@@ -1,0 +1,82 @@
+{
+  "domain": "DC",
+  "domain_name": "تصنيف البيانات",
+
+  "compliance_rule": "كل مواصفة تُقيَّم بإحدى درجتين فقط وفق صفحة 14 من المحتوى التدريبي لمؤشر نضيء: 100% ممتثل (مطبَّقة بالكامل) أو 0% غير ممتثل (مطبَّقة جزئياً أو غير مطبَّقة إطلاقاً). لا وزن لأي مواصفة، ولا ربط بمستوى النضج (current_level) -- منفصل تماماً عن sample_maturity_report.json.",
+
+  "data_source_note": "قائمة المواصفات = الأدلة التي يحتوي رمزها على الحرف C ضمن مجال تصنيف البيانات (evidence_repository_catalog.json)، طبقاً لقاعدة SDAIA الصريحة بأن أدلة الامتثال هي تحديداً الأدلة المرمّزة بـ C بمعزل عن مستوى النضج. حالة 9 من أصل 10 مواصفات مأخوذة حرفياً من status (PASS/FAIL) الموجود أصلاً في evaluated_evidence داخل sample_maturity_report.json. المواصفة العاشرة (DC.C.4.1) ملفها موجود في evidence_repository_catalog.json لكنه غير مُقيَّم ضمن sample_maturity_report.json الحالي -- صُنِّفت 0% تطبيقاً لنفس القاعدة الثنائية (غير مطبّقة بالكامل = غير ممتثل)، مع توضيح السبب صراحة في حقل note الخاص بها.",
+
+  "specifications": [
+    {
+      "specification_code": "DC.C.1.1",
+      "specification_name": "الخطة المعرفة والمعتمدة لتصنيف البيانات",
+      "linked_mq": "DC.MQ.1",
+      "compliance_status": "COMPLIANT",
+      "compliance_score": 100
+    },
+    {
+      "specification_code": "DC.C.2.1",
+      "specification_name": "ضوابط معالجة (تداول / مناولة) وحماية البيانات",
+      "linked_mq": "DC.MQ.2",
+      "compliance_status": "COMPLIANT",
+      "compliance_score": 100
+    },
+    {
+      "specification_code": "DC.C.1.2",
+      "specification_name": "ترتيب أولويات مجموعات البيانات والسجلات",
+      "linked_mq": "DC.MQ.2",
+      "compliance_status": "COMPLIANT",
+      "compliance_score": 100
+    },
+    {
+      "specification_code": "DC.C.3.1",
+      "specification_name": "تقرير جرد المجموعات التي تم تحديدها من البيانات والسجلات (Identified Datasets & Artifacts)",
+      "linked_mq": "DC.MQ.2",
+      "compliance_status": "NON_COMPLIANT",
+      "compliance_score": 0
+    },
+    {
+      "specification_code": "DC.C.3.2",
+      "specification_name": "تقرير تقييم الأثر",
+      "linked_mq": "DC.MQ.2",
+      "compliance_status": "NON_COMPLIANT",
+      "compliance_score": 0
+    },
+    {
+      "specification_code": "DC.C.3.3",
+      "specification_name": "تقرير تقييم البيانات منخفضة الأثر",
+      "linked_mq": "DC.MQ.2",
+      "compliance_status": "NON_COMPLIANT",
+      "compliance_score": 0
+    },
+    {
+      "specification_code": "DC.C.4.1",
+      "specification_name": "DC.C.4.1",
+      "linked_mq": "DC.MQ.2",
+      "compliance_status": "NON_COMPLIANT",
+      "compliance_score": 0,
+      "note": "لا يوجد اسم وصفي متاح لهذه المواصفة ضمن ملفات المشروع الحالية. الملف موجود في evidence_repository لكنه غير مُقيَّم ضمن sample_maturity_report.json الحالي -- صُنِّفت 0% تطبيقاً لقاعدة (غير مطبّقة بالكامل = غير ممتثل)، وليس بناءً على تقييم فعلي جرى بالفعل."
+    },
+    {
+      "specification_code": "DC.C.5.1",
+      "specification_name": "سجل البيانات",
+      "linked_mq": "DC.MQ.2",
+      "compliance_status": "COMPLIANT",
+      "compliance_score": 100
+    },
+    {
+      "specification_code": "DC.C.3.4",
+      "specification_name": "تقرير مراجعة تصنيف البيانات",
+      "linked_mq": "DC.MQ.3",
+      "compliance_status": "COMPLIANT",
+      "compliance_score": 100
+    },
+    {
+      "specification_code": "DC.C.3.5",
+      "specification_name": "وثيقة إثبات مستويات التصنيف المنشورة على أنها بيانات وصفية",
+      "linked_mq": "DC.MQ.3",
+      "compliance_status": "COMPLIANT",
+      "compliance_score": 100
+    }
+  ]
+}

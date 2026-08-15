@@ -1,0 +1,455 @@
+/* Wathiq — Maturity Dashboard (DC) — Layout
+   ================================================
+   WATHIQ_LAYOUT_HOOK
+
+   بنية الصفحة (Header/Sections/Grids/Footer). كل قيمة لونية تُقرأ عبر var()
+   فقط. الأقسام (IDs) وأسماء الـ Classes كما هي بلا أي تغيير — HTML Structure
+   لم يُمس، فقط الملفات المرجعية في <link> تغيّرت (انظر index.html). */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* WATHIQ_COLOR_HOOK -- الاستثناء الوحيد المسموح به هذه الجولة: إضافة
+   background-image للخلفية المتوهّجة (Soft Radial Glow) فوق background-color
+   الثابت، تنفيذاً لتعليمة صريحة تسمح بـ"أي CSS إضافي فقط إذا كان ضرورياً
+   لتطبيق الخلفية والتدرجات". القيمة نفسها (--bg-gradient) مُركَّبة بالكامل
+   في theme.css من ثلاثيات RGB مُعرَّفة في tokens.css -- لا لون حرفي هنا. */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  direction: rtl;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wq-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------------------------------------------------------------- */
+/* App Shell -- Sidebar Navigation Pass. حوّل الصفحة من Long Single-
+   Scroll إلى Sidebar(يمين، RTL) + Header + Main Content Area، حيث كل
+   عنصر تنقّل في القائمة يُظهر Section واحدة فقط (js/app.js::showView()) --
+   بلا أي تغيير على بنية الأقسام الداخلية أو render functions. القائمة
+   ثابتة على Desktop (>900px)، وتتحوّل إلى Drawer قابل للفتح/الإغلاق على
+   أي عرض أضيق (Tablet + Mobile معاً -- تبسيط متعمَّد لتفادي حالة وسطى
+   ثالثة "sidebar مصغّر بالأيقونات فقط" لا يمكن ضبطها بصرياً بلا معاينة
+   فعلية في متصفح). */
+/* ---------------------------------------------------------------- */
+
+.wq-app-shell {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+/* إصلاح جذري ثانٍ (اكتُشف بفحص بصري فعلي عند 390px): display:flex +
+   flex-direction:column هنا كانا يسبّبان تراكب حقيقي بين .wq-header
+   (position:sticky) و<main> -- main كان يُحسَب في نفس موضع header تماماً
+   (نفس top) بدل أن يُدفَع أسفله بارتفاع الهيدر، عند عرض الجوال تحديداً.
+   تحقّقتُ تجريبياً (تعديل حي على position/flex-shrink للهيدر عبر
+   DevTools) أن السبب ليس sticky نفسه ولا flex-shrink -- فأزلت Flex هنا
+   كلياً واستبدلته بتكديس Block عادي (النمط القياسي الأكثر اختباراً عبر
+   المتصفحات لـHeader لاصق + محتوى، بلا أي حالة حافة نادرة). .wq-app-
+   shell__content ما زال Flex Item داخل .wq-app-shell الأب (flex:1 1 auto
+   ما زالت له معنى هناك)؛ فقط توقّف عن استخدام flex لترتيب أبنائه هو. */
+.wq-app-shell__content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* إصلاح جذري (Final Senior UX Audit، اكتُشف بفحص بصري فعلي عند 390px):
+   .wq-app-shell__content نفسه لديه min-width:0 لكن أبناءه المباشرين
+   (header/main/footer) هم عناصر Flex في سياق flex-direction:column بلا
+   min-width:0 خاصة بهم -- القيمة الافتراضية min-width:auto تمنعهم من
+   الانكماش تحت أقل عرض محتوى داخلي (مثال فعلي: شبكة .wq-overview-grid
+   ذات 4 عناصر في صفحة "مستودع الأدلة" حسبت أعمدتها بناءً على
+   max-content بدل عرض الشاشة الفعلي، فدفعت main إلى 849px عرضاً داخل
+   شاشة 390px -- Horizontal Overflow حقيقي، لم يظهر في أي فحص سابق لأن كل
+   فحوصات Overflow السابقة استخدمت صفحة "متطلبات النضج" فقط كممثل عام).
+   هذا القيد يُصلح الفئة الكاملة من هذه المشكلة لأي محتوى مستقبلي عريض
+   داخل أي من الأقسام الثمانية، لا هذه الحالة فقط. */
+.wq-app-shell__content > * {
+  min-width: 0;
+}
+
+.wq-sidebar {
+  width: 248px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-inline-end: 1px solid var(--border);
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.wq-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px;
+}
+
+.wq-sidebar__brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.wq-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.wq-sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* مجموعة "معلومات إضافية" (Compliance/Operational Excellence) -- خط فاصل
+   رفيع أعلاها يميّزها عن مجموعات الرحلة الأساسية الأربع فوقها داخل
+   القائمة نفسها (بالإضافة إلى وزن الرابط الأصغر أعلاه). */
+.wq-sidebar__group--supplementary {
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+}
+
+.wq-sidebar__group-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  padding: 0 10px;
+  margin-bottom: 6px;
+}
+
+/* الستارة (Scrim) مخفية بالكامل على Desktop -- لا تُستخدَم إلا عند تفعيل
+   Drawer أدناه. */
+.wq-sidebar-scrim {
+  display: none;
+}
+
+.wq-sidebar-toggle {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .wq-sidebar {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-start: 0; /* = يمين فعلياً في RTL */
+    height: 100vh;
+    z-index: var(--z-modal);
+    transform: translateX(100%);
+    transition: transform var(--duration-base) var(--ease-standard);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .wq-sidebar[data-open="true"] {
+    transform: translateX(0);
+  }
+
+  .wq-sidebar-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-scrim);
+    z-index: calc(var(--z-modal) - 1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration-base) var(--ease-standard);
+  }
+
+  .wq-sidebar-scrim[data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .wq-sidebar-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .wq-sidebar-toggle:hover {
+    background: var(--surface-sunken);
+  }
+
+  .wq-sidebar-toggle:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wq-sidebar {
+    transition: none;
+  }
+  .wq-sidebar-scrim {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Header                                                            */
+/* ---------------------------------------------------------------- */
+
+.wq-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  /* كانت 20 حرفياً -- توحيد مع توكن --z-header الدلالي (نفس القيمة 20،
+     Sidebar Navigation Pass، بلا تغيير في السلوك). */
+  z-index: var(--z-header);
+}
+
+.wq-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+}
+
+.wq-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* WATHIQ_LOGO_HOOK — ختم وثيق الرسمي (Seal). تعليمة صريحة هذه الجولة: بلا
+   خلفية إضافية وبلا صندوق حول الشعار (أُزيل brand-tint/box-shadow من
+   الجولة السابقة) — فقط drop-shadow خفيف جداً عبر --logo-filter لتحسين
+   الوضوح في الداكن (none في الفاتح). الحجم/المكان/الشكل لم يتغيّروا.
+   محتوى SVG نفسه في index.html، مُعاد تلوينه بالكامل عبر tokens. */
+.wq-header__mark {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  filter: var(--logo-filter);
+}
+
+.wq-header__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.wq-header__subtitle {
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.wq-header__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Sections                                                           */
+/* ---------------------------------------------------------------- */
+
+.wq-section {
+  padding: 38px 0;
+  /* الإصلاح الحقيقي (اكتُشف بفحص بصري فعلي عند 390px، Final Senior UX
+     Audit): التنقّل بين الـViews يعتمد على location.hash، وبالتالي كل
+     تنقّل هو أيضاً "قفزة Anchor" عادية يعرفها المتصفح -- سلوك المتصفح
+     الافتراضي يُصعد أعلى القسم المستهدف إلى حافة الشاشة العلوية تماماً،
+     بلا أي علم بوجود .wq-header اللاصق (sticky) فوقه، فيختفي جزء من
+     عنوان القسم خلف الهيدر شبه الشفاف (كان يبدو "تراكباً"/Ghosting).
+     scroll-margin-top هنا هو الحل القياسي لهذه الحالة بالذات -- يخبر
+     المتصفح بترك مسافة أعلى القسم عند القفز إليه. القيمة (150px) تغطي
+     أطول ارتفاع فعلي للهيدر (~132px عند الجوال، سطرين) + هامش أمان؛ زيادة
+     بسيطة غير ضارة على العرض المكتبي (~86px، سطر واحد) تُقرأ كمسافة
+     إضافية مقبولة، لا كخطأ. */
+  scroll-margin-top: 150px;
+}
+
+.wq-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+/* عنوان فرعي صغير قبل العنوان الرئيسي -- يستخدَم فقط حيث توجد أكثر من
+   قسم متشابهة الاسم متجاورة (مستودع الأدلة / مستودع الأدلة المرئية) حتى
+   يميّز المستخدم غرض كل قسم من أول قراءة بلا حاجة لقراءة wq-section__hint
+   كاملاً. لون accent خفيف -- استخدام واحد صغير، ليس تعبئة كبيرة. */
+.wq-section__kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin: 0 0 4px;
+}
+
+.wq-section__title {
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* أقسام "معلومات إضافية" (Compliance/Operational Excellence) -- مجموعة
+   منفصلة في القائمة الجانبية (Sidebar Navigation Pass) بوزن بصري أخف من
+   عناصر الرحلة الأساسية (نظرة عامة/متطلبات النضج/الأدلة/الفجوات/
+   التوصيات). عنوان القسم هنا يطابق نفس التخفيف داخل محتوى الـView نفسها،
+   لا لون جديد، نفس text-primary. */
+.wq-section--supplementary .wq-section__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wq-section__hint {
+  font-size: 13px;
+  color: var(--text-faint);
+  margin: 4px 0 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* Grids                                                              */
+/* ---------------------------------------------------------------- */
+
+.wq-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* شبكات KPI متوازنة صراحة (Arabic Cleanup Pass) -- auto-fit المرن أعلاه
+   كان يوزّع أحياناً 3 بطاقات في صف + بطاقة منفردة في صف تالٍ (Compliance:
+   4 بطاقات عند ~1024px) أو صفاً غير متكرر (Operational Excellence: 3
+   بطاقات). عدد الأعمدة هنا صريح ثابت بدل حساب تلقائي، فلا ينتج توزيع
+   غير متوقَّع عند أي عرض. */
+.wq-kpi-grid--2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 560px) {
+  .wq-kpi-grid--2x2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3 أعمدة أو عمود واحد فقط -- بلا توقّف وسيط عند عمودين (يمنع "2 فوق +
+   1 تحت" عند أي عرض تابلت). */
+.wq-kpi-grid--3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .wq-kpi-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Breakpoints صريحة بدل auto-fit المرنة -- Mobile:1 / Tablet:2 / Desktop:3
+   (وليس 4 كما طُلب حرفياً: الحاوية الحالية wq-container أقصاها 1180px،
+   و4 أعمدة ضمنها تعني عرض بطاقة أقل من 320px، مما يخالف مواصفة عرض
+   البطاقة 320-360px المُعطاة صراحة لمفهوم File Card -- أُعطي الأولوية
+   لعرض البطاقة الصريح، فالحد الأقصى الواقعي هو 3 أعمدة). */
+.wq-mq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+@media (min-width: 640px) {
+  .wq-mq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .wq-mq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.wq-gap-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.wq-gap-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.wq-reco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Footer                                                             */
+/* ---------------------------------------------------------------- */
+
+.wq-footer {
+  padding: 28px 0 40px;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Responsive                                                         */
+/* ---------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .wq-header__bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .wq-section {
+    padding: 22px 0;
+  }
+}

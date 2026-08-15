@@ -1,0 +1,269 @@
+/*
+  Semantic Theme Tokens (Light + Dark)
+  ====================================
+  WATHIQ_COLOR_HOOK
+
+  يحوّل هذا الملف اللوحة الأساسية (tokens.css) إلى أسماء دلالية يستهلكها
+  components.css / layout.css / animations.css / index.html — عبر var()
+  فقط، بلا أي قيمة Hex/RGB/HSL حرفية هنا (الشفافيات المبنية من rgba(var(...))
+  ليست استثناءً -- القناة اللونية نفسها من tokens.css، الرقم هنا Alpha فقط).
+
+  ============================================================
+  Enterprise SaaS Polish Pass (هذه الجولة)
+  ============================================================
+  جديد هذه الجولة:
+    - Dark Surface أُعيد بناؤه على 4 أسماء غير ملتبسة (bg-dark/dark-surface/
+      dark-card/dark-highlighted) بترتيب تصاعدي حقيقي في الإضاءة — يلغي
+      ملاحظة "Cards أغمق من Surface" من الجولة السابقة.
+    - --bg-gradient خُفِّض إلى 3 طبقات فقط (بدل 7) وبشفافية أخفض — "خلفية
+      داعمة لا تنافس المحتوى"، عائلة Cyan/Teal حصراً.
+    - --border-subtle جديد: حدّ بطاقات خفيف جداً (0.08 Alpha) بدل
+      `transparent` الكامل — يحقق "Border يظهر تدريجياً" عبر transition
+      من subtle إلى strong عند hover، بدل transparent إلى color.
+    - --state-selected-bg / --state-selected-border جديدان لحالة MQ
+      Selected (بطاقة موسَّعة) — مُعطاة حرفياً لكل وضع.
+    - --logo-filter جديد: drop-shadow خفيف جداً في الداكن فقط لتحسين وضوح
+      الشعار، بدل خلفية/صندوق حوله (أُزيلا من layout.css هذه الجولة).
+    - --success / --warning / --error / --text-secondary / --card: أسماء
+      إضافية مطلوبة صراحة في "Token Architecture" (بند 11) — أُضيفت
+      كـ Aliases لنفس القيم الدلالية القائمة (--status-success وغيرها)
+      بدل إعادة تسمية جماعية عبر components.css، لتقليل نطاق اللمس على
+      ملف لا يُفترض تعديله إلا عند الحاجة. القيمة الفعلية واحدة، فقط
+      اسمان يشيران إليها.
+
+  تعيين الأدوار (بلا تغيير عن سابقه، للمرجعية):
+    Primary   → --brand-primary (فاتح: primary-light / داكن: accent-teal)
+    Secondary → --brand-secondary (فاتح: secondary-teal-light)
+    Accent    → --accent (accent-teal، نفس القيمة حرفياً في الوضعين)
+    Background→ --bg (أساس مصمت) + --bg-gradient (توهّج شفاف فوقه)
+    Text      → --text-primary / --text-soft (+ --text-numbers)
+    Border    → --border (+ border-strong / border-subtle)
+    Warning/Error → محايدة تماماً (Gray S=0%) -- لا Amber/Coral
+
+  Active States: Light = Primary تعبئة + نص أبيض. Dark = Accent تعبئة + نص
+  داكن (Active-Ink) -- لذلك --text-on-brand يختلف بين الوضعين.
+
+  Progress Bars: Light = Primary→Accent. Dark = Accent→Accent-Light (قيمة
+  الطرف الثاني تحدَّثت هذه الجولة إلى accent-light-dark الجديدة).
+*/
+
+:root {
+  /* ---- Brand ---- */
+  --brand-primary: var(--primary-light);
+  --brand-primary-hover: var(--primary-light-hover);
+  --brand-primary-active: var(--primary-light-active);
+  --brand-secondary: var(--secondary-teal-light);
+  --brand-tint: rgba(var(--white-rgb), 0.88);
+  --accent: var(--accent-teal);
+  --accent-hover: var(--accent-teal-hover);
+  --accent-active: var(--accent-teal-active);
+  --accent-soft: rgba(var(--white-rgb), 0.96);
+
+  /* ---- Background + Glow (خلفية داعمة، Cyan/Teal فقط، شفافية مخفَّضة) ---- */
+  --bg: var(--bg-light);
+  --bg-gradient: radial-gradient(560px 340px at 100% -4%, rgba(var(--accent-teal-rgb), 0.15) 0%, transparent 70%),
+    radial-gradient(520px 320px at 0% 6%, rgba(var(--glow-cyan-rgb), 0.12) 0%, transparent 70%),
+    radial-gradient(600px 360px at 55% 100%, rgba(var(--glow-mint-rgb), 0.1) 0%, transparent 70%);
+
+  /* بطاقات شبه شفافة (0.88) لإظهار توهّج الخلفية خلفها. */
+  --surface: rgba(var(--white-rgb), 0.88);
+  --surface-sunken: var(--bg-light);
+  --surface-highlighted: rgba(var(--white-rgb), 0.96);
+  --surface-elevated: var(--elevated-light); /* صلب بالكامل -- Modal فقط، فوق أي بطاقة أخرى في نفس الصفحة */
+  --card: var(--surface); /* alias معماري صريح (بند 11) */
+
+  /* ---- Border ---- */
+  --border: rgba(var(--border-light-rgb), 0.1);
+  --border-subtle: rgba(var(--border-light-rgb), 0.08);
+  --border-strong: var(--border-strong-light);
+  --divider: var(--border-subtle); /* alias دلالي صريح -- خط فصل بسيط بين أقسام داخل نفس البطاقة (Divider) بدل حدّ بطاقة كامل (Border) */
+  /* كانت accent (تباين محسوب ≈1.88:1 فوق الأسطح الفاتحة -- يفشل حدّ WCAG
+     1.4.11 للمؤشرات غير النصية، 3:1 كحدّ أدنى). brand-primary (نفس لون
+     "Active" الأساسي في الوضع الفاتح أصلاً) يعطي ≈14.8:1. الوضع الداكن لم
+     يتغيّر (accent هناك ≈9.98:1 فوق الخلفية، يجتاز الحدّ بارتياح -- انظر
+     الكتلتين أدناه). */
+  --border-focus: var(--brand-primary);
+
+  /* ---- Text ---- */
+  --text-primary: var(--text-primary-light);
+  --text-soft: var(--text-secondary-light);
+  --text-faint: var(--text-secondary-light);
+  --text-secondary: var(--text-soft); /* alias معماري صريح (بند 11) */
+  --text-disabled: var(--text-disabled-light);
+  --text-on-brand: var(--white);
+  --text-inverse: var(--white); /* alias دلالي صريح -- نص فوق خلفية داكنة/Accent صلبة، نفس قيمة text-on-brand */
+  --text-numbers: var(--text-numbers-light);
+
+  /* ---- Charts ---- */
+  --chart-1: var(--chart-1-light);
+  --chart-2: var(--chart-2-light);
+  --chart-3: var(--chart-3-light);
+  --chart-4: var(--chart-4-light);
+
+  /* ---- Z-Index (alias مباشر لـ tokens.css -- بلا قيم جديدة) ---- */
+  --z-header: var(--z-sticky-header);
+
+  /* ---- Status (محايد تماماً لـ Warning/Error، Accent لـ Success) ---- */
+  --status-success: var(--brand-primary);
+  --status-success-bg: var(--surface-highlighted);
+  --status-warning: var(--gray-600);
+  --status-warning-bg: var(--gray-100);
+  --status-error: var(--gray-900);
+  --status-error-bg: var(--gray-100);
+  --status-info: var(--brand-primary);
+  --status-info-bg: var(--surface-highlighted);
+  --success: var(--status-success); /* alias معماري صريح (بند 11) */
+  --warning: var(--status-warning);
+  --error: var(--status-error);
+
+  /* ---- Selected / MQ Active state ---- */
+  --state-selected-bg: var(--selected-bg-light);
+  --state-selected-border: var(--accent);
+
+  /* ---- Logo clarity (بلا خلفية/صندوق -- drop-shadow فقط عند الحاجة) ---- */
+  --logo-filter: none;
+
+  --overlay-scrim: var(--scrim);
+
+  --progress-gradient: linear-gradient(90deg, var(--brand-primary), var(--accent));
+}
+
+/* Respects OS-level dark preference automatically. A manual toggle also
+   exists (js/theme.js, button #wq-theme-toggle) -- it sets data-theme, which
+   the separate [data-theme="dark"] block below mirrors exactly so both
+   activation paths (OS preference vs. explicit user choice) resolve to the
+   same values. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-primary: var(--accent-teal);
+    --brand-primary-hover: var(--accent-teal-hover);
+    --brand-primary-active: var(--accent-teal-active);
+    --brand-secondary: var(--accent-teal);
+    --brand-tint: rgba(var(--white-rgb), 0.12);
+    --accent-hover: var(--accent-teal-hover);
+    --accent-active: var(--accent-teal-active);
+
+    --bg: var(--bg-dark);
+    --bg-gradient: radial-gradient(560px 340px at 100% -4%, rgba(var(--accent-teal-rgb), 0.2) 0%, transparent 70%),
+      radial-gradient(520px 320px at 0% 6%, rgba(var(--glow-cyan-rgb), 0.16) 0%, transparent 70%),
+      radial-gradient(600px 360px at 55% 100%, rgba(var(--glow-mint-rgb), 0.12) 0%, transparent 70%);
+
+    --surface: var(--dark-card);
+    --surface-sunken: var(--dark-surface);
+    --surface-highlighted: var(--dark-highlighted);
+    --surface-elevated: var(--dark-elevated);
+    --card: var(--surface);
+
+    --border: var(--dark-highlighted);
+    --border-subtle: rgba(var(--white-rgb), 0.08);
+    --border-strong: var(--border-strong-dark);
+    --divider: var(--border-subtle);
+    --border-focus: var(--accent);
+
+    --text-primary: var(--text-primary-dark);
+    --text-soft: var(--text-secondary-dark);
+    --text-faint: var(--text-secondary-dark);
+    --text-secondary: var(--text-soft);
+    --text-disabled: var(--text-disabled-dark);
+    --text-on-brand: var(--active-text-dark);
+    --text-inverse: var(--active-text-dark);
+    --text-numbers: var(--text-numbers-dark);
+
+    --chart-1: var(--chart-1-dark);
+    --chart-2: var(--chart-2-dark);
+    --chart-3: var(--chart-3-dark);
+    --chart-4: var(--chart-4-dark);
+
+    --accent: var(--accent-teal);
+    --accent-soft: rgba(var(--white-rgb), 0.08);
+
+    --status-success: var(--accent-teal);
+    --status-success-bg: var(--dark-highlighted);
+    --status-warning: var(--gray-dark-300);
+    --status-warning-bg: var(--gray-dark-700);
+    --status-error: var(--white);
+    --status-error-bg: var(--gray-dark-700);
+    --status-info: var(--active-text-dark);
+    --status-info-bg: var(--accent-teal);
+    --success: var(--status-success);
+    --warning: var(--status-warning);
+    --error: var(--status-error);
+
+    --state-selected-bg: var(--selected-bg-dark);
+    --state-selected-border: var(--accent);
+
+    /* توهّج خفيف جداً خلف الشعار في الداكن فقط لتحسين الوضوح -- بلا
+       خلفية/صندوق. */
+    --logo-filter: drop-shadow(0 0 4px rgba(var(--glow-cyan-rgb), 0.35));
+
+    --overlay-scrim: var(--scrim-dark);
+    --progress-gradient: linear-gradient(90deg, var(--accent), var(--accent-light-dark));
+  }
+}
+
+/* Same values, reached via an explicit attribute -- js/theme.js sets this
+   attribute when the user clicks the manual toggle (#wq-theme-toggle),
+   overriding whatever the OS preference block above would otherwise apply. */
+[data-theme="dark"] {
+  --brand-primary: var(--accent-teal);
+  --brand-primary-hover: var(--accent-teal-hover);
+  --brand-primary-active: var(--accent-teal-active);
+  --brand-secondary: var(--accent-teal);
+  --brand-tint: rgba(var(--white-rgb), 0.12);
+  --accent-hover: var(--accent-teal-hover);
+  --accent-active: var(--accent-teal-active);
+
+  --bg: var(--bg-dark);
+  --bg-gradient: radial-gradient(560px 340px at 100% -4%, rgba(var(--accent-teal-rgb), 0.2) 0%, transparent 70%),
+    radial-gradient(520px 320px at 0% 6%, rgba(var(--glow-cyan-rgb), 0.16) 0%, transparent 70%),
+    radial-gradient(600px 360px at 55% 100%, rgba(var(--glow-mint-rgb), 0.12) 0%, transparent 70%);
+
+  --surface: var(--dark-card);
+  --surface-sunken: var(--dark-surface);
+  --surface-highlighted: var(--dark-highlighted);
+  --surface-elevated: var(--dark-elevated);
+  --card: var(--surface);
+
+  --border: var(--dark-highlighted);
+  --border-subtle: rgba(var(--white-rgb), 0.08);
+  --border-strong: var(--border-strong-dark);
+  --divider: var(--border-subtle);
+  --border-focus: var(--accent);
+
+  --text-primary: var(--text-primary-dark);
+  --text-soft: var(--text-secondary-dark);
+  --text-faint: var(--text-secondary-dark);
+  --text-secondary: var(--text-soft);
+  --text-disabled: var(--text-disabled-dark);
+  --text-on-brand: var(--active-text-dark);
+  --text-inverse: var(--active-text-dark);
+  --text-numbers: var(--text-numbers-dark);
+
+  --chart-1: var(--chart-1-dark);
+  --chart-2: var(--chart-2-dark);
+  --chart-3: var(--chart-3-dark);
+  --chart-4: var(--chart-4-dark);
+
+  --accent: var(--accent-teal);
+  --accent-soft: rgba(var(--white-rgb), 0.08);
+
+  --status-success: var(--accent-teal);
+  --status-success-bg: var(--dark-highlighted);
+  --status-warning: var(--gray-dark-300);
+  --status-warning-bg: var(--gray-dark-700);
+  --status-error: var(--white);
+  --status-error-bg: var(--gray-dark-700);
+  --status-info: var(--active-text-dark);
+  --status-info-bg: var(--accent-teal);
+  --success: var(--status-success);
+  --warning: var(--status-warning);
+  --error: var(--status-error);
+
+  --state-selected-bg: var(--selected-bg-dark);
+  --state-selected-border: var(--accent);
+
+  --logo-filter: drop-shadow(0 0 4px rgba(var(--glow-cyan-rgb), 0.35));
+
+  --overlay-scrim: var(--scrim-dark);
+  --progress-gradient: linear-gradient(90deg, var(--accent), var(--accent-light-dark));
+}

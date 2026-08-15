@@ -1,0 +1,27 @@
+[
+  { "evidence_code": "DC.M.1", "file_name": "DC.M.1.docx", "domain": "Data Classification", "mq_id": "DC.MQ.1", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ1/DC.M.1.docx" },
+  { "evidence_code": "DC.C.1.1", "file_name": "DC.C.1.1.docx", "domain": "Data Classification", "mq_id": "DC.MQ.1", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ1/DC.C.1.1.docx" },
+  { "evidence_code": "DC.M.2", "file_name": "DC.M.2.docx", "domain": "Data Classification", "mq_id": "DC.MQ.1", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ1/DC.M.2.docx" },
+  { "evidence_code": "DC.M.3", "file_name": "DC.M.3.docx", "domain": "Data Classification", "mq_id": "DC.MQ.1", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ1/DC.M.3.docx" },
+  { "evidence_code": "DC.M.4", "file_name": "DC.M.4.docx", "domain": "Data Classification", "mq_id": "DC.MQ.1", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ1/DC.M.4.docx" },
+
+  { "evidence_code": "DC.M.5", "file_name": "DC.M.5.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.M.5.docx" },
+  { "evidence_code": "DC.M.6", "file_name": "DC.M.6.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.M.6.docx" },
+  { "evidence_code": "DC.C.2.1", "file_name": "DC.C.2.1.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.C.2.1.docx" },
+  { "evidence_code": "DC.C.1.2", "file_name": "DC.C.1.2.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.C.1.2.docx" },
+  { "evidence_code": "DC.C.3.1", "file_name": "DC.C.3.1.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.C.3.1.docx" },
+  { "evidence_code": "DC.C.3.2", "file_name": "DC.C.3.2.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.C.3.2.docx" },
+  { "evidence_code": "DC.C.3.3", "file_name": "DC.C.3.3.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.C.3.3.docx" },
+  { "evidence_code": "DC.M.7", "file_name": "DC.M.7.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.M.7.docx" },
+  { "evidence_code": "DC.M.8", "file_name": "DC.M.8.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.M.8.docx" },
+  { "evidence_code": "DC.C.5.1", "file_name": "DC.C.5.1.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.C.5.1.docx" },
+  { "evidence_code": "DC.C.4.1", "file_name": "DC.C.4.1.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.C.4.1.docx" },
+  { "evidence_code": "DC.M.9", "file_name": "DC.M.9.docx", "domain": "Data Classification", "mq_id": "DC.MQ.2", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ2/DC.M.9.docx" },
+
+  { "evidence_code": "DC.M.10", "file_name": "DC.M.10.docx", "domain": "Data Classification", "mq_id": "DC.MQ.3", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ3/DC.M.10.docx" },
+  { "evidence_code": "DC.M.11", "file_name": "DC.M.11.docx", "domain": "Data Classification", "mq_id": "DC.MQ.3", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ3/DC.M.11.docx" },
+  { "evidence_code": "DC.C.3.4", "file_name": "DC.C.3.4.docx", "domain": "Data Classification", "mq_id": "DC.MQ.3", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ3/DC.C.3.4.docx" },
+  { "evidence_code": "DC.C.3.5", "file_name": "DC.C.3.5.docx", "domain": "Data Classification", "mq_id": "DC.MQ.3", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ3/DC.C.3.5.docx" },
+  { "evidence_code": "DC.M.12", "file_name": "DC.M.12.docx", "domain": "Data Classification", "mq_id": "DC.MQ.3", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ3/DC.M.12.docx" },
+  { "evidence_code": "DC.M.13", "file_name": "DC.M.13.docx", "domain": "Data Classification", "mq_id": "DC.MQ.3", "file_type": "DOCX", "relative_path": "evidence_repository/data_classification/MQ3/DC.M.13.docx" }
+]

@@ -1,0 +1,187 @@
+{
+  "domain": "DC",
+  "domain_name": "تصنيف البيانات",
+
+  "assessment_overview": {
+    "total_mqs": 3,
+    "evaluated_mqs": 3,
+    "completion_status": "مكتمل"
+  },
+
+  "maturity_assessment_status": {
+    "domain_level_calculation": "NOT_AVAILABLE",
+    "reason": "No official aggregation rule between MQs found"
+  },
+
+  "architectural_note": "نتائج النضج المعروضة محسوبة على مستوى MQ فقط، ولا تمثل Domain Maturity نهائية لعدم توفر قاعدة تجميع رسمية بين MQs.",
+
+  "mq_results": [
+    {
+      "mq_id": "DC.MQ.1",
+      "question": "هل قامت الجهة ببناء خطة لتصنيف البيانات على النحو المنصوص عليه في معايير إدارة البيانات وحماية البيانات الشخصية؟",
+      "current_level": 2,
+      "level_name": "التعريف",
+      "level_description": "قامت الجهة بتعريف خطة لتصنيف البيانات لإدارة وتنظيم أنشطة تصنيف البيانات.",
+      "next_level": 3,
+      "next_level_name": "التفعيل",
+      "next_level_gaps": ["DC.M.2"],
+      "evaluated_evidence": [
+        {
+          "evidence_code": "DC.M.1",
+          "evidence_name": "الممارسات الحالية المتعلقة بمجال تصنيف البيانات",
+          "level_number": 1,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.C.1.1",
+          "evidence_name": "الخطة المعرفة والمعتمدة لتصنيف البيانات",
+          "level_number": 2,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.M.2",
+          "evidence_name": "تقرير حالة تنفيذ خطة تصنيف البيانات",
+          "level_number": 3,
+          "status": "FAIL",
+          "satisfied": false
+        }
+      ]
+    },
+    {
+      "mq_id": "DC.MQ.2",
+      "question": "هل الجهة عرفت، وحددت ونفذت العمليات المطلوبة لتصنيف البيانات؟",
+      "current_level": 2,
+      "level_name": "التعريف",
+      "level_description": "طورت الجهة إطار عمل لتحديد أولويات تصنيف مجموعات البيانات وإطاراً لإجراء تقييم الأثر، وعرّفت ضوابط معالجة وحماية البيانات لكل مجموعة ومستويات التصنيف المتوافقة مع معايير NDMO، وقامت بعملية تحديد وجرد مجموعات بياناتها وسجلاتها.",
+      "next_level": 3,
+      "next_level_name": "التفعيل",
+      "next_level_gaps": ["DC.C.3.1", "DC.C.3.2", "DC.C.3.3", "DC.M.8"],
+      "evaluated_evidence": [
+        {
+          "evidence_code": "DC.M.5",
+          "evidence_name": "القائمة الحالية لمجموعات البيانات المصنفة",
+          "level_number": 1,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.M.6",
+          "evidence_name": "سياسة تصنيف البيانات",
+          "level_number": 2,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.C.2.1",
+          "evidence_name": "ضوابط معالجة (تداول / مناولة) وحماية البيانات",
+          "level_number": 2,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.C.3.1",
+          "evidence_name": "تقرير جرد المجموعات التي تم تحديدها من البيانات والسجلات (Identified Datasets & Artifacts)",
+          "level_number": 3,
+          "status": "FAIL",
+          "satisfied": false
+        },
+        {
+          "evidence_code": "DC.C.1.2",
+          "evidence_name": "ترتيب أولويات مجموعات البيانات والسجلات",
+          "level_number": 3,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.M.7",
+          "evidence_name": "إرفاق ما يثبت استخدام أداة دليل / فهرس البيانات لجرد البيانات",
+          "level_number": 3,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.C.3.2",
+          "evidence_name": "تقرير تقييم الأثر",
+          "level_number": 3,
+          "status": "FAIL",
+          "satisfied": false
+        },
+        {
+          "evidence_code": "DC.C.3.3",
+          "evidence_name": "تقرير تقييم البيانات منخفضة الأثر",
+          "level_number": 3,
+          "status": "FAIL",
+          "satisfied": false
+        },
+        {
+          "evidence_code": "DC.M.8",
+          "evidence_name": "قائمة معتمدة لوصول المستخدمين إلى البيانات مع الامتيازات المخصصة",
+          "level_number": 3,
+          "status": "FAIL",
+          "satisfied": false
+        },
+        {
+          "evidence_code": "DC.C.5.1",
+          "evidence_name": "سجل البيانات",
+          "level_number": 3,
+          "status": "PASS",
+          "satisfied": true
+        }
+      ]
+    },
+    {
+      "mq_id": "DC.MQ.3",
+      "question": "هل راجعت الجهة كل مجموعات البيانات والسجلات المصنفة لضمان أن درجات التصنيف الممنوحة لها هي الأنسب وفقاً لسياسات تصنيف البيانات؟",
+      "current_level": 3,
+      "level_name": "التفعيل",
+      "level_description": "تقوم الجهة بتطبيق آلية مراجعة تصنيف البيانات على جميع مجموعات البيانات والسجلات المصنفة، وتنشرها في دليل/فهرس البيانات كبيانات وصفية.",
+      "next_level": 4,
+      "next_level_name": "التمكن",
+      "next_level_gaps": ["DC.M.12"],
+      "evaluated_evidence": [
+        {
+          "evidence_code": "DC.M.10",
+          "evidence_name": "الممارسات الحالية المتعلقة بمراجعة تصنيفات البيانات",
+          "level_number": 1,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.M.11",
+          "evidence_name": "آلية مراجعة تصنيف البيانات",
+          "level_number": 2,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.C.3.4",
+          "evidence_name": "تقرير مراجعة تصنيف البيانات",
+          "level_number": 3,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.C.3.5",
+          "evidence_name": "وثيقة إثبات مستويات التصنيف المنشورة على أنها بيانات وصفية",
+          "level_number": 3,
+          "status": "PASS",
+          "satisfied": true
+        },
+        {
+          "evidence_code": "DC.M.12",
+          "evidence_name": "تقرير مراقبة آلية مراجعة تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+          "level_number": 4,
+          "status": "FAIL",
+          "satisfied": false
+        }
+      ]
+    }
+  ],
+
+  "warnings": [
+    "MQ maturity is calculated independently.",
+    "Domain maturity aggregation requires official SDAIA/NDMO rule."
+  ]
+}

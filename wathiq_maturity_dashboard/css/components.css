@@ -1,0 +1,3210 @@
+/* Wathiq — Maturity Dashboard (DC) — Components
+   ================================================
+   كل قيمة لونية هنا تُقرأ عبر var() من theme.css فقط — ممنوع أي Hex/RGB/HSL
+   حرفي في هذا الملف (انظر tokens.css). أسماء الـ Selectors كلها كما هي
+   بلا أي تغيير — الأقسام البرمجية (app.js) تعتمد عليها حرفياً. */
+
+/* ---------------------------------------------------------------- */
+/* Sidebar navigation links (Sidebar Navigation Pass)                 */
+/* ---------------------------------------------------------------- */
+
+/* الحالة النشطة تتبع تعليمة صريحة: بلا خلفية Teal مصمتة -- سطح فاتح
+   (surface-highlighted) + نص/أيقونة بلون brand-primary (Navy في الفاتح،
+   Accent-Teal في الداكن -- نفس تعيين الأدوار المستخدَم أصلاً لكل عنصر
+   Primary آخر في هذه الواجهة، بلا استثناء جديد للـ Sidebar) + مؤشر رفيع
+   3px بلون accent فقط كإشارة إضافية غير معتمَدة عليها وحدها. */
+.wq-nav-link {
+  display: block;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border-inline-start: 3px solid transparent;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: background var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.wq-nav-link:hover {
+  background: var(--surface-sunken);
+  color: var(--text-primary);
+}
+
+.wq-nav-link:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.wq-nav-link--active {
+  background: var(--surface-highlighted);
+  color: var(--brand-primary);
+  font-weight: 700;
+  border-inline-start-color: var(--accent);
+}
+
+.wq-nav-link--active:hover {
+  background: var(--surface-highlighted);
+}
+
+/* روابط "معلومات إضافية" (Compliance/Operational Excellence) -- أصغر
+   قليلاً، بنفس منطق wq-section--supplementary (layout.css): الوزن
+   البصري يطابق ترتيبها الثانوي في التنقّل، بلا حذف أو تصغير مبالغ فيه. */
+.wq-nav-link--supplementary {
+  font-size: 12.5px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Chips                                                              */
+/* ---------------------------------------------------------------- */
+
+/* WATHIQ_LOGO_HOOK — Theme Toggle button. Its only job is flipping
+   documentElement's data-theme attribute (see js/theme.js) -- every color
+   below already exists as a semantic token that theme.css redefines for
+   dark, so this control needs no dark-specific override of its own. */
+.wq-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-standard),
+    background var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.wq-theme-toggle:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.wq-theme-toggle:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Architecture note banner                                          */
+/* ---------------------------------------------------------------- */
+
+/* ملاحظة توضيحية هادئة (Arabic Cleanup Pass) -- كانت بأيقونة دائرية "i"
+   وحدّ جانبي ملوَّن (status-info) يقرأها العين كتنبيه/Alert. لا أيقونة
+   ولا لون حالة الآن -- خلفية محايدة خفيفة فقط + نص، تُقرأ كملاحظة سياق
+   عادية ضمن الصفحة، لا كتحذير. */
+.wq-note {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  /* كانت تسبق wq-overview-grid (margin-bottom يفصلها عمّا بعدها)؛ أصبحت
+     تليه الآن (Visual Hierarchy Pass) فتحتاج المسافة قبلها بدل بعدها. */
+  margin-top: 22px;
+}
+
+.wq-note__text {
+  font-size: 13.5px;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* WATHIQ_CARD_HOOK — Overview stat cards                             */
+/* ---------------------------------------------------------------- */
+
+/* بلا حدّ افتراضي عمداً -- الفصل عن الخلفية بالظل وحده (تباين اللون)،
+   مطابقةً لكلا المرجعين حيث الحدود شبه غائبة والفصل بصري بالتباين لا
+   بخط محيطي. */
+.wq-stat {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  animation: wq-fade-in var(--duration-base) var(--ease-standard) both;
+  transition: transform var(--duration-hover) var(--ease-standard),
+    box-shadow var(--duration-hover) var(--ease-standard),
+    border-color var(--duration-hover) var(--ease-standard);
+}
+
+.wq-overview-grid > .wq-stat:nth-child(1) { animation-delay: 0ms; }
+.wq-overview-grid > .wq-stat:nth-child(2) { animation-delay: 60ms; }
+.wq-overview-grid > .wq-stat:nth-child(3) { animation-delay: 120ms; }
+
+.wq-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-strong);
+}
+
+.wq-stat__label {
+  font-size: 12px;
+  color: var(--text-faint);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.wq-stat__value {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  /* عزل اتجاه إلزامي لأي قيمة رقمية/نسبة مئوية داخل سياق RTL محيط -- بلا
+     هذا العزل قد تنقلب علامة % أو ترتيب الأرقام بصرياً حسب محتوى النص
+     المجاور. نفس العزل مُطبَّق على كل Evidence Code/رقم/نسبة أخرى في هذا
+     الملف (المعرّف، رقم المستوى، شارات الحالة، نسبة الاستيفاء...). */
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.wq-stat__sub {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------------------------- */
+/* WATHIQ_CARD_HOOK — MQ Maturity Cards                               */
+/* ---------------------------------------------------------------- */
+
+/* File / Document Card -- الحاوية نفسها (وليس أيقونة داخلها) هي شكل
+   الملف: طيّة زاوية واحدة (::after)، CSS بحت بلا أي عنصر HTML جديد.
+   الزاوية التي تحمل الطيّة (أعلى-يسار فعلياً في RTL =
+   border-start-end-radius) تُعطى انحناءً أصغر عمداً حتى لا يتصادم
+   الاستدارة الكبيرة مع حدّ الطيّة الحادّ -- بقية الزوايا الثلاث تبقى على
+   --radius-card-file كما هي. (File Tab العلوي أُزيل بناءً على طلب صريح
+   -- كان هنا سابقاً كـ .wq-mq-card::before.) */
+.wq-mq-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card-file);
+  border-start-end-radius: 4px; /* مُطابقة لحجم الطيّة الأصغر بعد Refinement */
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  animation: wq-fade-in var(--duration-base) var(--ease-standard) both;
+  transition: transform var(--duration-hover) var(--ease-standard),
+    box-shadow var(--duration-hover) var(--ease-standard),
+    border-color var(--duration-hover) var(--ease-standard),
+    background var(--duration-hover) var(--ease-standard);
+}
+
+/* Fold Corner -- Refinement: أصغر بكثير (كان 15x15) حتى لا يُقرأ كطيّة
+   ورقية بارزة، مجرد لمسة زاوية خفيفة جداً. نفس اللون المحايد الموجود
+   أصلاً (surface-sunken)، بلا Gradient. */
+.wq-mq-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  width: 9px;
+  height: 9px;
+  background: var(--surface-sunken);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.wq-mq-grid > .wq-mq-card:nth-child(1) { animation-delay: 0ms; }
+.wq-mq-grid > .wq-mq-card:nth-child(2) { animation-delay: 60ms; }
+.wq-mq-grid > .wq-mq-card:nth-child(3) { animation-delay: 120ms; }
+.wq-mq-grid > .wq-mq-card:nth-child(n+4) { animation-delay: 160ms; }
+
+.wq-mq-card:hover,
+.wq-mq-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-strong);
+}
+
+/* Selected/expanded emphasis — تلوين خلفية + حدّ Accent صريحان (Selected
+   State المُعطى حرفياً)، بالإضافة إلى القاعدة السفلية inset الموجودة
+   مسبقاً بدل تغيير سماكة الحدّ، حتى لا تتحرك أبعاد البطاقة عند التبديل. */
+.wq-mq-card[aria-expanded="true"] {
+  background: var(--state-selected-bg);
+  border-color: var(--state-selected-border);
+  box-shadow: var(--shadow-card-hover), inset 0 3px 0 var(--state-selected-border);
+}
+
+.wq-mq-card:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Header Area -- ID + Domain Badge + Status Indicator، الثلاثة صغيرة
+   ومتساوية الأهمية البصرية (لا شيء منها العنصر الرئيسي في البطاقة). */
+.wq-mq-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Typography Hierarchy fix: رجوع إلى 500 (كان رُفع إلى 700 في جولة سابقة)
+   -- السؤال (wq-mq-card__question) هو العنصر البصري الرئيسي فعلياً، فلا
+   يجب أن يكون الـ ID أثقل وزناً منه أو مساوياً لوزن رقم المستوى. */
+.wq-mq-card__id {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* مخفي (Final UX Simplification Pass): كل بطاقة MQ في هذا النموذج تنتمي
+   لنفس المجال الوحيد المعروض (تصنيف البيانات/DC -- الصفحة كلها لمجال
+   واحد فقط، مذكور أصلاً في الرأس والـOverview). عرض الشارة نفسها حرفياً
+   على 3 بطاقات متتالية لا يميّز شيئاً، مجرد تكرار بصري. لم تُحذف من
+   JS/البيانات -- إخفاء عرض فقط، تعود تلقائياً إن أُضيف مجال ثانٍ يوماً
+   (عندها ستكون شارة مفيدة فعلياً للتمييز بين البطاقات). */
+.wq-mq-card__domain-badge {
+  display: none;
+}
+
+.wq-mq-card__status-pill {
+  margin-inline-start: auto;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 3px 10px;
+  color: var(--status-warning);
+  background: var(--status-warning-bg);
+}
+
+.wq-mq-card__status-pill[data-complete="true"] {
+  color: var(--status-success);
+  background: var(--status-success-bg);
+}
+
+/* File Identity Area -- هوية "الملف" أصبحت شكل الحاوية نفسها (Tab +
+   Fold أعلاه)، وليست أيقونة داخلية بعد الآن. عنصر الأيقونة
+   (.wq-mq-card__file-icon) ما زال موجوداً في HTML المُولَّد من app.js
+   (ممنوع تعديل app.js هذه الجولة)، لذا أُخفي هنا بالكامل عبر CSS بدل
+   حذفه من DOM -- اسم المتطلب (question) هو العنصر البصري الوحيد المتبقي
+   في هذا القسم والرئيسي فعلياً في البطاقة كلها. */
+.wq-mq-card__file {
+  margin-top: var(--space-4);
+}
+
+.wq-mq-card__file-icon {
+  display: none;
+}
+
+.wq-mq-card__question {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Refinement: تحويل Level/Evidence/Satisfaction من كتل مُباعَدة بالـ
+   margin فقط إلى حقول بيانات مفصولة بخط رفيع (نفس نمط wq-mq-card__row
+   الموجود أصلاً أسفل هذا القسم، ونفس توكن --border) -- إحساس "بيانات
+   داخل ملف" بدل عناصر Widget منفصلة، بلا أي لون جديد. */
+.wq-mq-card__level {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.wq-mq-card__level-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.wq-mq-card__level-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* تعبئة كحلية صلبة، وليست حبة فاتحة -- هذا هو أهم رقم في البطاقة (مستوى
+   النضج المُحقَّق)، يقابل وزن "$542,376" الصلب في المرجع، وليس شارة ثانوية
+   خفيفة. هذا أيضاً العنصر الرئيسي الذي يحمل حضور Navy الصلب في الواجهة،
+   بنفس نسبة الاستخدام المحدودة والمُركَّزة في المرجع (تعبئة صلبة واحدة
+   بارزة لكل بطاقة، وليس في كل مكان). */
+.wq-level-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  background: var(--brand-primary);
+  color: var(--text-on-brand);
+  border-radius: var(--radius-sm);
+  padding: 7px 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.wq-level-badge__num {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Level Presentation: سياق ثابت "من 5" (نطاق Maturity Model نفسه ثابت 0-5
+   في كل المتطلبات -- انظر levelTrackHtml() في app.js، ليس بيانة متغيّرة
+   لكل MQ) عبر CSS بحت، بلا لمس JS. أخف وزناً وحجماً من الرقم الأساسي
+   (opacity بدل لون جديد) حتى يبقى الرقم هو المُهيمن بصرياً. */
+.wq-level-badge__num::after {
+  content: "/5";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: normal;
+  opacity: 0.65;
+  margin-inline-start: 1px;
+}
+
+.wq-level-badge__name {
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+/* Level progress track (0-5) -- نقاط صغيرة (Level 1 ○ ○ ● ○ ○) بدل أشرطة
+   ممتدة، أقرب لأسلوب مؤشرات الملفات/الحالة في مرجع File Card. */
+.wq-level-track {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wq-level-track__seg {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: background var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard);
+}
+
+.wq-level-track__seg[data-achieved="true"] {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.wq-level-track__seg[data-target="true"] {
+  border-color: var(--accent);
+  border-style: dashed;
+}
+
+/* Evidence Section -- معاينة مضغوطة لأسماء ملفات الأدلة (Evidence Files)،
+   بلا عرض القائمة كاملة (Chips + "+N"). القائمة الكاملة تبقى في لوحة
+   التفاصيل الموسّعة (wq-evidence-list) كما كانت.
+   Internal Spacing: نفس نمط الفاصل المستخدَم أعلاه في wq-mq-card__level
+   (--space-4 لكل من margin/padding + خط علوي rgba(--border)) بدل margin
+   فقط -- فصل بصري واضح ومتّسق بين كل حقل، بلا أي قيمة spacing جديدة. */
+.wq-mq-card__evidence {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.wq-mq-card__evidence-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-2);
+}
+
+.wq-mq-card__evidence-preview {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.wq-mq-card__evidence-preview li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-soft);
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+  padding: 4px 9px;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.wq-mq-card__evidence-preview .wq-mq-card__evidence-more {
+  color: var(--text-faint);
+  background: transparent;
+  padding-inline: 2px;
+}
+
+/* علامة الاستيفاء -- تُقرأ من data-satisfied (مبني من evaluated_evidence[
+   ].satisfied الموجود أصلاً) عبر ::before، بلا نص إضافي داخل الـ HTML.
+   الألوان نفس التوكنات المحايدة المستخدَمة أصلاً لحالة الأدلة
+   (status-success / status-error). */
+.wq-mq-card__evidence-preview li[data-satisfied]::before {
+  font-weight: 700;
+  line-height: 1;
+}
+
+.wq-mq-card__evidence-preview li[data-satisfied="true"]::before {
+  content: "✓";
+  color: var(--status-success);
+}
+
+.wq-mq-card__evidence-preview li[data-satisfied="false"]::before {
+  content: "✕";
+  color: var(--status-error);
+}
+
+/* Progress Indicator -- عمداً "نسبة استيفاء الأدلة المُقيَّمة" (Evidence
+   Satisfaction) وليس "نسبة تقدّم نحو النضج": تُبنى فقط من عدّ evaluated_
+   evidence[].satisfied الموجود أصلاً في البيانات، ولا تمثّل مستوى النضج
+   (current_level) ولا تُقارَن به بصرياً -- تفادياً للخلط المعماري بين
+   Evidence Coverage وMaturity المُعالَج مسبقاً في هذا المشروع. */
+/* Internal Spacing: نفس نمط الفاصل (--space-4 + خط علوي) المطبَّق على
+   الحقلين أعلاه، لتوحيد الإيقاع البصري بين Level/Evidence/Satisfaction. */
+.wq-mq-card__satisfaction {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.wq-mq-card__satisfaction-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  margin-bottom: var(--space-2);
+}
+
+.wq-mq-card__satisfaction-head span:last-child {
+  font-weight: 500;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.wq-mq-card__satisfaction-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.wq-mq-card__satisfaction-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--progress-gradient);
+  transition: width var(--duration-base) var(--ease-standard);
+}
+
+.wq-mq-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-soft);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--border);
+}
+
+.wq-mq-card__row:first-of-type {
+  border-top: none;
+}
+
+/* عدّاد كل صف ("الأدلة المُقيَّمة"/"الفجوات القادمة") هو بمثابة Badge
+   ثانوي هنا -- وزن أخف من الرقم الأساسي (Level) حتى لا ينافسه، بدل وزن
+   <strong> الافتراضي للمتصفح. */
+.wq-mq-card__row strong {
+  font-weight: 500;
+}
+
+.wq-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.wq-status-badge[data-status="pass"] {
+  color: var(--status-success);
+  background: var(--status-success-bg);
+}
+
+.wq-status-badge[data-status="partial"] {
+  color: var(--status-warning);
+  background: var(--status-warning-bg);
+}
+
+.wq-status-badge[data-status="fail"] {
+  color: var(--status-error);
+  background: var(--status-error-bg);
+}
+
+/* Evidence Upload -- "قيد المراجعة" ليست PASS/FAIL/PARTIAL (لم تُقيَّم
+   بعد)، لذا لا تُطابَق مع data-status="partial" (تعني تحديداً
+   PARTIAL_PASS معتمَد) رغم استخدامها نفس التوكنات المحايدة -- تمييز
+   بالاسم في الكود بلا أي لون جديد. */
+.wq-status-badge[data-status="pending"] {
+  color: var(--status-warning);
+  background: var(--status-warning-bg);
+}
+
+/* Evidence Lifecycle Hardening -- جاهزتان للعرض إن ظهرت هذه الحالتان
+   مستقبلاً من مراجعة فعلية (غير مُنفَّذة اليوم). approved يستخدم نفس
+   توكن success الموجود أصلاً (نجاح=معتمد دلالياً)؛ rejected يستخدم
+   status-error (المكافئ الفعلي الوحيد الموجود لِما طُلب باسم
+   "status-danger" -- هذا التوكن غير موجود في theme.css الحالي، فاستُبدل
+   بالتوكن المحايد المكافئ فعلياً بلا أي لون جديد). */
+.wq-status-badge[data-status="approved"] {
+  color: var(--status-success);
+  background: var(--status-success-bg);
+}
+
+.wq-status-badge[data-status="rejected"] {
+  color: var(--status-error);
+  background: var(--status-error-bg);
+}
+
+/* الاعتماد على اللون وحده لتمييز PASS/PARTIAL/FAIL غير كافٍ (WCAG) -- بقيت
+   الدائرة الصلبة كخلفية (تمييز سريع من مسافة)، لكن تحمل الآن رمزاً مختلفاً
+   فعلياً لكل حالة (وليس مجرد لون) عبر ::before، بلا أي تعديل على HTML
+   (span فارغ أصلاً في app.js في كل الاستخدامات الستة) -- بحيث يبقى الفرق
+   واضحاً حتى بلا إدراك لوني (Color-blind / طباعة Grayscale). حجم الدائرة
+   كُبِّر من 6px إلى 13px ليتّسع للرمز بوضوح، بلا تغيير على تخطيط الشارة
+   نفسها (Badge) المحيطة بها. */
+.wq-status-badge__dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wq-status-badge__dot::before {
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--surface-elevated);
+}
+
+.wq-status-badge[data-status="pass"] .wq-status-badge__dot::before,
+.wq-status-badge[data-status="approved"] .wq-status-badge__dot::before {
+  content: "✓";
+}
+
+.wq-status-badge[data-status="partial"] .wq-status-badge__dot::before {
+  content: "!";
+}
+
+.wq-status-badge[data-status="fail"] .wq-status-badge__dot::before,
+.wq-status-badge[data-status="rejected"] .wq-status-badge__dot::before {
+  content: "✕";
+  font-size: 8px;
+}
+
+.wq-status-badge[data-status="pending"] .wq-status-badge__dot::before {
+  content: "…";
+  font-size: 8px;
+  margin-top: -3px;
+}
+
+.wq-mq-card__gaps {
+  margin-top: var(--space-3);
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.wq-mq-card__gaps strong {
+  color: var(--text-soft);
+}
+
+/* Discoverability fix: الصفّ الأخير في وجه البطاقة أصبح حاوية مشتركة
+   لإجراءين -- "إرفاق دليل" (جديد هنا، كان محصوراً داخل Detail View فقط)
+   و"عرض التفاصيل" (كما كان). الحدّ العلوي/المسافة اللذان كانا على
+   expand-hint وحده انتقلا إلى هذه الحاوية المشتركة. */
+.wq-mq-card__footer {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+/* لم تعد Full-width (بات عرضها بحجم محتواها داخل wq-mq-card__footer)، فقط
+   محاذاة النص مع السهم داخلياً. بلا خلفية حتى عند Hover، فقط تغيّر لون
+   النص (نفس توكنين text-faint/text-soft كما كانا). */
+.wq-mq-card__expand-hint {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--duration-hover) var(--ease-standard);
+}
+
+.wq-mq-card:hover .wq-mq-card__expand-hint,
+.wq-mq-card:focus-visible .wq-mq-card__expand-hint {
+  color: var(--text-soft);
+}
+
+.wq-mq-card__expand-hint svg {
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.wq-mq-card[aria-expanded="true"] .wq-mq-card__expand-hint svg {
+  transform: rotate(180deg);
+}
+
+/* Expandable detail panel inside the card */
+.wq-mq-card__detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-base) var(--ease-standard);
+}
+
+.wq-mq-card[aria-expanded="true"] .wq-mq-card__detail {
+  grid-template-rows: 1fr;
+}
+
+.wq-mq-card__detail-inner {
+  overflow: hidden;
+}
+
+.wq-mq-card__detail-content {
+  padding-top: 16px;
+  margin-top: 14px;
+  border-top: 1px dashed var(--border-strong);
+  /* فصل بصري خفيف بلون الخلفية، بلا حدود إضافية قوية -- يميّز محتوى
+     المستوى الحالي المفتوح، مستلهَم من نمط "الصف المُحدَّد" في مرجع
+     التصميم. */
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+  padding: 14px 12px 4px;
+  margin-inline: -12px;
+}
+
+.wq-detail-block {
+  margin-bottom: 14px;
+}
+
+.wq-detail-block__label {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.wq-detail-block__body {
+  font-size: 13.5px;
+  color: var(--text-soft);
+}
+
+.wq-evidence-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wq-evidence-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-sunken);
+  font-size: 12.5px;
+  transition: background var(--duration-fast) var(--ease-standard);
+}
+
+.wq-evidence-list li:hover {
+  background: var(--accent-soft);
+}
+
+.wq-evidence-list .wq-evidence-code {
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.wq-evidence-list .wq-evidence-name {
+  color: var(--text-soft);
+  flex: 1;
+}
+
+/* Evidence Layer -- تصنيف نوع الدليل (Maturity/Compliance) + صفّ الحالة.
+   Selector أكثر تحديداً (.wq-evidence-list .wq-evidence-item) لتجاوز
+   flex-direction الأفقي الافتراضي لـ ".wq-evidence-list li" بأمان، بلا أي
+   تعديل على تلك القاعدة المشتركة مع wq-pending-evidence-item. توكنات
+   مطابقة لما هو مستخدَم أصلاً (text-faint/text-soft/text-primary) بلا أي
+   لون جديد. */
+.wq-evidence-list .wq-evidence-item {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.wq-evidence-item__head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.wq-evidence-item__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wq-evidence-item__type,
+.wq-evidence-item__status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wq-evidence-item__type-label,
+.wq-evidence-item__status-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.wq-evidence-item__type-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+/* Evidence Repository Integration -- Viewer فقط لملفات evidence_repository/
+   الحقيقية. توكنات هذه الجولة حصراً: brand-primary / surface / border /
+   text-primary / text-secondary / space-*. بلا أي لون جديد. */
+.wq-evidence-file-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.wq-evidence-file-list li {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+
+.wq-evidence-file-item__main {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.wq-evidence-file-item__name {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.wq-evidence-file-item__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.wq-evidence-open-btn,
+.wq-evidence-export-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  padding: 5px var(--space-3);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.wq-evidence-open-btn:hover,
+.wq-evidence-export-btn:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.wq-evidence-open-btn:active,
+.wq-evidence-export-btn:active {
+  border-color: var(--brand-primary-active);
+  color: var(--brand-primary-active);
+  background: var(--surface-sunken);
+}
+
+.wq-evidence-open-btn:focus-visible,
+.wq-evidence-export-btn:focus-visible,
+.wq-export-mq-btn:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+.wq-evidence-file-error {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* تصدير الأدلة (المستوى الكامل للـ MQ) -- حدّ بلون Primary ليقرأ كإجراء
+   أبرز قليلاً من أزرار الملف الواحد، بلا أي تعبئة/لون جديد. */
+.wq-export-mq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-3);
+  border: 1px solid var(--brand-primary);
+  background: var(--surface);
+  color: var(--brand-primary);
+  padding: 6px var(--space-3);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: box-shadow var(--duration-fast) var(--ease-standard),
+    background var(--duration-fast) var(--ease-standard);
+}
+
+/* لم يكن لهذا الزر حالتا hover/active من الأصل رغم أنه إجراء رئيسي
+   (تصدير كامل الأدلة) -- توكنات مطابقة تماماً لأزرار الإجراء المجاورة. */
+.wq-export-mq-btn:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.wq-export-mq-btn:active {
+  background: var(--surface-sunken);
+  border-color: var(--brand-primary-active);
+  color: var(--brand-primary-active);
+}
+
+/* Evidence Status Display -- عنصر الأدلة المرفوعة (Pending/Approved/
+   Rejected) يحتاج سطرين (رئيسي + Meta) بدل السطر الأفقي الواحد المستخدَم
+   لعناصر wq-evidence-list العادية (Selector أكثر تحديداً من
+   `.wq-evidence-list li` القائمة، لتجاوز flex-direction الافتراضي بأمان
+   بلا تعديل تلك القاعدة المشتركة). */
+.wq-evidence-list .wq-pending-evidence-item {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.wq-pending-evidence-item__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.wq-pending-evidence-item__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Discoverability fix: انتقل من داخل لوحة التفاصيل الموسّعة إلى
+   wq-mq-card__footer على وجه البطاقة نفسه (نسخة واحدة فقط الآن، لا تكرار
+   -- أُزيلت النسخة القديمة من Detail View بالكامل). مجموعة توكنات مقيَّدة
+   حرفياً هذه الجولة: brand-primary / border / surface / shadow-card-hover
+   / space-* فقط -- بلا أي لون إضافي (لا accent، لا surface-sunken). */
+.wq-attach-evidence-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--brand-primary);
+  padding: 6px var(--space-3);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.wq-attach-evidence-btn:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.wq-attach-evidence-btn:active {
+  background: var(--surface-sunken);
+  box-shadow: none;
+}
+
+.wq-attach-evidence-btn:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Filters / toolbar buttons                                          */
+/* ---------------------------------------------------------------- */
+
+.wq-filter-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-soft);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.wq-filter-btn:hover {
+  border-color: var(--border-strong);
+}
+
+.wq-filter-btn:active {
+  background: var(--surface-sunken);
+}
+
+.wq-filter-btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.wq-filter-btn[aria-pressed="true"] {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--text-on-brand);
+}
+
+/* ---------------------------------------------------------------- */
+/* WATHIQ_CARD_HOOK — Gap cards                                       */
+/* ---------------------------------------------------------------- */
+
+.wq-gap-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-right: 4px solid var(--status-warning);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: transform var(--duration-hover) var(--ease-standard),
+    box-shadow var(--duration-hover) var(--ease-standard),
+    background var(--duration-hover) var(--ease-standard),
+    border-color var(--duration-hover) var(--ease-standard);
+  animation: wq-fade-in var(--duration-base) var(--ease-standard) both;
+}
+
+.wq-gap-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  background: var(--surface-sunken);
+}
+
+.wq-gap-card__code {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-primary);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* رمز التحذير (⚠) الذي كان هنا حُذف (Arabic Cleanup Pass) -- أصبح متكرراً
+   بصرياً على كل بطاقة فجوة بلا إضافة معنى فعلي (البطاقة نفسها تحتوي
+   الكود/الوصف/المتطلب/المستوى، وهذا كافٍ لتحديد أنها Gap ضمن قسم
+   "الفجوات"). الحدّ الملوَّن الجانبي (border-right أدناه) يبقى وحده
+   كإشارة بصرية خفيفة، مدعوماً بالنص الكامل للبطاقة -- بلا اعتماد فعلي
+   على اللون وحده لفهم المحتوى.
+*/
+
+/* أعيد بناؤه كصف Label+Value (كان نصاً عارياً) لإضافة تسمية "مرتبط
+   بالمتطلب" الموضّحة -- بلا حدّ علوي (استمرارية طبيعية من __req، الحدّ
+   المتقطّع محجوز لبداية معلومة الانتقال أدناه فقط). */
+.wq-gap-card__mq {
+  margin-top: var(--space-2);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.wq-gap-card__mq-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.wq-gap-card__mq-value {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: end;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.wq-gap-card__req {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  margin-top: var(--space-2);
+  line-height: 1.5;
+}
+
+/* Gap Cards Enhancement -- يعرض next_level/next_level_name (موجودان أصلاً
+   في كائن gap عبر allGaps() في app.js، لم يكونا يُعرضان سابقاً). خط علوي
+   متقطّع بنفس أسلوب wq-mq-card__detail-content الموجود مسبقاً في هذا
+   الملف (تمييز عن الفاصل الصلب المستخدَم في حقول بطاقة MQ). */
+.wq-gap-card__next {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.wq-gap-card__next-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.wq-gap-card__next-value {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--brand-primary);
+  text-align: end;
+  /* isolate بلا فرض LTR كامل -- القيمة هنا رقم مستوى + اسم عربي معاً
+     (مثال: "٣ — متقدم")، فعزل الاتجاه وحده يكفي لمنع تأثّرها بجيرانها في
+     RTL بلا كسر ترتيب الكلمة العربية داخلها. */
+  unicode-bidi: isolate;
+}
+
+.wq-empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-faint);
+  font-size: 13.5px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+}
+
+/* ---------------------------------------------------------------- */
+/* WATHIQ_CARD_HOOK — Recommendation cards                            */
+/* ---------------------------------------------------------------- */
+
+.wq-reco-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  animation: wq-fade-in var(--duration-base) var(--ease-standard) both;
+  transition: box-shadow var(--duration-hover) var(--ease-standard),
+    transform var(--duration-hover) var(--ease-standard),
+    border-color var(--duration-hover) var(--ease-standard);
+}
+
+.wq-reco-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-strong);
+}
+
+.wq-reco-grid > .wq-reco-card:nth-child(1) { animation-delay: 0ms; }
+.wq-reco-grid > .wq-reco-card:nth-child(2) { animation-delay: 60ms; }
+.wq-reco-grid > .wq-reco-card:nth-child(3) { animation-delay: 120ms; }
+.wq-reco-grid > .wq-reco-card:nth-child(n+4) { animation-delay: 160ms; }
+
+.wq-reco-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.wq-reco-card__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.wq-reco-card__mq {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Recommendation Enhancement -- يعرض العلاقة Current → Next → Missing
+   كصفوف صريحة (بيانات من reco.current_level/level_name/next_level/
+   next_level_name/gaps، مُضافة في recommendation_engine.js من مدخلات
+   الدالة نفسها -- لا حساب جديد). نفس نمط Label/Value ولون الفصل
+   المستخدَم أصلاً في بطاقة الفجوة (تناسق بصري، بلا لون جديد). */
+.wq-reco-card__levels {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.wq-reco-card__level-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: 12.5px;
+}
+
+.wq-reco-card__level-label {
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.wq-reco-card__level-value {
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: end;
+  unicode-bidi: isolate; /* رقم مستوى + اسم عربي معاً -- انظر تعليق wq-gap-card__next-value */
+}
+
+.wq-reco-card__level-row--next .wq-reco-card__level-value {
+  color: var(--brand-primary);
+}
+
+.wq-reco-card__missing {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--border);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.wq-reco-card__missing-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.wq-reco-card__missing-value {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--brand-primary);
+  text-align: end;
+  unicode-bidi: isolate; /* قائمة Evidence Codes مفصولة بفواصل -- عزل يمنع انقلاب ترتيبها */
+}
+
+.wq-reco-card__title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: var(--space-2) 0 var(--space-2);
+}
+
+/* تسمية "لماذا؟" -- كانت فقرة wq-reco-card__body تحمل التفسير بلا أي
+   عنوان يفصلها عن wq-reco-card__title (What)، فيقرأها المستخدم كنص واحد
+   متصل. تسمية صغيرة محايدة بنفس أسلوب wq-reco-card__level-label. */
+.wq-reco-card__why-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-faint);
+  margin-bottom: 2px;
+}
+
+.wq-reco-card__body {
+  font-size: 13.5px;
+  color: var(--text-soft);
+  margin-bottom: var(--space-3);
+  line-height: 1.6;
+}
+
+.wq-reco-actions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wq-reco-actions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.wq-reco-actions li::before {
+  content: "—";
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.wq-reco-card--complete {
+  border-right: 4px solid var(--status-success);
+}
+
+.wq-reco-card--pending {
+  border-right: 4px solid var(--status-warning);
+}
+
+/* ---------------------------------------------------------------- */
+/* WATHIQ_CARD_HOOK — Modal (evidence / gap detail)                   */
+/* ---------------------------------------------------------------- */
+
+.wq-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-scrim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-base) var(--ease-standard);
+}
+
+.wq-modal-overlay[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wq-modal {
+  background: var(--surface-elevated);
+  border-radius: var(--radius-xl);
+  max-width: 480px;
+  width: 100%;
+  padding: 24px;
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(12px) scale(0.98);
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+/* Evidence Package Viewer -- محتوى أطول وأكثر كثافة بكثير من الاستخدام
+   البسيط الافتراضي لهذا المودال (تفاصيل فجوة واحدة). عرض أوسع فقط
+   (لا تغيير على radius/padding/شكل الرأس/زر الإغلاق) يمنح الأقسام
+   الداخلية (wq-evidence-package-overview وما بعدها) مساحة قراءة معقولة
+   بدل ضغطها في عمود 480px ضيق. يُضاف كصنف إضافي من JS (لا يغيّر الوسم
+   الافتراضي wq-modal نفسه) عند فتح عارض الدليل تحديداً، ويُزال عند فتح
+   مودال الفجوة البسيط أو عند الإغلاق. */
+.wq-modal--wide {
+  max-width: 720px;
+}
+
+@media (max-width: 760px) {
+  .wq-modal--wide {
+    max-width: 480px;
+  }
+}
+
+.wq-modal-overlay[data-open="true"] .wq-modal {
+  transform: translateY(0) scale(1);
+}
+
+.wq-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.wq-modal__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.wq-modal__close {
+  background: var(--surface-sunken);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: var(--text-soft);
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: background var(--duration-fast) var(--ease-standard);
+}
+
+.wq-modal__close:hover {
+  background: var(--accent-soft);
+}
+
+.wq-modal__close:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.wq-modal__body {
+  font-size: 13.5px;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+/* ---------------------------------------------------------------- */
+/* WATHIQ_CARD_HOOK — Progressive disclosure (Evidence Viewer)        */
+/* ---------------------------------------------------------------- */
+
+/* عارض الدليل (Evidence Package Viewer) يحمل 6 أقسام إضافية متعمّقة
+   (العلاقات، دورة الحياة، سجل التدقيق، سجل الإصدارات، التحقق، تحليل AI)
+   إلى جانب المحتوى الأساسي (نظرة عامة/علاقة التقييم/البيانات الوصفية/
+   المعاينة/المرفقات) -- بدل عرض الكل مكدَّساً دفعة واحدة ("جدار بيانات")،
+   تُجمَّع الأقسام الستة المتعمّقة داخل عنصر <details> واحد قابل للطي
+   (عنصر HTML أصلي، بلا أي JS إضافي للتوسيع/الطي، ويعمل بالكيبورد ومع
+   قارئ الشاشة تلقائياً). كل قسم داخلي يحتفظ بعنوانه (h4) وبنيته كما هي
+   تماماً -- هذا فقط غلاف عرض حول مخرجات دوال app.js الموجودة، بلا أي
+   تغيير على منطقها أو البيانات التي تقرأها. */
+/* .wq-filters-disclosure يشارك نفس القواعد أدناه حرفياً (أُضيف لاحقاً لطي
+   شريط فلاتر مستودع الأدلة المرئية الطويل -- 13 مجموعة فلتر) -- نفس
+   مكوّن الطي بصرياً، بلا تكرار تصميم/توكنات جديدة، فقط سياق استخدام مختلف. */
+.wq-evidence-more-details,
+.wq-filters-disclosure {
+  margin-top: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.wq-evidence-more-details__summary,
+.wq-filters-disclosure__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: 12px var(--space-4);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--surface-sunken);
+  cursor: pointer;
+  list-style: none;
+  transition: background var(--duration-fast) var(--ease-standard);
+}
+
+/* إخفاء السهم الافتراضي للمتصفح (marker) واستبداله بسهم CSS متسق مع
+   sهم بطاقة MQ (wq-mq-card__expand-hint) في هذا الملف. */
+.wq-evidence-more-details__summary::-webkit-details-marker,
+.wq-filters-disclosure__summary::-webkit-details-marker {
+  display: none;
+}
+
+.wq-evidence-more-details__summary::marker,
+.wq-filters-disclosure__summary::marker {
+  content: "";
+}
+
+.wq-evidence-more-details__summary:hover,
+.wq-filters-disclosure__summary:hover {
+  background: var(--surface-highlighted);
+}
+
+.wq-evidence-more-details__summary:focus-visible,
+.wq-filters-disclosure__summary:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: -2px;
+}
+
+.wq-evidence-more-details__icon,
+.wq-filters-disclosure__icon {
+  flex-shrink: 0;
+  transition: transform var(--duration-base) var(--ease-standard);
+  color: var(--text-faint);
+}
+
+.wq-evidence-more-details[open] .wq-evidence-more-details__icon,
+.wq-filters-disclosure[open] .wq-filters-disclosure__icon {
+  transform: rotate(180deg);
+}
+
+.wq-evidence-more-details__body,
+.wq-filters-disclosure__body {
+  padding: var(--space-4);
+  padding-top: 2px;
+  border-top: 1px solid var(--border);
+}
+
+/* الأقسام الفرعية المكدَّسة داخل الغلاف تُفصَل عن بعضها بخط رفيع فقط --
+   بلا حدود/ظلال إضافية، حتى لا تتكرّر بطاقة داخل بطاقة داخل Accordion. */
+.wq-evidence-more-details__body > * + * {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--border);
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Upload Modal -- يستهلك wq-modal-overlay/wq-modal/wq-modal__*
+   الموجودة أصلاً بلا أي تكرار، فقط عناصر النموذج الداخلية جديدة هنا. */
+/* ---------------------------------------------------------------- */
+
+.wq-upload-field {
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.wq-upload-field__label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-2);
+}
+
+.wq-upload-field__value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.wq-upload-file-input {
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  color: var(--text-soft);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  background: var(--surface-sunken);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+/* كان لهذا الحقل focus-visible بلا hover -- إضافة الآن (Final Audit Pass). */
+.wq-upload-file-input:hover {
+  border-color: var(--brand-primary);
+}
+
+.wq-upload-file-input:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.wq-upload-hint {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  margin: var(--space-2) 0 var(--space-4);
+}
+
+.wq-upload-error {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--status-error);
+  background: var(--status-error-bg);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.wq-upload-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  background: var(--brand-primary);
+  color: var(--text-on-brand);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-standard);
+}
+
+.wq-upload-submit:hover {
+  background: var(--brand-primary-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* حالة الضغط (Pressed) -- كانت غائبة تماماً؛ الزر الوحيد المعبّأ بالكامل
+   (Primary CTA) في الواجهة، لذا يحتاج تمييزاً واضحاً عند التفاعل الفعلي
+   لا الـHover فقط. */
+.wq-upload-submit:active {
+  background: var(--brand-primary-active);
+  box-shadow: none;
+}
+
+.wq-upload-submit:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Compliance section -- إحصاء (.wq-stat عبر .wq-overview-grid المعاد
+   استخدامها حرفياً، بلا شبكة جديدة) + قائمة مواصفات. توكنات مقيَّدة
+   بنفس المجموعة المستخدَمة أصلاً لبطاقات الأدلة/الحالة (wq-evidence-list،
+   wq-status-badge) -- بلا أي لون جديد. */
+/* ---------------------------------------------------------------- */
+
+/* رقم نسبة الامتثال يتبع نفس لون Level Badge الصلب (brand-primary) --
+   أهم رقم في القسم، بنفس منطق الأولوية البصرية المطبَّق على مستوى النضج
+   في بطاقات MQ أعلاه. */
+.wq-stat--compliance .wq-stat__value {
+  color: var(--brand-primary);
+}
+
+.wq-compliance-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.wq-compliance-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  border: 1px solid var(--border-subtle);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+}
+
+.wq-compliance-item__main {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.wq-compliance-item__code {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.wq-compliance-item__name {
+  font-size: 12.5px;
+  color: var(--text-soft);
+}
+
+.wq-compliance-item__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.wq-compliance-item__mq {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* ---------------------------------------------------------------- */
+/* Operational Excellence -- Simulation Card. توكنات مقيَّدة بنفس مجموعة
+   Compliance أعلاه (wq-overview-grid/wq-stat معاد استخدامها حرفياً) --
+   بلا أي لون جديد. status-warning هنا يعني تحديداً "بيانات محاكاة، ليست
+   حقيقية" (نفس الدلالة التحذيرية المستخدَمة أصلاً لحالة "قيد المراجعة"
+   في wq-status-badge[data-status="pending"]) -- وليس خطأ أو حالة سلبية. */
+/* ---------------------------------------------------------------- */
+
+.wq-opex-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.wq-opex-badge-row {
+  display: flex;
+}
+
+.wq-opex-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--status-warning);
+  background: var(--status-warning-bg);
+  border: 1px solid var(--status-warning);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+/* Flexbox+wrap+center بدل Grid auto-fit (Arabic Cleanup Pass) -- 5 مؤشرات
+   كانت تتوزّع بشكل غير متوقَّع حسب العرض (أحياناً 2 فوق + 3 تحت بمحاذاة
+   يمين فقط). flex-wrap مع justify-content:center يوزّع 3 في الصف الأول
+   و2 مُمركزتين في الصف الثاني تلقائياً عند أي عرض واسع بما يكفي لثلاثة
+   أعمدة، بلا حساب صريح لعدد الصفوف. */
+.wq-opex-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.wq-opex-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  flex: 1 1 calc(33.333% - var(--space-3));
+  min-width: 190px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .wq-opex-item {
+    flex: 1 1 100%;
+  }
+}
+
+.wq-opex-item__name {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+/* الرقم هو العنصر الأكبر داخل البطاقة (Arabic Cleanup Pass -- كان بنفس
+   حجم اسم المؤشر تقريباً، متلاصقاً مع "المستوى" على سطر واحد). */
+.wq-opex-item__value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--brand-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* مستوى نوعي نصي (مثال: "ممتاز"/"ريادي") -- Secondary أسفل الرقم، شارة
+   صغيرة محايدة (نفس توكنات wq-mq-card__domain-badge)، بلا أي لون دلالي جديد. */
+.wq-opex-item__level {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-soft);
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+  padding: 2px 10px;
+}
+
+/* شفافية المصدر: "مصدر البيانات" / "حالة الربط" -- صفّان Label/Value بنفس
+   نمط wq-reco-card__missing (خط علوي متقطّع + توكنات محايدة)، بلا أي لون
+   دلالي جديد. */
+/* بطاقة معلومات واضحة (Arabic Cleanup Pass) -- كانت صفين نصيّين
+   (Label...Value على نفس السطر بمحاذاة متضادة) بلا حدود ولا خلفية، فتبدو
+   كنص عائم غير مرتب. أصبحت الآن بطاقة فعلية (خلفية/حدود/تباعد داخلي) مع
+   Label أعلى الـValue (Stacked)، والـDisclaimer أسفلها كملاحظة داعمة
+   منفصلة بصرياً -- ليست جزءاً من بطاقة الـKPI ولا من بطاقة المعلومات. */
+.wq-opex-meta {
+  margin-top: var(--space-2);
+  padding: var(--space-4);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 480px) {
+  .wq-opex-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wq-opex-meta__row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12.5px;
+}
+
+.wq-opex-meta__label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+}
+
+.wq-opex-meta__value {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.wq-opex-disclaimer {
+  margin: var(--space-3) 0 0;
+  font-size: 12px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------- */
+/* Operational Excellence -- Placeholder (غير مستخدَم في DOM الحالي).
+   injectOperationalExcellenceSection() تبني بطاقة Simulation (الكتلة
+   أعلاه: .wq-opex-card/__badge/__list/__item) وليس هذا Placeholder --
+   أُبقيت هذه الكتلة بلا حذف كنقطة رجوع سريعة (بأصغر Diff) لو تقرّر لاحقاً
+   إخفاء Simulation مجدداً قبل ربط مصدر حقيقي. */
+/* ---------------------------------------------------------------- */
+
+.wq-opex-placeholder {
+  background: var(--surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.wq-opex-placeholder__row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.wq-opex-placeholder__label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  min-width: 60px;
+}
+
+.wq-opex-placeholder__status {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--status-warning);
+  background: var(--status-warning-bg);
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+
+.wq-opex-placeholder__reason {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Repository -- عرض ومتابعة فقط. توكنات مقيَّدة بنفس مجموعة
+   Compliance/Evidence Layer أعلاه (wq-overview-grid/wq-stat معاد استخدامها
+   حرفياً لبطاقات الإحصاء، wq-status-badge لشارة الحالة) -- بلا أي لون أو
+   Shadow أو Radius جديد. */
+/* ---------------------------------------------------------------- */
+
+.wq-evrepo-status-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: var(--space-2);
+}
+
+.wq-evrepo-status-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: 12.5px;
+}
+
+.wq-evrepo-status-row__label {
+  color: var(--text-soft);
+}
+
+.wq-evrepo-status-row__value {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.wq-evrepo-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* عنوان مجموعة (Final Senior UX Audit): القائمة المسطّحة (23 عنصراً في
+   هذا النموذج) كانت تُعرض بلا أي تجميع، وكل صف يكرر حقل "المتطلب
+   المرتبط" بشكل منفصل -- كثافة بصرية عالية بلا سبب. أصبحت الآن مُجمَّعة
+   حسب المتطلب (evidenceRepositoryGroupedHtml في app.js)؛ هذا العنوان
+   يفصل كل مجموعة بصرياً بخط علوي + لون brand-primary لمعرّف المتطلب،
+   بلا بطاقة/ظل جديد -- عنصر قائمة `<li>` عادي داخل نفس `<ul>`. */
+.wq-evrepo-group-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-2) 2px 6px;
+  margin-top: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.wq-evrepo-list > .wq-evrepo-group-header:first-child {
+  margin-top: 0;
+}
+
+.wq-evrepo-group-header__id {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--brand-primary);
+  direction: ltr;
+  unicode-bidi: isolate;
+  flex-shrink: 0;
+}
+
+.wq-evrepo-group-header__question {
+  font-size: 12px;
+  color: var(--text-faint);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wq-evrepo-group-header__count {
+  font-size: 11px;
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+/* بطاقة مُعاد ترتيبها بالكامل (Arabic Cleanup Pass) -- كانت صفاً أفقياً
+   واحداً (كود+اسم يبدأ، حقول+حالة تنتهي، بمحاذاة متضادة) فتبدو المعلومات
+   متلاصقة عند التفاف الأسطر. أصبحت الآن عموداً: الكود والاسم أولاً (كل
+   منهما سطر مستقل)، ثم خط فاصل رفيع، ثم صف حقول Metadata حيث كل حقل
+   Label أعلى/Value أسفل (Stacked) -- يطابق المثال المطلوب حرفياً. */
+.wq-evrepo-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border: 1px solid var(--border-subtle);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+}
+
+.wq-evrepo-item__main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.wq-evrepo-item__code {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--text-primary);
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: start;
+}
+
+.wq-evrepo-item__name {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.wq-evrepo-item__meta {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border);
+  /* توضّح Tablet (~768px) عبر اختبار Playwright فعلي: بعض قيم الحالة
+     الطويلة ("غير مُقيّم في المصدر الحالي") كانت تفيض خارج حافة البطاقة
+     يساراً بدل الالتفاف لسطر جديد -- min-width:0 هنا وعلى wq-evrepo-item__
+     field/wq-status-badge أدناه يزيل قيد min-width:auto الافتراضي لعناصر
+     Flex الذي يمنع النص الطويل من الالتفاف أصلاً. */
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Label أعلى/Value أسفل (Stacked) بدل تجاورهما أفقياً بفارق 5px فقط --
+   كانت تُقرأ كنص متلاصق واحد. */
+.wq-evrepo-item__field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.wq-evrepo-item__field-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+}
+
+.wq-evrepo-item__field-value {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Artifact Layer -- الأدلة المرئية المرتبطة (داخل Modal تفاصيل
+   الدليل الحالي حصراً). Classes جديدة مخصَّصة لهذا القسم فقط -- لا تعديل
+   على أي كلاس Modal/Evidence موجود أصلاً. توكنات مقيَّدة بنفس المجموعة
+   المستخدَمة في بقية الملف (surface/border/text-*/radius-sm/brand-primary/
+   space-*) -- بلا أي لون أو Shadow أو Radius جديد. */
+/* ---------------------------------------------------------------- */
+
+.wq-visual-evidence-section {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-strong);
+}
+
+.wq-visual-evidence-section__title {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.wq-visual-evidence-empty {
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+.wq-visual-evidence-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.wq-visual-evidence-card {
+  border: 1px solid var(--border);
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+
+.wq-visual-evidence-card__context {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px dashed var(--border);
+}
+
+.wq-visual-evidence-card__context-code {
+  font-weight: 700;
+  font-size: 12.5px;
+  color: var(--text-primary);
+}
+
+.wq-visual-evidence-card__context-mq {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.wq-visual-evidence-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+/* Category Badge -- شارة محايدة واحدة لكل الفئات الخمس (بلا تلوين لكل فئة
+   على حدة، حتى لا يتطلب أي لون جديد) -- نفس أسلوب wq-mq-card__domain-badge
+   الموجود أصلاً. */
+.wq-visual-evidence-badge {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 2px 9px;
+}
+
+.wq-visual-evidence-card__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.wq-visual-evidence-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.wq-visual-evidence-card__field {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.wq-visual-evidence-card__field-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.wq-visual-evidence-card__field-value {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.wq-visual-evidence-card__action {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--brand-primary);
+  padding: 5px var(--space-3);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.wq-visual-evidence-card__action:hover:not(:disabled) {
+  border-color: var(--brand-primary);
+}
+
+.wq-visual-evidence-card__action:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.wq-visual-evidence-card__action--unavailable {
+  color: var(--text-faint);
+  border-color: var(--border);
+}
+
+/* ---------------------------------------------------------------- */
+/* Visual Evidence Repository -- قسم مستقل: فلاتر + قائمة عامة. الأزرار
+   تُعيد استخدام .wq-filter-btn الموجودة أصلاً (بلا أي تعديل عليها) لنفس
+   مظهر فلاتر قسم الفجوات، ضمن حاوية مجموعة جديدة فقط. */
+/* ---------------------------------------------------------------- */
+
+.wq-visual-evidence-filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: 22px;
+}
+
+.wq-visual-evidence-filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.wq-visual-evidence-filter-group__label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  min-width: 64px;
+}
+
+.wq-visual-evidence-filter-group__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.wq-visual-evidence-repo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.wq-visual-evidence-repo-list .wq-visual-evidence-card {
+  background: var(--surface);
+}
+
+/* Search input -- توكنات مطابقة لحقل الرفع الموجود أصلاً (wq-upload-file-
+   input)، بلا أي تعديل عليه، فقط قيم مماثلة على عنصر جديد. */
+.wq-visual-evidence-search {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 9px var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.wq-visual-evidence-search:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 1px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Viewer -- المحتوى الجديد لنفس Modal الحالي عند فتح دليل مرئي
+   واحد (Evidence Preview + Metadata + Validation + Timeline). كلاسات
+   جديدة بالكامل، بلا أي تعديل على .wq-modal* الموجودة. */
+/* ---------------------------------------------------------------- */
+
+.wq-evidence-viewer__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.wq-evidence-viewer__code {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-primary);
+  /* رمز الدليل (مثل DC.M.1) لاتيني/رقمي بالكامل -- يمنع انعكاس ترتيبه داخل سياق RTL المحيط */
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.wq-evidence-viewer__mq {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.wq-evidence-preview {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.wq-evidence-preview__loading,
+.wq-evidence-preview__unavailable {
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+.wq-evidence-preview__image {
+  max-width: 100%;
+  max-height: 320px;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.wq-evidence-preview__pdf {
+  width: 100%;
+  height: 320px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.wq-evidence-preview__external-btn {
+  border: 1px solid var(--brand-primary);
+  background: var(--surface);
+  color: var(--brand-primary);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+/* لم يكن لهذا الزر hover ولا focus-visible إطلاقاً (Final Audit Pass) --
+   نفس معاملة wq-evidence-open-btn/wq-export-mq-btn المجاورة. */
+.wq-evidence-preview__external-btn:hover:not(:disabled) {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.wq-evidence-preview__external-btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.wq-evidence-preview__external-btn:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.wq-evidence-audit-summary,
+.wq-evidence-metadata,
+.wq-evidence-validation,
+.wq-evidence-lifecycle,
+.wq-evidence-version {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-strong);
+}
+
+.wq-evidence-audit-summary__title,
+.wq-evidence-metadata__title,
+.wq-evidence-validation__title,
+.wq-evidence-lifecycle__title,
+.wq-evidence-version__title {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.wq-evidence-metadata__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 13px;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+}
+
+.wq-evidence-metadata__row:first-of-type {
+  border-top: none;
+}
+
+.wq-evidence-metadata__label {
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.wq-evidence-metadata__value {
+  color: var(--text-soft);
+  font-weight: 500;
+  text-align: end;
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Lifecycle -- شارة حالة، ملخص تدقيق، دورة حياة رأسية، سجل
+   إصدارات. كلاسات جديدة بالكامل، بلا أي تعديل على .wq-status-badge أو أي
+   كلاس Evidence Viewer موجود من قبل. */
+/* ---------------------------------------------------------------- */
+
+/* شارة حالة دورة الحياة -- ست حالات فقط، كل قيمها من توكنات دلالية/محايدة
+   موجودة أصلاً (status-info/warning/success/error + درجتا رمادي من
+   text-faint/text-primary على surface-sunken) -- بلا أي لون جديد. */
+.wq-evidence-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 11px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+/* رمز قبل النص لكل حالة -- كانت هذه الشارة تعتمد على اللون + النص فقط
+   بلا أي رمز مميِّز (بخلاف wq-status-badge المجاورة التي تملك رمزاً داخل
+   النقطة). إضافة الآن لتحقيق Icon + Text + Color في كل شارة حالة بالواجهة،
+   بلا أي تعديل على JS -- content فقط عبر data-status الموجود أصلاً. */
+.wq-evidence-status-badge::before {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.wq-evidence-status-badge[data-status="draft"] {
+  color: var(--text-faint);
+  background: var(--surface-sunken);
+}
+.wq-evidence-status-badge[data-status="draft"]::before {
+  content: "○";
+}
+
+.wq-evidence-status-badge[data-status="submitted"] {
+  color: var(--status-info);
+  background: var(--status-info-bg);
+}
+.wq-evidence-status-badge[data-status="submitted"]::before {
+  content: "→";
+}
+
+.wq-evidence-status-badge[data-status="under-review"] {
+  color: var(--status-warning);
+  background: var(--status-warning-bg);
+}
+.wq-evidence-status-badge[data-status="under-review"]::before {
+  content: "!";
+}
+
+.wq-evidence-status-badge[data-status="approved"] {
+  color: var(--status-success);
+  background: var(--status-success-bg);
+}
+.wq-evidence-status-badge[data-status="approved"]::before {
+  content: "✓";
+}
+
+.wq-evidence-status-badge[data-status="rejected"] {
+  color: var(--status-error);
+  background: var(--status-error-bg);
+}
+.wq-evidence-status-badge[data-status="rejected"]::before {
+  content: "✕";
+}
+
+.wq-evidence-status-badge[data-status="archived"] {
+  color: var(--text-primary);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-strong);
+}
+.wq-evidence-status-badge[data-status="archived"]::before {
+  content: "▪";
+}
+
+/* ملخص التدقيق -- بطاقة مميَّزة (بخلاف الأقسام الأخرى ذات الخط العلوي
+   المتقطّع فقط) لتصدُّرها أعلى محتوى الـViewer مباشرة بعد المعاينة. */
+.wq-evidence-audit-summary {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+}
+
+.wq-evidence-audit-summary__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 12.5px;
+  padding: 5px 0;
+}
+
+.wq-evidence-audit-summary__label {
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.wq-evidence-audit-summary__value {
+  color: var(--text-primary);
+  font-weight: 700;
+  text-align: end;
+}
+
+/* دورة حياة الدليل -- عرض رأسي، كل مرحلة صفّ مستقل (Draft/Submitted/Under
+   Review/Approved بالترتيب المخزَّن). */
+.wq-evidence-lifecycle__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wq-evidence-lifecycle__step {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: 12.5px;
+  padding: 8px 10px;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+}
+
+.wq-evidence-lifecycle__step-label {
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 90px;
+}
+
+.wq-evidence-lifecycle__step-date {
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.wq-evidence-lifecycle__step-person {
+  color: var(--text-soft);
+  margin-inline-start: auto;
+}
+
+/* سجل الإصدارات -- سرد للعرض فقط. */
+.wq-evidence-version__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wq-evidence-version__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 12.5px;
+  padding: 8px 10px;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+}
+
+.wq-evidence-version__number {
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.wq-evidence-version__note {
+  color: var(--text-soft);
+  text-align: end;
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Package Viewer 1.0 -- كلاسات جديدة بالكامل فقط (Overview/
+   Assessment Relationship/Attachments + صفوف التحقق الموسَّعة). لا تعديل
+   على أي قاعدة CSS موجودة من قبل (الحالة الحالية/Lifecycle/Theme Tokens) --
+   قاعدة مستقلة مكرَّرة عمداً بنفس القيم بدل توسيع Selector مُجمَّع قائم. */
+/* ---------------------------------------------------------------- */
+
+.wq-evidence-package-overview,
+.wq-evidence-assessment-link,
+.wq-evidence-attachments {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-strong);
+}
+
+.wq-evidence-package-overview__title,
+.wq-evidence-assessment-link__title,
+.wq-evidence-attachments__title {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.wq-evidence-package-overview__name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.wq-evidence-package-overview__description {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.wq-evidence-assessment-link__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 12.5px;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+}
+
+.wq-evidence-assessment-link__row:first-of-type {
+  border-top: none;
+}
+
+.wq-evidence-assessment-link__label {
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.wq-evidence-assessment-link__value {
+  color: var(--text-soft);
+  font-weight: 500;
+  text-align: end;
+}
+
+.wq-evidence-attachments__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wq-evidence-attachment-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12.5px;
+  padding: 8px 10px;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+}
+
+.wq-evidence-attachment-item__icon {
+  flex-shrink: 0;
+}
+
+.wq-evidence-attachment-item__name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.wq-evidence-attachment-item__meta {
+  color: var(--text-faint);
+  margin-inline-start: auto;
+  flex-shrink: 0;
+}
+
+/* صفوف "التحقق من الدليل" الموسَّعة (تم التحقق بواسطة/تاريخ/ملاحظات) --
+   نفس نمط الصفوف المستخدَم في الأقسام الأخرى، بلا تعديل على .wq-status-badge
+   أو عنوان القسم الأصلي. */
+.wq-evidence-validation__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 12.5px;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+}
+
+.wq-evidence-validation__row:first-of-type {
+  border-top: none;
+}
+
+.wq-evidence-validation__label {
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.wq-evidence-validation__value {
+  color: var(--text-soft);
+  font-weight: 500;
+  text-align: end;
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Health Dashboard 1.0 -- كلاسات جديدة بالكامل فقط. لا تعديل على
+   أي كلاس Lifecycle/Package/الحالة الحالية موجود من قبل، ولا على Theme
+   Tokens. الألوان الثلاث لشارة الصحة من توكنات دلالية موجودة أصلاً
+   (success/warning/error) -- بلا أي لون جديد. */
+/* ---------------------------------------------------------------- */
+
+.wq-evidence-health-dashboard {
+  margin-bottom: 22px;
+}
+
+.wq-evidence-health-dashboard__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.wq-evidence-health-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-3);
+}
+
+.wq-evidence-health-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.wq-evidence-health-card__label {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.wq-evidence-health-card__value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* شارة الصحة العامة -- تظهر أعلى بطاقات مستودع الأدلة المرئية بجانب فئة
+   الدليل. */
+.wq-evidence-health-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-inline-start: auto;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+/* نفس منطق wq-evidence-status-badge أعلاه -- رمز + نص + لون، بلا تعديل JS. */
+.wq-evidence-health-status::before {
+  font-size: 9px;
+  line-height: 1;
+}
+
+.wq-evidence-health-status[data-health="healthy"] {
+  color: var(--status-success);
+  background: var(--status-success-bg);
+}
+.wq-evidence-health-status[data-health="healthy"]::before {
+  content: "✓";
+}
+
+.wq-evidence-health-status[data-health="attention-required"] {
+  color: var(--status-warning);
+  background: var(--status-warning-bg);
+}
+.wq-evidence-health-status[data-health="attention-required"]::before {
+  content: "!";
+}
+
+.wq-evidence-health-status[data-health="incomplete"] {
+  color: var(--status-error);
+  background: var(--status-error-bg);
+}
+.wq-evidence-health-status[data-health="incomplete"]::before {
+  content: "✕";
+}
+
+/* بطاقة الإدارة -- طبقة ثانية اختيارية فوق .wq-visual-evidence-card
+   الموجودة أصلاً (Class إضافي على نفس العنصر، بلا استبدال) خاصة بسياق
+   مستودع الأدلة المرئية تحديداً؛ تجعل رأس البطاقة يفرد المساحة بين شارة
+   الفئة وشارة الصحة. */
+.wq-evidence-management-card.wq-visual-evidence-card .wq-visual-evidence-card__head {
+  justify-content: space-between;
+}
+
+/* مجموعة فلترة الصحة/التحقق -- Class تمييزي فقط (بند 6: فلاتر عرض بحتة، لا
+   تؤثر على أي حساب) -- نفس مظهر .wq-visual-evidence-filter-group تماماً،
+   بلا أي قاعدة بصرية إضافية مطلوبة هنا. */
+.wq-evidence-health-filter {
+  display: flex;
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Relationships Layer 1.0 -- كلاسات جديدة بالكامل فقط:
+   .wq-evidence-relationships / .wq-evidence-relationship-card /
+   .wq-evidence-relationship-type / .wq-evidence-related-item، إضافة إلى
+   العنوان وزر الفتح الفرعيَين. لا تعديل على أي كلاس Package/Lifecycle/
+   Health Dashboard/Theme Tokens موجود من قبل -- قاعدة مستقلة جديدة فقط،
+   بنفس نمط الفواصل والتوكنات المستخدَمة في الأقسام المشابهة أعلاه. */
+/* ---------------------------------------------------------------- */
+
+.wq-evidence-relationships {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-strong);
+}
+
+.wq-evidence-relationships__title {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.wq-evidence-relationship-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-size: 12.5px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+}
+
+.wq-evidence-relationship-card:last-child {
+  margin-bottom: 0;
+}
+
+.wq-evidence-relationship-type {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+}
+
+.wq-evidence-related-item {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.wq-evidence-related-item__open {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--brand-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.wq-evidence-related-item__open:hover {
+  text-decoration: underline;
+}
+
+/* لم يكن لهذا الزر focus-visible (Final Audit Pass). */
+.wq-evidence-related-item__open:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Evidence Governance Expansion Layer -- كلاسات جديدة بالكامل فقط:
+   .wq-evidence-audit-trail / .wq-evidence-audit-item / .wq-evidence-export /
+   .wq-evidence-analytics / .wq-evidence-analytics-card / .wq-ai-evidence-panel
+   (إضافة إلى عناصرها الفرعية __title/__row/... حصراً). لا تعديل على أي
+   كلاس Lifecycle/Package/Health/Relationship/Theme Tokens موجود من قبل --
+   نفس نمط الفواصل والتوكنات المستخدَمة في الأقسام المشابهة أعلاه فقط. */
+/* ---------------------------------------------------------------- */
+
+/* -- Audit Trail (بند 1) -- نفس نمط Lifecycle/Package تماماً (فاصل علوي
+   متقطّع + عنوان صغير بحروف كبيرة)، بلا أي مشاركة Selector مع
+   .wq-evidence-lifecycle. */
+.wq-evidence-audit-trail {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-strong);
+}
+
+.wq-evidence-audit-trail__title {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.wq-evidence-audit-trail__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wq-evidence-audit-item {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-size: 12.5px;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+}
+
+.wq-evidence-audit-item:first-child {
+  border-top: none;
+}
+
+.wq-evidence-audit-item__date {
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.wq-evidence-audit-item__actor {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+.wq-evidence-audit-item__action {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--surface-sunken);
+}
+
+/* -- Evidence Export Package (بند 2) -- زر + معاينة قابلة للطي، عرض فقط. */
+.wq-evidence-export {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-strong);
+}
+
+.wq-evidence-export__trigger {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.wq-evidence-export__trigger:hover {
+  border-color: var(--border-strong);
+}
+
+/* لم يكن لهذا الزر focus-visible (Final Audit Pass). */
+.wq-evidence-export__trigger:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.wq-evidence-export__preview {
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-sunken);
+  border-radius: var(--radius-md);
+}
+
+.wq-evidence-export__preview[data-open="false"] {
+  display: none;
+}
+
+.wq-evidence-export__preview-title {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+/* -- Evidence Analytics Dashboard (بند 3) -- نفس بنية Evidence Health
+   Dashboard تماماً (Grid من بطاقات)، Class مستقل بالكامل بلا أي مشاركة مع
+   .wq-evidence-health-*. */
+.wq-evidence-analytics {
+  margin-bottom: 22px;
+}
+
+.wq-evidence-analytics__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.wq-evidence-analytics__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+}
+
+.wq-evidence-analytics-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.wq-evidence-analytics-card__title {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-weight: 500;
+  margin: 0 0 var(--space-2);
+}
+
+.wq-evidence-analytics-card__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: 12.5px;
+  padding: 4px 0;
+}
+
+.wq-evidence-analytics-card__label {
+  color: var(--text-soft);
+}
+
+.wq-evidence-analytics-card__value {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.wq-evidence-analytics-card__value--big {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* -- AI Evidence Assistant Preparation Layer (بند 4) -- عرض فقط، بلا أي
+   تحليل حقيقي. نفس نمط الصفوف Label/Value المستخدَم في الأقسام الأخرى. */
+.wq-ai-evidence-panel {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-strong);
+}
+
+.wq-ai-evidence-panel__title {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 6px;
+}
+
+.wq-ai-evidence-panel__disclaimer {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  margin: 0 0 10px;
+  font-style: italic;
+}
+
+.wq-ai-evidence-panel__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 12.5px;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+}
+
+.wq-ai-evidence-panel__row:first-of-type {
+  border-top: none;
+}
+
+.wq-ai-evidence-panel__label {
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.wq-ai-evidence-panel__value {
+  color: var(--text-soft);
+  font-weight: 500;
+  text-align: end;
+}
+
+/* ---------------------------------------------------------------- */
+/* طبقة تصدير حزم الأدلة + مركز الأدلة -- كلاسات جديدة بالكامل فقط:
+   .wq-evidence-export-section / .wq-evidence-center / .wq-evidence-center-card /
+   .wq-evidence-management-table (إضافة إلى عناصرها الفرعية __title/__grid/
+   __label/__value حصراً). .wq-evidence-export نفسه (الحاوية والزر
+   والمعاينة) موجود من قبل ولم يُعَد تعريفه هنا إطلاقاً. لا تعديل على أي
+   CSS موجود من قبل (Health/Analytics/Package/Lifecycle/Relationship/
+   Theme Tokens). */
+/* ---------------------------------------------------------------- */
+
+/* -- كل قسم مُعاد استخدامه داخل معاينة التصدير يُغلَّف بهذا الكلاس ليعطي
+   المعاينة "تصميماً مستقلاً" (بند 3) عن شكل نفس الأقسام داخل العارض
+   الرئيسي، بلا أي تعديل على كلاسات تلك الأقسام نفسها. */
+.wq-evidence-export-section {
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.wq-evidence-export-section:first-child {
+  margin-top: 0;
+}
+
+.wq-evidence-export-section__title {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+/* -- Evidence Center (بند 4) -- نفس بنية Evidence Health Dashboard/Evidence
+   Analytics تماماً (Grid من بطاقات)، Class مستقل بالكامل بلا أي مشاركة مع
+   .wq-evidence-health-*/.wq-evidence-analytics-*. */
+.wq-evidence-center {
+  margin-bottom: 22px;
+}
+
+.wq-evidence-center__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.wq-evidence-center__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-3);
+}
+
+.wq-evidence-center-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.wq-evidence-center-card__label {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.wq-evidence-center-card__value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* -- جدول إدارة الأدلة (بند 5) -- عرض جدولي اختياري بديل، بلا أي علاقة
+   بأي جدول آخر في المشروع. */
+.wq-evidence-management-table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.wq-evidence-management-table th,
+.wq-evidence-management-table td {
+  text-align: start;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.wq-evidence-management-table th {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.wq-evidence-management-table td {
+  color: var(--text-soft);
+}
+
+/* عمود "معرف الدليل" (كود لاتيني منقّط، مثل DC.M.1-E01) وعمود "الإصدار"
+   (Version + رقم) -- كانا بلا عزل RTL رغم أن كل كود/رقم مشابه في بقية
+   الواجهة معزول (Final Audit Pass، الفجوة الوحيدة المتبقية من هذا النوع). */
+.wq-evidence-management-table td:nth-child(1),
+.wq-evidence-management-table td:nth-child(7) {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.wq-evidence-management-table tbody tr:hover {
+  background: var(--surface-sunken);
+}

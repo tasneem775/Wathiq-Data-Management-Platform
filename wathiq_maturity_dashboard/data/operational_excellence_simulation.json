@@ -1,0 +1,44 @@
+{
+  "data_type": "SIMULATION",
+  "domain": "Data Classification",
+
+  "data_source_label": "Simulation Data (Prototype)",
+  "connection_status": "غير مرتبط بمصادر تشغيلية فعلية",
+
+  "score_calculation_note": "مؤشر التميز التشغيلي التجريبي = متوسط قيمة (value) كل المؤشرات ضمن indicators[] -- على مستوى هذا القسم فقط، بلا وزن، بلا صيغة 70/20/10، وبلا أي دمج مع Maturity أو Compliance أو أي Final/Overall Score لمنصة نضيء ككل.",
+
+  "indicators": [
+    {
+      "id": "DC.OPEX.1",
+      "name": "اكتمال مراجعة التصنيف",
+      "value": 92,
+      "level": "ممتاز"
+    },
+    {
+      "id": "DC.OPEX.2",
+      "name": "تغطية الأصول المصنّفة",
+      "value": 95,
+      "level": "ريادي"
+    },
+    {
+      "id": "DC.OPEX.3",
+      "name": "نشر البيانات الوصفية",
+      "value": 89,
+      "level": "جيد"
+    },
+    {
+      "id": "DC.OPEX.4",
+      "name": "الالتزام بدورة المراجعة",
+      "value": 88,
+      "level": "جيد"
+    },
+    {
+      "id": "DC.OPEX.5",
+      "name": "معدل إغلاق المراجعات المتبقية",
+      "value": 86,
+      "level": "جيد"
+    }
+  ],
+
+  "disclaimer": "بيانات تشغيلية تجريبية لغرض العرض فقط وليست بيانات فعلية من SDAIA."
+}

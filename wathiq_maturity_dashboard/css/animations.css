@@ -1,0 +1,31 @@
+/* Wathiq — Maturity Dashboard (DC) — Motion
+   ================================================
+   WATHIQ_MOTION_HOOK
+
+   يحوي هذا الملف تعريفات @keyframes وقواعد prefers-reduced-motion فقط.
+   قيم المدة/المنحنى (--duration-*, --ease-standard) مصدرها tokens.css. أما
+   خصائص transition/animation الفعلية على كل مكوّن فتبقى داخل قاعدة ذلك
+   المكوّن نفسه في components.css/layout.css (وليس هنا) — فصلها إلى ملف
+   منفصل عن المكوّن الذي تنتمي إليه يُفتّت قراءة سلوك كل مكوّن، وهذه ليست
+   الفائدة المرجوة من التقسيم؛ التقسيم هنا مخصص لتعريفات الحركة القابلة
+   لإعادة الاستخدام (Keyframes) ونقطة تفعيل/تعطيل الحركة عالمياً. */
+
+@keyframes wq-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

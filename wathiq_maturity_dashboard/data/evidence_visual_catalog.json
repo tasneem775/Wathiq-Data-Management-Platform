@@ -1,0 +1,154 @@
+[
+  {
+    "visual_evidence_id": "VE-DC-M11-001",
+    "evidence_code": "DC.M.11",
+    "mq_id": "DC.MQ.3",
+    "title": "ورشة توعية تصنيف البيانات",
+    "description": "ورشة تدريبية لتوعية فريق العمل بآلية مراجعة تصنيف البيانات قبل اعتمادها.",
+    "category": "Workshop",
+    "file_name": "DC.M.11_Workshop.png",
+    "file_type": "PNG",
+    "date": "2026-06-15",
+    "owner": "فريق تصنيف البيانات",
+    "participants": "14 مشاركاً",
+    "status": "Approved",
+    "linked_requirement": "DC.MQ.3",
+    "validation_status": "مراجع",
+    "uploaded_by": "منسّق تصنيف البيانات",
+    "reviewer": "مسؤول حوكمة البيانات",
+    "version": "1.0",
+    "last_updated_date": "2026-06-19",
+    "review_date": "2026-06-18",
+    "reviewer_notes": "الورشة موثَّقة بالكامل ومطابقة لآلية المراجعة المعتمدة.",
+    "verified_by": "مسؤول حوكمة البيانات",
+    "verification_date": "2026-06-19",
+    "validation_notes": "تم التحقق من مطابقة الورشة لآلية المراجعة المعتمدة.",
+    "lifecycle_history": {
+      "Draft": { "date": "2026-06-10", "responsible_person": "منسّق تصنيف البيانات" },
+      "Submitted": { "date": "2026-06-15", "responsible_person": "منسّق تصنيف البيانات" },
+      "Under Review": { "date": "2026-06-18", "responsible_person": "مسؤول حوكمة البيانات" },
+      "Approved": { "date": "2026-06-19", "responsible_person": "مالك المجال" }
+    },
+    "version_history": [
+      { "version": "1.0", "note": "تم إنشاء الدليل" }
+    ],
+    "attachments": [
+      { "name": "تقرير دليل DC.M.11.pdf", "type": "PDF", "size": "1.2MB", "date": "2026-06-15" },
+      { "name": "محضر الاجتماع.docx", "type": "DOCX", "size": "340KB", "date": "2026-06-18" },
+      { "name": "صورة الورشة.jpg", "type": "JPG", "date": "2026-06-15" }
+    ],
+    "relationships": {
+      "supports": ["DC.MQ.3"],
+      "related_evidence": ["DC.C.3.4"],
+      "related_requirements": ["DC.C.3.5"]
+    },
+    "audit_trail": [
+      { "date": "2026-06-10", "actor": "فريق تصنيف البيانات", "action": "Created" },
+      { "date": "2026-06-15", "actor": "منسّق تصنيف البيانات", "action": "Submitted" },
+      { "date": "2026-06-18", "actor": "مسؤول حوكمة البيانات", "action": "Reviewed" },
+      { "date": "2026-06-19", "actor": "مالك المجال", "action": "Approved" }
+    ]
+  },
+  {
+    "visual_evidence_id": "VE-DC-M11-002",
+    "evidence_code": "DC.M.11",
+    "mq_id": "DC.MQ.3",
+    "title": "اجتماع مراجعة التصنيف",
+    "description": "اجتماع لجنة البيانات لمراجعة نتائج آلية مراجعة تصنيف البيانات.",
+    "category": "Meeting",
+    "file_name": "DC.M.11_Meeting.pdf",
+    "file_type": "PDF",
+    "date": "2026-06-20",
+    "owner": "فريق تصنيف البيانات",
+    "participants": "6 حضور",
+    "status": "Under Review",
+    "linked_requirement": "DC.MQ.3",
+    "validation_status": "قيد المراجعة",
+    "uploaded_by": "منسّق تصنيف البيانات",
+    "lifecycle_history": {
+      "Draft": { "date": "2026-06-17", "responsible_person": "منسّق تصنيف البيانات" },
+      "Submitted": { "date": "2026-06-20", "responsible_person": "منسّق تصنيف البيانات" },
+      "Under Review": { "date": "2026-06-21", "responsible_person": "مسؤول حوكمة البيانات" }
+    }
+  },
+  {
+    "visual_evidence_id": "VE-DC-M11-003",
+    "evidence_code": "DC.M.11",
+    "mq_id": "DC.MQ.3",
+    "title": "اعتماد آلية مراجعة تصنيف البيانات",
+    "description": "خطاب اعتماد آلية مراجعة تصنيف البيانات من المسؤول المختص.",
+    "category": "Approval",
+    "file_name": "DC.M.11_Approval.pdf",
+    "file_type": "PDF",
+    "date": "2026-06-22",
+    "owner": "فريق تصنيف البيانات",
+    "status": "Approved",
+    "linked_requirement": "DC.MQ.3",
+    "validation_status": "مراجع",
+    "uploaded_by": "منسّق تصنيف البيانات",
+    "reviewer": "مسؤول حوكمة البيانات",
+    "version": "1.0",
+    "review_date": "2026-06-23",
+    "lifecycle_history": {
+      "Draft": { "date": "2026-06-20", "responsible_person": "منسّق تصنيف البيانات" },
+      "Submitted": { "date": "2026-06-22", "responsible_person": "منسّق تصنيف البيانات" },
+      "Under Review": { "date": "2026-06-23", "responsible_person": "مسؤول حوكمة البيانات" },
+      "Approved": { "date": "2026-06-24", "responsible_person": "مالك المجال" }
+    },
+    "attachments": [
+      { "name": "خطاب الاعتماد الموقّع.pdf", "type": "PDF", "date": "2026-06-24" }
+    ]
+  },
+  {
+    "visual_evidence_id": "VE-DC-C1.1-001",
+    "evidence_code": "DC.C.1.1",
+    "mq_id": "DC.MQ.1",
+    "title": "صفحة اعتماد خطة تصنيف البيانات",
+    "description": "خطاب اعتماد الخطة المعرفة لتصنيف البيانات من صاحب الصلاحية.",
+    "category": "Approval",
+    "file_name": "DC.C.1.1_Approval.pdf",
+    "file_type": "PDF",
+    "date": "2026-05-10",
+    "owner": "فريق تصنيف البيانات",
+    "status": "Draft",
+    "linked_requirement": "DC.MQ.1"
+  },
+  {
+    "visual_evidence_id": "VE-DC-C3.4-001",
+    "evidence_code": "DC.C.3.4",
+    "mq_id": "DC.MQ.3",
+    "title": "تقرير مراجعة تصنيف البيانات",
+    "description": "التقرير التنفيذي لنتائج مراجعة تصنيف البيانات.",
+    "category": "Report",
+    "file_name": "DC.C.3.4_Report.pdf",
+    "file_type": "PDF",
+    "date": "2026-07-02",
+    "owner": "فريق تصنيف البيانات",
+    "status": "Submitted",
+    "linked_requirement": "DC.MQ.3",
+    "validation_status": "غير مراجع",
+    "uploaded_by": "فريق تصنيف البيانات",
+    "version": "1.0",
+    "lifecycle_history": {
+      "Draft": { "date": "2026-06-29", "responsible_person": "فريق تصنيف البيانات" },
+      "Submitted": { "date": "2026-07-02", "responsible_person": "فريق تصنيف البيانات" }
+    }
+  },
+  {
+    "visual_evidence_id": "VE-DC-M7-001",
+    "evidence_code": "DC.M.7",
+    "mq_id": "DC.MQ.2",
+    "title": "لقطة شاشة أداة دليل البيانات",
+    "description": "لقطة شاشة توضح استخدام أداة دليل/فهرس البيانات لجرد البيانات.",
+    "category": "Screenshot",
+    "file_name": "DC.M.7_Screenshot.png",
+    "file_type": "PNG",
+    "date": "2026-06-28",
+    "owner": "فريق تصنيف البيانات",
+    "status": "Archived",
+    "linked_requirement": "DC.MQ.2",
+    "uploaded_by": "فريق تصنيف البيانات",
+    "version": "1.0",
+    "last_updated_date": "2026-07-05"
+  }
+]

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>وثيق — منصة إدارة البيانات</title>
+<!--
+  Wathiq — Maturity Dashboard (DC domain)
+  ==================================================
+  هذه الصفحة تعرض نتائج src/maturity_assessment/ (Evidence Assessment ->
+  Maturity Assessment -> MQ Maturity Report) على مستوى MQ فقط، ولا تحسب أي
+  Domain Maturity Score أو Compliance، ولا تعرض Coverage/Compliance
+  Percentage كنسبة نضج — انظر css/tokens.css لمصدر الهوية اللونية الحالية،
+  وjs/app.js::loadMaturityData() لنقطة ربط البيانات الحقيقية لاحقاً.
+
+  الهوية البصرية مطبَّقة من مرجع لوني/تصميمي مصوَّر (انظر تعليقات
+  css/tokens.css للمصدر وتفاصيل الثقة لكل لون) — راجع css/theme.css قبل أي
+  استبدال مستقبلي للهوية.
+-->
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/v2.css" />
+<script>
+  // Applied synchronously before first paint to avoid a flash of the wrong
+  // theme. Presentation-only (sets one attribute css/theme.css already
+  // maps); the click handler + icon/label live in js/theme.js. Completely
+  // separate from js/app.js and js/recommendation_engine.js.
+  (function () {
+    var stored = null;
+    try {
+      stored = localStorage.getItem("wathiq-theme");
+    } catch (e) {}
+    document.documentElement.setAttribute("data-theme", stored === "dark" ? "dark" : "light");
+  })();
+</script>
+</head>
+<body>
+
+<!-- App Shell (Sidebar Navigation Pass): تحويل الصفحة من Long Single-Scroll
+     إلى App Shell (Sidebar + Header + Main) -- كل الأقسام أدناه (Overview/
+     MQ Cards/Evidence Repository/Visual Evidence Repository/Gaps/
+     Recommendations/Compliance/Operational Excellence) بنفس المعرّفات
+     ونفس البنية الداخلية تماماً كما كانت؛ التغيير الوحيد هو أنها الآن
+     "Views" يُظهرها/يُخفيها js/app.js (showView()) عبر السمة الأصلية hidden
+     بدل الظهور جميعاً في تمرير واحد طويل. لا تغيير على أي render function
+     ولا على البيانات. -->
+<div class="wq-app-shell">
+
+  <aside class="wq-sidebar" id="wq-sidebar" data-open="false" aria-label="التنقل الرئيسي">
+    <div class="wq-sidebar__brand">
+      <div class="wq-header__mark" aria-hidden="true">
+        <!-- شعار وثيق الرسمي (الختم/Seal) — منقول حرفياً من
+             wathiq_portfolio_package/04_Platform_Mockups/TEST_Continuous_Improvement_Prototype_LIGHT_TEST.html
+             (نفس بنية SVG)، مُعاد تلوينه عبر tokens الحالية للوحة هذه
+             (var(--brand-primary), var(--accent)) بدل ألوانه الأصلية
+             الحرفية — بحيث يتبع أي تحديث لوني لاحق للهوية تلقائياً. -->
+        <svg viewBox="0 0 100 100" width="22" height="22" fill="none" aria-hidden="true">
+          <circle cx="50" cy="50" r="34" stroke="var(--brand-primary)" stroke-width="11" stroke-linecap="round" stroke-dasharray="179.6 34" transform="rotate(-118 50 50)"/>
+          <circle cx="50" cy="16" r="10" fill="var(--accent)"/>
+        </svg>
+      </div>
+      <div class="wq-sidebar__brand-name">وثيق</div>
+    </div>
+
+    <!-- Navigation v2 (2026-08-11): 5 عناصر فقط بدل الثمانية القديمة، بنفس
+         مطابقة تجربة Streamlit المرجعية. الأقسام الثمانية القديمة (overview
+         .. operational-excellence) باقية في DOM بلا حذف وبلا رابط تنقّل --
+         ما زالت ضمن WATHIQ_VIEWS في app.js فتُخفى بشكل صحيح تلقائياً. -->
+    <nav class="wq-sidebar__nav">
+      <div class="wq-sidebar__group">
+        <a class="wq-nav-link" href="#home" data-view="home">الرئيسية</a>
+        <a class="wq-nav-link" href="#assessment" data-view="assessment">التقييم</a>
+        <a class="wq-nav-link" href="#maturity-live" data-view="maturity-live">النضج والامتثال</a>
+        <a class="wq-nav-link" href="#evidence-live" data-view="evidence-live">الأدلة</a>
+        <a class="wq-nav-link" href="#reports" data-view="reports">التقارير</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ستارة الإغلاق لوضع Drawer على الجوال/التابلت فقط (مخفية تماماً على
+       Desktop عبر CSS) -- نقرة عليها تغلق القائمة، بنفس نمط wq-modal-overlay
+       الموجود أصلاً. -->
+  <div class="wq-sidebar-scrim" id="wq-sidebar-scrim" data-open="false" aria-hidden="true"></div>
+
+  <div class="wq-app-shell__content">
+
+    <header class="wq-header">
+      <div class="wq-container wq-header__bar">
+        <div class="wq-header__brand">
+          <button type="button" class="wq-sidebar-toggle" id="wq-sidebar-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="wq-sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7"/>
+              <line x1="4" y1="12" x2="20" y2="12"/>
+              <line x1="4" y1="17" x2="20" y2="17"/>
+            </svg>
+          </button>
+          <div>
+            <div class="wq-header__title" id="wq-page-title">نظرة عامة</div>
+            <div class="wq-header__subtitle" id="wq-header-domain">—</div>
+          </div>
+        </div>
+        <div class="wq-header__meta">
+          <button type="button" id="wq-theme-toggle" class="wq-theme-toggle" aria-pressed="false" aria-label="التبديل إلى الوضع الداكن">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wq-container">
+
+  <!-- Overview ------------------------------------------------------ -->
+  <section class="wq-section" id="overview" aria-labelledby="overview-title">
+    <div class="wq-section__head">
+      <div>
+        <!-- كانت سطرين: "المجال الحالي: (DC)" ثم جملة ثانية عامة تعيد
+             ذكر "(DC) فقط" مرة أخرى -- أي أن رمز المجال يتكرر 3 مرات في
+             نفس الشاشة (العنوان + سطر أول + سطر ثانٍ) قبل أن يصل المستخدم
+             لأي رقم فعلي (Final UX Simplification Pass). دُمجا في سطر
+             واحد -- المعلومة الديناميكية (المجال الحالي) أولاً، ثم سبب
+             وجود مجال واحد فقط بجملة قصيرة بلا إعادة ذكر الرمز. لا تغيير
+             على #wq-domain-context (لا يزال يُملأ من نفس البيانات). -->
+        <h1 class="wq-section__title" id="overview-title">نظرة عامة — <span id="wq-domain-name">—</span></h1>
+        <p class="wq-section__hint">المجال الحالي: <span id="wq-domain-context">—</span> — وثيق قابل للتوسع لدعم مجالات إدارة بيانات إضافية مستقبلاً.</p>
+      </div>
+    </div>
+
+    <!-- الترتيب أصبح: الأرقام (الإجابة المباشرة عن "أين نحن الآن؟") أولاً،
+         ثم الملاحظة التفسيرية (سياق/تنبيه) بعدها -- كانت الملاحظة تسبق
+         الأرقام، فيقرأ أول زائر جملتين تفسيريتين وصندوق ملاحظة قبل أن
+         يرى أي نتيجة فعلية (User Journey / Visual Hierarchy Pass). لا
+         حذف ولا تغيير على محتوى الملاحظة نفسها -- إعادة ترتيب فقط. -->
+    <div class="wq-overview-grid">
+      <div class="wq-stat">
+        <div class="wq-stat__label">عدد المتطلبات التي تم تقييمها</div>
+        <div class="wq-stat__value" id="wq-stat-evaluated">—</div>
+      </div>
+      <div class="wq-stat">
+        <div class="wq-stat__label">حالة اكتمال التقييم</div>
+        <div class="wq-stat__value" id="wq-stat-completion">—</div>
+      </div>
+      <!-- بطاقة "مستوى نضج المجال" مخفية عن العرض (Arabic Cleanup Pass) --
+           النظام لا يملك فعلياً نتيجة نضج على مستوى المجال (لا قاعدة تجميع
+           رسمية بين المتطلبات)، فعرضها كبطاقة KPI بقيمة "غير متاح" يوحي
+           بأنها نتيجة حقيقية غير محسوبة بعد، بدل غياب فعلي للمفهوم نفسه.
+           العنصر والمعرّفان (wq-stat-domain-status/-sub) باقيان في الـDOM
+           بلا حذف -- renderOverview() في app.js يستمر بالكتابة إليهما
+           بلا أي تعديل على تلك الدالة أو على البيانات؛ hidden فقط تمنع
+           ظهورها كبطاقة. -->
+      <div class="wq-stat" hidden>
+        <div class="wq-stat__label">مستوى نضج المجال</div>
+        <div class="wq-stat__value" id="wq-stat-domain-status">—</div>
+        <div class="wq-stat__sub" id="wq-stat-domain-status-sub"></div>
+      </div>
+    </div>
+
+    <!-- أيقونة "i" حُذفت (Arabic Cleanup Pass) -- الملاحظة تبقى نصاً
+         داعماً هادئاً فقط، بلا أيقونة/تحذير/بطاقة ثقيلة. -->
+    <div class="wq-note">
+      <p class="wq-note__text" id="wq-architectural-note"></p>
+    </div>
+  </section>
+
+  <!-- MQ Maturity Cards ---------------------------------------------- -->
+  <section class="wq-section" id="mq-cards" aria-labelledby="mq-cards-title">
+    <div class="wq-section__head">
+      <div>
+        <h2 class="wq-section__title" id="mq-cards-title">بطاقات نضج المتطلبات</h2>
+        <p class="wq-section__hint">اضغط على أي بطاقة لعرض وصف المستوى والأدلة المُقيَّمة</p>
+      </div>
+    </div>
+    <div class="wq-mq-grid" id="wq-mq-grid"></div>
+  </section>
+
+  <!-- Gap Identification ---------------------------------------------- -->
+  <section class="wq-section" id="gaps" aria-labelledby="gaps-title">
+    <div class="wq-section__head">
+      <div>
+        <h2 class="wq-section__title" id="gaps-title">تحديد الفجوات</h2>
+        <p class="wq-section__hint">الأدلة المطلوبة للانتقال إلى المستوى التالي في كل متطلب</p>
+      </div>
+    </div>
+    <div class="wq-gap-toolbar" id="wq-gap-toolbar"></div>
+    <div class="wq-gap-list" id="wq-gap-list"></div>
+  </section>
+
+  <!-- Recommendations ---------------------------------------------- -->
+  <section class="wq-section" id="recommendations" aria-labelledby="reco-title">
+    <div class="wq-section__head">
+      <div>
+        <h2 class="wq-section__title" id="reco-title">التوصيات</h2>
+        <p class="wq-section__hint">تُبنى مباشرة من المستوى الحالي والفجوات — بلا حساب نضج جديد</p>
+      </div>
+    </div>
+    <div class="wq-reco-grid" id="wq-reco-grid"></div>
+  </section>
+
+  <!-- v2 (2026-08-11) -- الرئيسية ------------------------------------ -->
+  <section class="wq-section" id="home" aria-labelledby="home-title">
+    <div class="wq-hero">
+      <h1 class="wq-hero__title">وثيق</h1>
+      <p class="wq-hero__desc">منصة إدارة وقياس امتثال ونضج البيانات. ارفع الأدلة، قيّم مستوى الامتثال،
+        اكتشف الفجوات، واحصل على توصيات واضحة للتحسين.</p>
+      <a class="wq-hero__cta" href="#assessment" data-view="assessment">ابدأ تقييمًا جديدًا ←</a>
+    </div>
+    <h2 class="wq-section__title" id="home-title" style="font-size:16px;">نظرة سريعة</h2>
+    <p class="wq-section__hint">من نتائج التقييم الفعلية المحفوظة حتى الآن — التفاصيل الكاملة في صفحة النضج والامتثال</p>
+    <div class="wq-quick-stats" id="wq-v2-home-stats">
+      <div class="wq-kpi-card"><div class="wq-kpi-card__label">إجمالي الأدلة</div><div class="wq-kpi-card__value">—</div></div>
+      <div class="wq-kpi-card"><div class="wq-kpi-card__label">نسبة اكتمال التقييم</div><div class="wq-kpi-card__value">—</div></div>
+      <div class="wq-kpi-card wq-kpi-card--hero"><div class="wq-kpi-card__label">متوسط تغطية الأدلة</div><div class="wq-kpi-card__value">—</div></div>
+    </div>
+    <div class="wq-note"><p class="wq-note__text">وثيق يعتمد اليوم على مجال "تصنيف البيانات" فقط، ببيانات حقيقية من نتائج التقييم الفعلية المحفوظة — بلا بيانات تجريبية أو نتائج مُعدَّة سلفاً.</p></div>
+  </section>
+
+  <!-- v2 -- التقييم (Domain -> Requirement -> Evidence -> Upload -> Result) -->
+  <section class="wq-section" id="assessment" aria-labelledby="assessment-title">
+    <div class="wq-section__head">
+      <div>
+        <h2 class="wq-section__title" id="assessment-title">تقييم دليل جديد</h2>
+      </div>
+    </div>
+    <div class="wq-stepper" id="wq-v2-stepper"></div>
+
+    <div id="wq-v2-step-domain" data-v2-step="domain">
+      <h3 class="wq-section__title" style="font-size:16px;">اختر مجال التقييم</h3>
+      <div class="wq-option-card wq-option-card--selected">
+        <div class="wq-option-card__title">تصنيف البيانات</div>
+        <div class="wq-option-card__meta">تقييم متطلبات وتصنيف البيانات وفق إطار المجال.</div>
+        <button type="button" class="wq-option-card__action" id="wq-v2-domain-continue">متابعة ←</button>
+      </div>
+      <div class="wq-option-card wq-option-card--disabled">
+        <div class="wq-option-card__title">الخصوصية (Privacy)</div>
+        <span class="wq-soon-pill">قريبًا</span>
+      </div>
+      <div class="wq-option-card wq-option-card--disabled">
+        <div class="wq-option-card__title">جودة البيانات (Data Quality)</div>
+        <span class="wq-soon-pill">قريبًا</span>
+      </div>
+    </div>
+
+    <div id="wq-v2-step-requirement" data-v2-step="requirement" hidden>
+      <button type="button" class="wq-back-link" data-v2-back="domain">← رجوع لاختيار المجال</button>
+      <h3 class="wq-section__title" style="font-size:16px;">اختر المتطلب</h3>
+      <div id="wq-v2-requirement-list">جارٍ التحميل…</div>
+    </div>
+
+    <div id="wq-v2-step-evidence" data-v2-step="evidence" hidden>
+      <button type="button" class="wq-back-link" data-v2-back="requirement">← رجوع لاختيار المتطلب</button>
+      <h3 class="wq-section__title" style="font-size:16px;">اختر الدليل المطلوب</h3>
+      <p class="wq-section__hint" id="wq-v2-evidence-context"></p>
+      <div id="wq-v2-evidence-list"></div>
+    </div>
+
+    <div id="wq-v2-step-upload" data-v2-step="upload" hidden>
+      <button type="button" class="wq-back-link" data-v2-back="evidence">← رجوع لاختيار الدليل</button>
+      <h3 class="wq-section__title" style="font-size:16px;">رفع الدليل</h3>
+      <p class="wq-section__hint">ارفع ملف الدليل ليقوم وثيق بتحليله ومقارنته بالمتطلبات المحددة.</p>
+      <p class="wq-section__hint" id="wq-v2-upload-context"></p>
+      <div class="wq-upload-zone">
+        <div>اسحب الملف هنا أو اختر ملفاً</div>
+        <input type="file" id="wq-v2-file-input" accept=".docx" />
+      </div>
+      <div id="wq-v2-file-ready"></div>
+      <button type="button" class="wq-option-card__action" id="wq-v2-start-assessment" disabled>بدء التقييم</button>
+      <div id="wq-v2-result"></div>
+    </div>
+  </section>
+
+  <!-- v2 -- النضج والامتثال (بيانات حية من data/assessment_results/DC_results.json) -->
+  <section class="wq-section" id="maturity-live" aria-labelledby="maturity-live-title">
+    <div class="wq-section__head">
+      <div>
+        <h2 class="wq-section__title" id="maturity-live-title">النضج والامتثال</h2>
+        <p class="wq-section__hint">ملخص حالة تغطية الأدلة الحالية بناءً على نتائج محرك التقييم الداخلي — لا يمثّل نتيجة امتثال SDAIA رسمية (Compliance Decision Layer قيد الإعداد)</p>
+      </div>
+    </div>
+    <div class="wq-kpi-grid" id="wq-v2-maturity-kpis"></div>
+    <div class="wq-table-wrap">
+      <table class="wq-table" id="wq-v2-mq-table">
+        <thead><tr><th>المتطلب</th><th>عدد الأدلة</th><th>متوسط التغطية</th></tr></thead>
+        <tbody><tr><td colspan="3">جارٍ التحميل…</td></tr></tbody>
+      </table>
+    </div>
+    <div class="wq-note"><p class="wq-note__text">المصدر: data/assessment_results/DC_results.json — يُحدَّث فور كل تقييم جديد (يتطلب تشغيل خادم Wathiq الحقيقي، انظر صفحة التقييم).</p></div>
+  </section>
+
+  <!-- v2 -- الأدلة (جدول حي) ------------------------------------------- -->
+  <section class="wq-section" id="evidence-live" aria-labelledby="evidence-live-title">
+    <div class="wq-section__head">
+      <div>
+        <h2 class="wq-section__title" id="evidence-live-title">الأدلة</h2>
+        <p class="wq-section__hint">كل الأدلة المقيَّمة حتى الآن، بحالتها ونسبة تغطيتها الحقيقية من آخر تقييم لكل دليل.</p>
+      </div>
+    </div>
+    <div class="wq-table-wrap">
+      <table class="wq-table" id="wq-v2-evidence-table">
+        <thead><tr><th>الدليل</th><th>اسم الدليل</th><th>المتطلب</th><th>الحالة</th><th>التغطية</th></tr></thead>
+        <tbody><tr><td colspan="5">جارٍ التحميل…</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- v2 -- التقارير (قريبًا -- لا يوجد أرشيف تقارير حقيقي) -------------- -->
+  <section class="wq-section" id="reports" aria-labelledby="reports-title">
+    <div class="wq-section__head">
+      <div>
+        <h2 class="wq-section__title" id="reports-title">التقارير</h2>
+      </div>
+    </div>
+    <div class="wq-backend-note">
+      <b>أرشيف التقارير — قريبًا.</b><br />
+      لا يتوفر حالياً أرشيف مركزي للتقارير في هذه النسخة. تقارير التقييم تُنشَأ عبر محرك Python الحقيقي
+      (src/reports/word_report_generator.py) ولا يمكن لهذه الواجهة الثابتة سردها أو تنزيلها دون ربطها بخادم Backend.
+    </div>
+  </section>
+
+    </main>
+
+    <footer class="wq-footer">
+      تغطية الأدلة لا تساوي مستوى النضج. طبقة قرار الامتثال خارج نطاق هذه الواجهة. لا يوجد متوسط نضج للمجال لعدم توفر قاعدة تجميع رسمية بين المتطلبات.
+    </footer>
+
+  </div>
+  <!-- /.wq-app-shell__content -->
+</div>
+<!-- /.wq-app-shell -->
+
+<!-- Modal ------------------------------------------------------------ -->
+<div class="wq-modal-overlay" id="wq-modal-overlay" data-open="false" role="dialog" aria-modal="true" aria-labelledby="wq-modal-title">
+  <div class="wq-modal">
+    <div class="wq-modal__head">
+      <h3 class="wq-modal__title" id="wq-modal-title">—</h3>
+      <button type="button" class="wq-modal__close" id="wq-modal-close" aria-label="إغلاق">✕</button>
+    </div>
+    <div class="wq-modal__body" id="wq-modal-body"></div>
+  </div>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/recommendation_engine.js"></script>
+<script src="js/app.js"></script>
+<script src="js/v2.js"></script>
+</body>
+</html>

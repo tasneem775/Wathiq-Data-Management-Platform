@@ -1,0 +1,179 @@
+/*
+  Design Tokens — PRIMITIVES ONLY
+  ================================
+  WATHIQ_COLOR_HOOK
+
+  هذا هو الملف الوحيد في كامل المشروع المسموح فيه بقيم Hex/RGB/HSL حرفية.
+  كل ملف آخر (theme.css, components.css, layout.css, animations.css,
+  index.html) يستهلك هذه القيم عبر var() فقط — لا استثناء.
+
+  ============================================================
+  Enterprise SaaS Polish Pass (هذه الجولة) — منظَّم حسب Token Architecture
+  المطلوبة: Brand / Neutral (Dark 4-Layer) / Glow / Status / Shape / Shadow
+  / Spacing. القيم اللونية الأساسية (Primary/Accent/Secondary/Text) لم
+  تتغيّر عن الجولة السابقة — فقط طبقات Dark، شفافية التوهّج، والـ Shadow
+  الجديدة مُعطاة حرفياً هذه المرة.
+  ============================================================
+*/
+
+:root {
+  /* ================================================================
+     BRAND
+     ================================================================ */
+  --primary-light: #1d2740;
+  --primary-light-hover: #263252; /* درجة أفتح قليلاً من primary-light -- Hover لأزرار/عناصر تفاعلية تستخدم brand-primary في الفاتح */
+  --primary-light-active: #141c30; /* درجة أغمق قليلاً -- Active/Pressed */
+  --accent-teal: #2ad1d6; /* نفس القيمة في الوضعين حرفياً */
+  --accent-teal-rgb: 42, 209, 214; /* نفس accent-teal، بصيغة ثلاثية لبناء rgba() للتوهّج/drop-shadow */
+  --accent-teal-hover: #22b8bc; /* أغمق قليلاً من accent-teal -- Hover (يُستخدم في الوضعين، إذ accent-teal ثابت حرفياً في الاثنين) */
+  --accent-teal-active: #1c9ea1; /* أغمق أكثر -- Active/Pressed */
+  --secondary-teal-light: #0fa3b1;
+
+  /* ================================================================
+     NEUTRAL — Light
+     ================================================================ */
+  --bg-light: #f5f9fe;
+  --elevated-light: #ffffff; /* سطح مرتفع فوق --surface العادي (شبه شفاف 0.88) -- صلب بالكامل، للـ Modal/القوائم المنسدلة حيث تكدّس محتوى فوق بطاقات أخرى */
+  --text-primary-light: #374151;
+  --text-secondary-light: #6b7280;
+  --text-disabled-light: #a7b0be; /* أفتح من secondary، للعناصر المعطّلة (أزرار/حقول disabled) */
+  --text-numbers-light: #06182c;
+  --border-light-rgb: 15, 60, 100; /* لبناء rgba(...,0.08/0.10) لحدود البطاقات الفاتحة */
+  --white-rgb: 255, 255, 255;
+  --border-strong-light: #c7cce0;
+  --border-strong-dark: #4a5e7b;
+
+  /* ================================================================
+     NEUTRAL — Dark، 4 طبقات صريحة ومتصاعدة الإضاءة (Background < Surface
+     < Card < Highlighted) — مُعطاة حرفياً هذه الجولة، تحل محل قيم الجولة
+     السابقة (كانت Cards أغمق من Surface بالخطأ حسب المصدر القديم؛ هذه
+     المجموعة الجديدة مرتّبة تصاعدياً بلا التباس). ================ */
+  --bg-dark: #0b1220; /* Background */
+  --dark-surface: #111c2e; /* Surface */
+  --dark-card: #162235; /* Card */
+  --dark-highlighted: #1d3148; /* Highlighted / Selected */
+  --dark-elevated: #1a2740; /* أعلى طبقة -- فوق dark-highlighted، للـ Modal فقط، تُبقي المودال مميّزاً عن أي بطاقة "Selected" في نفس الصفحة */
+
+  --text-primary-dark: #e5e7eb;
+  --text-secondary-dark: #94a3b8;
+  --text-disabled-dark: #566379; /* أغمق من secondary، للعناصر المعطّلة في الداكن */
+  --text-numbers-dark: #f8fafc;
+  --active-text-dark: #04202b; /* نص الأزرار النشطة فوق تعبئة Accent في الداكن */
+  --accent-light-dark: #54e6e8; /* الطرف الثاني لتدرّج Progress الداكن */
+
+  /* ================================================================
+     GLOW — عائلة Cyan/Teal فقط (حذفنا Sky/Blue/Indigo من الجولة السابقة
+     بناءً على تعليمة صريحة "استخدم فقط Cyan/Teal family"). القيم الثلاث
+     أدناه مطابقة حرفياً للأمثلة المُعطاة:
+       rgba(42,209,214,.15) = --accent-teal-rgb أعلاه
+       rgba(34,211,238,.12) = --glow-cyan-rgb
+       rgba(94,234,212,.10) = --glow-mint-rgb
+     ثلاثيات بلا Alpha — الشفافية تُبنى في theme.css فقط. ================ */
+  --glow-cyan-rgb: 34, 211, 238;
+  --glow-mint-rgb: 94, 234, 212;
+
+  /* ================================================================
+     STATUS — محايدة تماماً (Saturation=0% مؤكَّد)، لا Amber/Coral.
+     Success يُبنى من Accent (Teal) لا من هذه العائلة — انظر theme.css.
+     ================================================================ */
+  --gray-100: #f0f0f0;
+  --gray-600: #696969; /* Accessibility fix: كانت #737373 (تباين 4.16:1 على
+    gray-100 -- تفشل WCAG AA للنص 4.5:1). القيمة الجديدة 4.82:1، محايدة
+    تماماً بنفس العائلة (S=0%)، مُستهلَكة حصراً من --status-warning. */
+  --gray-900: #262626;
+  --gray-dark-300: #b8b8b8; /* Accessibility fix: كانت #a6a6a6 (تباين 3.82:1
+    على gray-dark-700 -- تفشل WCAG AA). القيمة الجديدة 4.68:1، نفس العائلة
+    المحايدة، مُستهلَكة حصراً من --status-warning (الوضع الداكن). */
+  --gray-dark-700: #474747;
+
+  --white: #ffffff;
+
+  /* ================================================================
+     CHART PALETTE — عائلة Navy/Teal/محايد فقط (نفس منطق GLOW أعلاه)،
+     بلا Rainbow وبلا ألوان صاخبة. مُعَدّة للاستخدام المستقبلي إن احتاجت
+     أي صفحة رسماً بيانياً متعدد الفئات (Bar/Donut) -- لا رسم بياني في
+     هذه الواجهة حالياً يستهلكها. أربع درجات متمايزة بالإضاءة/التشبّع
+     ضمن نفس العائلة اللونية للهوية (Primary → Accent → درجتان محايدتان)
+     بدل الاعتماد على تباين اللون فقط عند تجاور أكثر من فئتين. ================ */
+  --chart-1-light: #1d2740; /* = primary-light، الفئة الأساسية/الأهم */
+  --chart-2-light: #2ad1d6; /* = accent-teal */
+  --chart-3-light: #7c8aa8; /* محايد بارد بين النص الثانوي والحدود القوية */
+  --chart-4-light: #c7cce0; /* = border-strong-light، أفتح فئة -- خلفية/غير نشط */
+  --chart-1-dark: #54e6e8; /* = accent-light-dark */
+  --chart-2-dark: #2ad1d6; /* = accent-teal */
+  --chart-3-dark: #6b7d99; /* مكافئ محايد بارد للداكن */
+  --chart-4-dark: #334463; /* أغمق فئة -- خلفية/غير نشط في الداكن */
+
+  /* Selected / MQ Active state — مُعطاة حرفياً */
+  --selected-bg-light: #f0feff;
+  --selected-bg-dark: #122b35;
+
+  /* ---- Overlay scrim (modal backdrop) — عام، غير مرتبط بالهوية ---- */
+  --scrim: rgba(16, 26, 45, 0.5);
+  --scrim-dark: rgba(0, 0, 0, 0.6);
+
+  /* ================================================================
+     SHAPE
+     ================================================================ */
+  --radius-sm: 8px;
+  --radius-md: 14px; /* بطاقات ثانوية/مدمجة (Stat, Gap, Note) */
+  --radius-lg: 16px; /* بطاقات رئيسية أكبر (MQ, Reco) — تكبير بصري طفيف
+    (Optical Corner Radius) حتى تبدو بنفس درجة الاستدارة لبطاقة Stat/Gap
+    الأصغر، متسقاً مع الطابع الأكثر Premium في المرجع الأخير */
+  --radius-xl: 28px; /* المودال فقط */
+  --radius-card-file: 20px; /* بطاقة MQ فقط -- مفهوم "File Card" الجديد،
+    مُعطى حرفياً هذه الجولة (20px)، منفصل عن radius-lg العام حتى لا يتأثر
+    به Reco Card */
+
+  /* ================================================================
+     SHADOW — قيم Enterprise خفيفة (rgba(0,0,0,…) بدل rgba(15,23,42,…)
+     السابقة — أخف وأحيَد).
+     تعديل مُقاس هذه الجولة (Visual Refinement Pass): 0.06/0.08 السابقتان
+     قِيستا فعلياً غير كافيتين لإعطاء البطاقات ارتفاعاً مرئياً في الوضع
+     الفاتح -- التباين المحسوب بين --bg و--surface هناك ≈1.05:1 (شبه
+     متطابقين، Surface شبه شفافة فوق خلفية قريبة الدرجة منها أصلاً)،
+     وحدّ البطاقة الافتراضي (--border-subtle) ≈1.15:1 أيضاً ضعيف جداً --
+     فيتبقى الـ Shadow وحده تقريباً كمصدر "الارتفاع" البصري للبطاقة. رُفعت
+     القيمتان بشكل معتدل (لا تزالان subtle، ليستا decorative) بدل تغيير
+     ألوان Surface/Border المستهلَكة في عشرات المواضع الأخرى. ================ */
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.09);
+  --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.13);
+
+  /* ================================================================
+     SPACING — سلّم مسافات موحّد، يُستهلَك حيث يلزم توحيد Padding البطاقات
+     (24px = --space-6) بدل قيم متفرقة (22/24px) سابقاً.
+     ================================================================ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+
+  /* ================================================================
+     MOTION
+     ================================================================ */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-hover: 180ms; /* Card hover / selected — مُعطاة حرفياً هذه الجولة */
+  --duration-base: 240ms;
+
+  --font-body: "Segoe UI", "Tahoma", "Arial", sans-serif;
+  --font-display: "Segoe UI", "Tahoma", "Arial", sans-serif;
+
+  /* ================================================================
+     Z-INDEX — سلّم صريح بدل أرقام حرة متفرقة (كانت 20 للـ Header و50
+     للـ Modal Overlay مباشرة في layout.css/components.css). القيم نفسها
+     لم تتغيّر -- فقط أصبحت مُسمّاة ومركزية هنا. ================ */
+  --z-sticky-header: 20;
+  --z-modal: 50;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-hover: 0ms;
+    --duration-base: 0ms;
+  }
+}
