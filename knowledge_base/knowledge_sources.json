@@ -1,0 +1,84 @@
+{
+  "knowledge_sources": [
+    {
+      "source_name": "المؤشر الوطني للبيانات",
+      "file_path": "knowledge_base/ndi_framework/المؤشر الوطني للبيانات.pdf",
+      "source_type": "Official Reference",
+      "builds": [
+        "data/maturity_models/"
+      ],
+      "used_for": [
+        "description",
+        "maturity_requirement",
+        "inherits_previous_level_requirements"
+      ]
+    },
+    {
+      "source_name": "المحتوى التدريبي لمؤشر نضيء",
+      "file_path": "knowledge_base/المحتوى التدريبي لمؤشر نضيء.pdf",
+      "source_type": "Training Reference",
+      "builds": [
+        "data/evidence_catalog/"
+      ],
+      "used_for": [
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "source_name": "الدليل الإرشادي للمؤشرات التشغيلية",
+      "file_path": "knowledge_base/guides/الدليل الإرشادي للمؤشرات التشغيلية.pdf",
+      "source_type": "Supporting Official Reference",
+      "builds": [],
+      "used_for": []
+    },
+    {
+      "source_name": "مبادئ التزييف",
+      "file_path": "knowledge_base/guides/مبادئ التزييف.pdf",
+      "source_type": "Supporting Official Reference",
+      "builds": [],
+      "used_for": []
+    },
+    {
+      "source_name": "نظام حماية البيانات الشخصية",
+      "file_path": "knowledge_base/laws/نظام حماية البيانات الشخصية.pdf",
+      "source_type": "Supporting Official Reference",
+      "builds": [],
+      "used_for": []
+    },
+    {
+      "source_name": "دليل مستخدم منصة المؤشر",
+      "file_path": "knowledge_base/ndi_framework/دليل مستخدم منصة المؤشر.pdf",
+      "source_type": "Supporting Official Reference",
+      "builds": [],
+      "used_for": []
+    },
+    {
+      "source_name": "سياسة البيانات المفتوحة",
+      "file_path": "knowledge_base/policies/سياسة البيانات المفتوحة.pdf",
+      "source_type": "Supporting Official Reference",
+      "builds": [],
+      "used_for": []
+    },
+    {
+      "source_name": "سياسة تصنيف البيانات",
+      "file_path": "knowledge_base/policies/سياسة تصنيف البيانات.pdf",
+      "source_type": "Supporting Official Reference",
+      "builds": [],
+      "used_for": []
+    },
+    {
+      "source_name": "سياسة مشاركة البيانات",
+      "file_path": "knowledge_base/policies/سياسة مشاركة البيانات.pdf",
+      "source_type": "Supporting Official Reference",
+      "builds": [],
+      "used_for": []
+    },
+    {
+      "source_name": "ضوابط ومواصفات إدارة البيانات الوطنية",
+      "file_path": "knowledge_base/standards/ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+      "source_type": "Supporting Official Reference",
+      "builds": [],
+      "used_for": []
+    }
+  ]
+}

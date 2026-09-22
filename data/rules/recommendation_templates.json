@@ -1,0 +1,10 @@
+{
+  "ADD_SECTION": "أضف قسماً بعنوان '{criterion}' داخل الوثيقة لضمان تغطية هذا المتطلب.",
+  "ADD_REQUIRED_CONTENT": "استكمل محتوى الوثيقة بإضافة المتطلب التالي: '{criterion}'.",
+  "PROVIDE_REPORT": "أرفق تقريراً يثبت تنفيذ المتطلب التالي: '{criterion}'.",
+  "PROVIDE_LIST": "أرفق قائمة توضح المتطلب التالي: '{criterion}'.",
+  "PROVIDE_REGISTER": "أرفق سجلاً يوثق المتطلب التالي: '{criterion}'.",
+  "PROVIDE_EVIDENCE": "أرفق دليلاً داعماً يثبت تحقق المتطلب التالي: '{criterion}'.",
+  "UPDATE_POLICY": "حدّث السياسة لتشمل المتطلب التالي: '{criterion}'.",
+  "REVIEW_AND_APPROVE": "راجع واعتمد الوثيقة للتأكد من تغطية المتطلب التالي: '{criterion}'."
+}

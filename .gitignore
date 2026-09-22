@@ -1,0 +1,21 @@
+﻿__pycache__/
+*.pyc
+desktop.ini
+
+# Local / IDE / AI tool state
+.claude/
+
+# Generated vector database artifacts
+
+# Python build/cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated local reports
+reports/
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example

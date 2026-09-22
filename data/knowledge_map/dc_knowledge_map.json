@@ -1,0 +1,209 @@
+[
+  {
+    "evidence_code": "DC.M.1",
+    "evidence_name": "الممارسات الحالية المتعلقة بمجال تصنيف البيانات",
+    "mq_id": "DC.MQ.1",
+    "level_number": 1,
+    "level_name": "البناء",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.C.1.1",
+    "evidence_name": "الخطة المعرفة والمعتمدة لتصنيف البيانات",
+    "mq_id": "DC.MQ.1",
+    "level_number": 2,
+    "level_name": "التعريف",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.M.2",
+    "evidence_name": "تقرير حالة تنفيذ خطة تصنيف البيانات",
+    "mq_id": "DC.MQ.1",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.M.3",
+    "evidence_name": "تقرير مراقبة تنفيذ خطة تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+    "mq_id": "DC.MQ.1",
+    "level_number": 4,
+    "level_name": "التمكن",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.M.4",
+    "evidence_name": "تقرير مراجعة خطة تصنيف البيانات",
+    "mq_id": "DC.MQ.1",
+    "level_number": 5,
+    "level_name": "الريادة",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.M.5",
+    "evidence_name": "القائمة الحالية لمجموعات البيانات المصنفة",
+    "mq_id": "DC.MQ.2",
+    "level_number": 1,
+    "level_name": "البناء",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.M.6",
+    "evidence_name": "سياسة تصنيف البيانات",
+    "mq_id": "DC.MQ.2",
+    "level_number": 2,
+    "level_name": "التعريف",
+    "reference_pdf": "سياسة تصنيف البيانات.pdf",
+    "reference_reason": "اسم الدليل يحتوي على 'سياسة تصنيف البيانات'."
+  },
+  {
+    "evidence_code": "DC.C.2.1",
+    "evidence_name": "ضوابط معالجة (تداول / مناولة) وحماية البيانات",
+    "mq_id": "DC.MQ.2",
+    "level_number": 2,
+    "level_name": "التعريف",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.C.3.1",
+    "evidence_name": "تقرير جرد المجموعات التي تم تحديدها من البيانات والسجلات (Identified Datasets & Artifacts)",
+    "mq_id": "DC.MQ.2",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.C.1.2",
+    "evidence_name": "ترتيب أولويات مجموعات البيانات والسجلات",
+    "mq_id": "DC.MQ.2",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.M.7",
+    "evidence_name": "إرفاق ما يثبت استخدام أداة دليل / فهرس البيانات لجرد البيانات",
+    "mq_id": "DC.MQ.2",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.C.3.2",
+    "evidence_name": "تقرير تقييم الأثر",
+    "mq_id": "DC.MQ.2",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.C.3.3",
+    "evidence_name": "تقرير تقييم البيانات منخفضة الأثر",
+    "mq_id": "DC.MQ.2",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.M.8",
+    "evidence_name": "قائمة معتمدة للوصول إلى البيانات مع الامتيازات المخصصة",
+    "mq_id": "DC.MQ.2",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.C.5.1",
+    "evidence_name": "سجل البيانات",
+    "mq_id": "DC.MQ.2",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.C.4.1",
+    "evidence_name": "تقرير مراقبة عملية تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+    "mq_id": "DC.MQ.2",
+    "level_number": 4,
+    "level_name": "التمكن",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.M.9",
+    "evidence_name": "أداة أتمتة تصنيف البيانات",
+    "mq_id": "DC.MQ.2",
+    "level_number": 5,
+    "level_name": "الريادة",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.M.10",
+    "evidence_name": "الممارسات الحالية المتعلقة بمراجعة تصنيفات البيانات",
+    "mq_id": "DC.MQ.3",
+    "level_number": 1,
+    "level_name": "البناء",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.M.11",
+    "evidence_name": "آلية مراجعة تصنيف البيانات",
+    "mq_id": "DC.MQ.3",
+    "level_number": 2,
+    "level_name": "التعريف",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.C.3.4",
+    "evidence_name": "تقرير مراجعة التصنيف",
+    "mq_id": "DC.MQ.3",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.C.3.5",
+    "evidence_name": "وثيقة إثبات مستويات التصنيف المنشورة على أنها بيانات وصفية",
+    "mq_id": "DC.MQ.3",
+    "level_number": 3,
+    "level_name": "التفعيل",
+    "reference_pdf": "ضوابط ومواصفات إدارة البيانات الوطنية.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.C."
+  },
+  {
+    "evidence_code": "DC.M.12",
+    "evidence_name": "تقرير مراقبة عملية تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+    "mq_id": "DC.MQ.3",
+    "level_number": 4,
+    "level_name": "التمكن",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  },
+  {
+    "evidence_code": "DC.M.13",
+    "evidence_name": "تقرير مراجعة آليات مراجعة تصنيف البيانات",
+    "mq_id": "DC.MQ.3",
+    "level_number": 5,
+    "level_name": "الريادة",
+    "reference_pdf": "المؤشر الوطني للبيانات.pdf",
+    "reference_reason": "كود الدليل يبدأ بـ DC.M ولا يشير اسمه إلى سياسة تصنيف البيانات."
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "entity": "هيئة الخدمات الحكومية الذكية",
+  "entity_code": "SGSA",
+  "domain": "Data Classification",
+  "domain_code": "DC",
+  "current_maturity": {
+    "DC.MQ.1": 2,
+    "DC.MQ.2": 3,
+    "DC.MQ.3": 2
+  },
+  "target_level": 5,
+  "available_evidence": [
+    "DC.M.1",
+    "DC.C.1.1",
+    "DC.M.5",
+    "DC.M.6",
+    "DC.C.2.1",
+    "DC.C.3.1",
+    "DC.C.1.2",
+    "DC.M.7",
+    "DC.C.3.2",
+    "DC.C.3.3",
+    "DC.M.8",
+    "DC.C.5.1",
+    "DC.M.10",
+    "DC.M.11"
+  ]
+}

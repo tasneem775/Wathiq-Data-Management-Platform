@@ -1,0 +1,4807 @@
+{
+  "DC.C.1.1": {
+    "evidence_code": "DC.C.1.1",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.1.1.docx",
+      "read_status": "success",
+      "text_length": 4659,
+      "paragraphs_count": 71,
+      "tables_count": 7,
+      "table_rows_count": 29,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.1.1",
+      "evidence_name": "الخطة المعرفة والمعتمدة لتصنيف البيانات",
+      "document_type": "Plan",
+      "mandatory_requirement": "وجود خطة حديثة ومعتمدة من صاحب الصلاحية لتصنيف البيانات.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 2,
+      "passed_criteria": 2,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "خارطة طريق تضم النشاطات والأهداف المرحلية لتصنيف بيانات الجهة. وعلى النشاطات أن تشمل ما يلزم لتحقيق مواصفات هذا المجال، كحد أدنى.",
+          "status": "PASS",
+          "matched_terms": [
+            "خارطة",
+            "طريق",
+            "تضم",
+            "النشاطات",
+            "والأهداف",
+            "المرحلية",
+            "لتصنيف",
+            "بيانات",
+            "وعلى",
+            "النشاطات",
+            "المجال"
+          ],
+          "missing_terms": [
+            "يلزم",
+            "لتحقيق",
+            "مواصفات"
+          ]
+        },
+        {
+          "criterion": "تخصيص الموارد المطلوبة والميزانية لإدارة تصنيف بيانات الجهة.",
+          "status": "PASS",
+          "matched_terms": [
+            "تخصيص",
+            "الموارد",
+            "المطلوبة",
+            "والميزانية",
+            "لإدارة",
+            "تصنيف",
+            "بيانات"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 82,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "الخطة المعرفة والمعتمدة لتصنيف البيانات"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 169,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.1.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 170,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.1.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.1.1"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'الخطة المعرفة والمعتمدة لتصنيف البيانات (DC.C.1.1)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.1.1",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.1.1.docx",
+        "read_status": "success",
+        "text_length": 4659,
+        "paragraphs_count": 71,
+        "tables_count": 7,
+        "table_rows_count": 29,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.1.1",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.1.1",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "تقارير"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 2,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.1.1",
+      "file_name": "DC.C.1.1.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 2,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 7,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.M.1": {
+    "evidence_code": "DC.M.1",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.1.docx",
+      "read_status": "success",
+      "text_length": 4344,
+      "paragraphs_count": 41,
+      "tables_count": 2,
+      "table_rows_count": 3,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.1",
+      "evidence_name": "الممارسات الحالية المتعلقة بمجال تصنيف البيانات",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير يوضح الممارسات الحالية المتعلقة بتصنيف البيانات.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 0,
+      "passed_criteria": 0,
+      "failed_criteria": 0,
+      "criteria_results": [],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "high",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 169,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 170,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.1"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'الممارسات الحالية المتعلقة بمجال تصنيف البيانات (DC.M.1)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.1",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.1.docx",
+        "read_status": "success",
+        "text_length": 4344,
+        "paragraphs_count": 41,
+        "tables_count": 2,
+        "table_rows_count": 3,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.1",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.1",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 1,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.1",
+      "file_name": "DC.M.1.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 1,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 2,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.M.2": {
+    "evidence_code": "DC.M.2",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.2.docx",
+      "read_status": "success",
+      "text_length": 5912,
+      "paragraphs_count": 48,
+      "tables_count": 8,
+      "table_rows_count": 25,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.2",
+      "evidence_name": "تقرير حالة تنفيذ خطة تصنيف البيانات",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير يوضح حالة تنفيذ خطة تصنيف البيانات وخارطة الطريق.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PARTIAL_PASS",
+      "coverage_percentage": 67,
+      "total_criteria": 3,
+      "passed_criteria": 2,
+      "failed_criteria": 1,
+      "criteria_results": [
+        {
+          "criterion": "حالة المبادرات والمشاريع: تحديد حالة كل مبادرة أو مشروع (تم البدء، أو قيد التنفيذ، أو مكتمل، أو متأخر) مع توضيح أي تأخيرات أو تحديات.",
+          "status": "PASS",
+          "matched_terms": [
+            "حالة",
+            "المبادرات",
+            "والمشاريع",
+            "تحديد",
+            "حالة",
+            "مبادرة",
+            "تم",
+            "قيد",
+            "التنفيذ",
+            "مكتمل",
+            "متأخر",
+            "تأخيرات",
+            "تحديات"
+          ],
+          "missing_terms": [
+            "مشروع",
+            "البدء",
+            "توضيح"
+          ]
+        },
+        {
+          "criterion": "نسب الإنجاز: تقديم نسب إنجاز الأنشطة والأهداف المرحلية في الخطة والخارطة، مع تفاصيل واضحة حول الأنشطة الفعلية التي تم تنفيذها.",
+          "status": "PASS",
+          "matched_terms": [
+            "نسب",
+            "الإنجاز",
+            "تقديم",
+            "نسب",
+            "إنجاز",
+            "الأنشطة",
+            "والأهداف",
+            "المرحلية",
+            "الخطة",
+            "والخارطة",
+            "تفاصيل",
+            "الأنشطة",
+            "الفعلية",
+            "تم",
+            "تنفيذها"
+          ],
+          "missing_terms": [
+            "واضحة",
+            "حول"
+          ]
+        },
+        {
+          "criterion": "الأدلة الداعمة: إرفاق إثباتات التقدم المحققة / الإنجاز مثل: التقارير، الصور، المستندات، أو محاضر الاجتماعات التي تدعم حالة التنفيذ.",
+          "status": "FAIL",
+          "matched_terms": [
+            "الأدلة",
+            "الداعمة",
+            "التقدم",
+            "المحققة",
+            "الإنجاز",
+            "مثل",
+            "محاضر",
+            "الاجتماعات",
+            "حالة",
+            "التنفيذ"
+          ],
+          "missing_terms": [
+            "إثباتات",
+            "التقارير",
+            "الصور",
+            "المستندات",
+            "تدعم"
+          ]
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [
+        "الأدلة الداعمة: إرفاق إثباتات التقدم المحققة / الإنجاز مثل: التقارير، الصور، المستندات، أو محاضر الاجتماعات التي تدعم حالة التنفيذ."
+      ],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 82,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "تقرير حالة تنفيذ خطة تصنيف البيانات"
+        },
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 209,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "تقرير حالة تنفيذ خطة تصنيف البيانات"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 169,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.2"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 170,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.2"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'تقرير حالة تنفيذ خطة تصنيف البيانات (DC.M.2)' يغطي جزءاً من متطلبات القبول فقط. يجب استكمال 1 بند/بنود موضحة في medium_missing."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.2",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.2.docx",
+        "read_status": "success",
+        "text_length": 5912,
+        "paragraphs_count": 48,
+        "tables_count": 8,
+        "table_rows_count": 25,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.2",
+        "evidence_found": true,
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "صور",
+          "مستندات",
+          "محاضر اجتماعات",
+          "تقارير",
+          "أدلة داعمة",
+          "إثباتات"
+        ],
+        "matched_acceptance_criteria": [
+          "الأدلة الداعمة: إرفاق إثباتات التقدم المحققة / الإنجاز مثل: التقارير، الصور، المستندات، أو محاضر الاجتماعات التي تدعم حالة التنفيذ."
+        ],
+        "needs_human_review": false,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.2",
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "صور",
+          "مستندات",
+          "محاضر اجتماعات",
+          "تقارير",
+          "أدلة داعمة",
+          "إثباتات"
+        ],
+        "detected_supporting_types": [
+          "جداول",
+          "محاضر اجتماعات",
+          "تقارير"
+        ],
+        "supporting_evidence_status": "PARTIAL",
+        "missing_supporting_types": [
+          "صور",
+          "مستندات"
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "تم رصد بعض الأنواع المطلوبة فقط؛ الأنواع الناقصة: صور, مستندات."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": true,
+        "supporting_evidence_status": "PARTIAL",
+        "required_supporting_types_count": 6,
+        "detected_supporting_types_count": 3,
+        "missing_supporting_types_count": 2,
+        "needs_human_review": true
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.2",
+      "file_name": "DC.M.2.docx",
+      "text_overall_status": "PARTIAL_PASS",
+      "text_coverage_percentage": 67,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 1,
+      "supporting_evidence_required": true,
+      "supporting_evidence_status": "PARTIAL",
+      "required_supporting_types_count": 6,
+      "detected_supporting_types_count": 3,
+      "missing_supporting_types_count": 2,
+      "images_count": 0,
+      "tables_count": 8,
+      "combined_overall_status": "PARTIAL_PASS",
+      "needs_human_review": true
+    },
+    "warnings": []
+  },
+  "DC.M.3": {
+    "evidence_code": "DC.M.3",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.3.docx",
+      "read_status": "success",
+      "text_length": 8206,
+      "paragraphs_count": 48,
+      "tables_count": 12,
+      "table_rows_count": 86,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.3",
+      "evidence_name": "تقرير مراقبة تنفيذ خطة وأنشطة تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقا",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير محدث ومعتمد من صاحب الصلاحية لمراقبة فعالية خطة تصنيف البيانات بناءً على مؤشرات الأداء الرئيسية (KPIs).",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 94,
+      "total_criteria": 17,
+      "passed_criteria": 16,
+      "failed_criteria": 1,
+      "criteria_results": [
+        {
+          "criterion": "قيمة المؤشر الحالية مقارنة بالقيمة المستهدفة.",
+          "status": "PASS",
+          "matched_terms": [
+            "قيمة",
+            "المؤشر",
+            "الحالية",
+            "مقارنة",
+            "بالقيمة",
+            "المستهدفة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "حالة المؤشر (محقق/متأخر/غير محقق/إلخ).",
+          "status": "PASS",
+          "matched_terms": [
+            "حالة",
+            "المؤشر",
+            "محقق/متأخر/غير",
+            "محقق/إلخ"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "توصيات لتحسين الأداء بناءً على القيم الفعلية للمؤشرات.",
+          "status": "PASS",
+          "matched_terms": [
+            "توصيات",
+            "لتحسين",
+            "الأداء",
+            "بناءً",
+            "القيم",
+            "الفعلية",
+            "للمؤشرات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "اسم / ورمز المؤشر.",
+          "status": "PASS",
+          "matched_terms": [
+            "اسم",
+            "ورمز",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "مالك المؤشر.",
+          "status": "PASS",
+          "matched_terms": [
+            "مالك",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "منسق المؤشر.",
+          "status": "PASS",
+          "matched_terms": [
+            "منسق",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "وصف المؤشر.",
+          "status": "PASS",
+          "matched_terms": [
+            "وصف",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "الهدف الاستراتيجي/ التشغيلي المراد قياسه (مع تحديد المواصفة أو العملية التي يتبع لها المؤشر).",
+          "status": "PASS",
+          "matched_terms": [
+            "الهدف",
+            "الاستراتيجي/",
+            "التشغيلي",
+            "قياسه",
+            "تحديد",
+            "المواصفة",
+            "العملية",
+            "المؤشر"
+          ],
+          "missing_terms": [
+            "المراد",
+            "يتبع"
+          ]
+        },
+        {
+          "criterion": "معادلة المؤشر.",
+          "status": "PASS",
+          "matched_terms": [
+            "معادلة",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "وحدة القياس (نسبة، عدد، إلخ).",
+          "status": "PASS",
+          "matched_terms": [
+            "وحدة",
+            "القياس",
+            "نسبة",
+            "عدد"
+          ],
+          "missing_terms": [
+            "إلخ"
+          ]
+        },
+        {
+          "criterion": "خط الأساس.",
+          "status": "PASS",
+          "matched_terms": [
+            "خط",
+            "الأساس"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "القيمة المستهدفة.",
+          "status": "PASS",
+          "matched_terms": [
+            "القيمة",
+            "المستهدفة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "دورية القياس (شهري/ربع سنوي/نصف سنوي/ سنوي).",
+          "status": "PASS",
+          "matched_terms": [
+            "دورية",
+            "القياس",
+            "شهري/ربع",
+            "سنوي/نصف",
+            "سنوي/",
+            "سنوي"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "مصادر البيانات لحساب المؤشر.",
+          "status": "PASS",
+          "matched_terms": [
+            "مصادر",
+            "البيانات",
+            "لحساب",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "آلية جمع البيانات (آلياً/يدوياً).",
+          "status": "PASS",
+          "matched_terms": [
+            "آلية",
+            "جمع",
+            "البيانات",
+            "آلياً/يدوياً"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "قطبية المؤشر (+/-) (موجبة: الزيادة هي الهدف، سالبة: النقص هو الهدف).",
+          "status": "FAIL",
+          "matched_terms": [
+            "قطبية",
+            "المؤشر",
+            "موجبة",
+            "الزيادة",
+            "الهدف",
+            "الهدف"
+          ],
+          "missing_terms": [
+            "+/-",
+            "سالبة",
+            "النقص"
+          ]
+        },
+        {
+          "criterion": "الوثائق الداعمة للبيانات المستخدمة لحساب قيم المؤشرات.",
+          "status": "PASS",
+          "matched_terms": [
+            "الوثائق",
+            "الداعمة",
+            "للبيانات",
+            "لحساب",
+            "قيم",
+            "المؤشرات"
+          ],
+          "missing_terms": [
+            "المستخدمة"
+          ]
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [
+        "قطبية المؤشر (+/-) (موجبة: الزيادة هي الهدف، سالبة: النقص هو الهدف)."
+      ],
+      "needs_human_review": true,
+      "confidence": "low",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 169,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.3"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 170,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.3"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'تقرير مراقبة تنفيذ خطة وأنشطة تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقا (DC.M.3)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.3",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.3.docx",
+        "read_status": "success",
+        "text_length": 8206,
+        "paragraphs_count": 48,
+        "tables_count": 12,
+        "table_rows_count": 86,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.3",
+        "evidence_found": true,
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "matched_acceptance_criteria": [
+          "الوثائق الداعمة للبيانات المستخدمة لحساب قيم المؤشرات."
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "النوع المطلوب عام (أدلة/وثائق داعمة أو إثباتات) دون تحديد واضح - يلزم مراجعة بشرية."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.3",
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "detected_supporting_types": [
+          "جداول",
+          "محاضر اجتماعات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "PARTIAL",
+        "missing_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "النوع المطلوب عام (أدلة/وثائق داعمة أو إثباتات) دون تحديد واضح - يلزم مراجعة بشرية.",
+          "تم رصد أدلة داعمة، لكن أحد الأنواع المطلوبة عام (أدلة/وثائق داعمة أو إثباتات) - يلزم مراجعة بشرية للتأكد من التطابق."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": true,
+        "supporting_evidence_status": "PARTIAL",
+        "required_supporting_types_count": 1,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 1,
+        "needs_human_review": true
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.3",
+      "file_name": "DC.M.3.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 94,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 1,
+      "supporting_evidence_required": true,
+      "supporting_evidence_status": "PARTIAL",
+      "required_supporting_types_count": 1,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 1,
+      "images_count": 0,
+      "tables_count": 12,
+      "combined_overall_status": "PARTIAL_PASS",
+      "needs_human_review": true
+    },
+    "warnings": []
+  },
+  "DC.M.4": {
+    "evidence_code": "DC.M.4",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.4.docx",
+      "read_status": "success",
+      "text_length": 7836,
+      "paragraphs_count": 60,
+      "tables_count": 6,
+      "table_rows_count": 26,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.4",
+      "evidence_name": "تقرير مراجعة خطة لتصنيف البيانات",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير يوضح تحديد وتنفيذ ومراقبة آليات التحسين المستمر لخطة تصنيف البيانات.",
+      "mandatory_requirement_passed": false,
+      "overall_status": "FAIL",
+      "coverage_percentage": 100,
+      "total_criteria": 3,
+      "passed_criteria": 3,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "المراجعات التي تمت.",
+          "status": "PASS",
+          "matched_terms": [
+            "المراجعات",
+            "تمت"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "نتائج كل مراجعة.",
+          "status": "PASS",
+          "matched_terms": [
+            "نتائج",
+            "مراجعة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "التحسينات التي تم تنفيذها (مع الوثائق الداعمة).",
+          "status": "PASS",
+          "matched_terms": [
+            "التحسينات",
+            "تم",
+            "تنفيذها",
+            "الوثائق",
+            "الداعمة"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 169,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.4"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 170,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.4"
+        }
+      ],
+      "recommendation_note": "الدليل 'تقرير مراجعة خطة لتصنيف البيانات (DC.M.4)' لم يحقق المتطلب الإلزامي (Mandatory Gate) بالكامل، لذلك يُعتبر الدليل غير ناجح (FAIL) بغض النظر عن نسبة التغطية الإجمالية."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.4",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.4.docx",
+        "read_status": "success",
+        "text_length": 7836,
+        "paragraphs_count": 60,
+        "tables_count": 6,
+        "table_rows_count": 26,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.4",
+        "evidence_found": true,
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "matched_acceptance_criteria": [
+          "التحسينات التي تم تنفيذها (مع الوثائق الداعمة)."
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "النوع المطلوب عام (أدلة/وثائق داعمة أو إثباتات) دون تحديد واضح - يلزم مراجعة بشرية."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.4",
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "detected_supporting_types": [
+          "جداول",
+          "محاضر اجتماعات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "PARTIAL",
+        "missing_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "النوع المطلوب عام (أدلة/وثائق داعمة أو إثباتات) دون تحديد واضح - يلزم مراجعة بشرية.",
+          "تم رصد أدلة داعمة، لكن أحد الأنواع المطلوبة عام (أدلة/وثائق داعمة أو إثباتات) - يلزم مراجعة بشرية للتأكد من التطابق."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": true,
+        "supporting_evidence_status": "PARTIAL",
+        "required_supporting_types_count": 1,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 1,
+        "needs_human_review": true
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.4",
+      "file_name": "DC.M.4.docx",
+      "text_overall_status": "FAIL",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": false,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": true,
+      "supporting_evidence_status": "PARTIAL",
+      "required_supporting_types_count": 1,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 1,
+      "images_count": 0,
+      "tables_count": 6,
+      "combined_overall_status": "FAIL",
+      "needs_human_review": true
+    },
+    "warnings": []
+  },
+  "DC.M.5": {
+    "evidence_code": "DC.M.5",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.5.docx",
+      "read_status": "success",
+      "text_length": 4273,
+      "paragraphs_count": 11,
+      "tables_count": 4,
+      "table_rows_count": 33,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.5",
+      "evidence_name": "القائمة الحالية لمجموعات البيانات المصنفة",
+      "document_type": "List",
+      "mandatory_requirement": "وجود قائمة بمجموعات البيانات المصنفة حالياً.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 0,
+      "passed_criteria": 0,
+      "failed_criteria": 0,
+      "criteria_results": [],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "high",
+      "references": [
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 83,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "القائمة الحالية لمجموعات البيانات المصنفة"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.5"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 172,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.5"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'القائمة الحالية لمجموعات البيانات المصنفة (DC.M.5)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.5",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.5.docx",
+        "read_status": "success",
+        "text_length": 4273,
+        "paragraphs_count": 11,
+        "tables_count": 4,
+        "table_rows_count": 33,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.5",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.5",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "محاضر اجتماعات",
+          "خطابات",
+          "تقارير"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.5",
+      "file_name": "DC.M.5.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 4,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.M.6": {
+    "evidence_code": "DC.M.6",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.6.docx",
+      "read_status": "success",
+      "text_length": 16794,
+      "paragraphs_count": 146,
+      "tables_count": 17,
+      "table_rows_count": 104,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.6",
+      "evidence_name": "سياسة تصنيف البيانات",
+      "document_type": "Policy",
+      "mandatory_requirement": "وجود سياسة معتمدة من صاحب الصلاحية لتصنيف البيانات.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 14,
+      "passed_criteria": 14,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "المبادئ الرئيسية للتصنيف.",
+          "status": "PASS",
+          "matched_terms": [
+            "المبادئ",
+            "الرئيسية",
+            "للتصنيف"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "مستويات التصنيف.",
+          "status": "PASS",
+          "matched_terms": [
+            "مستويات",
+            "التصنيف"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "ضوابط التصنيف.",
+          "status": "PASS",
+          "matched_terms": [
+            "ضوابط",
+            "التصنيف"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "الخطوات اللازمة للتصنيف: تحديد البيانات، تعيين مسؤول التصنيف، إجراء تقييم الأثر، إجراء تقييم الأثر للبيانات منخفضة الأثر، مراجعة التصنيف، تطبيق الضوابط المناسبة، الأدوار والمسؤوليات.",
+          "status": "PASS",
+          "matched_terms": [
+            "الخطوات",
+            "اللازمة",
+            "للتصنيف",
+            "تحديد",
+            "البيانات",
+            "تعيين",
+            "مسؤول",
+            "التصنيف",
+            "إجراء",
+            "تقييم",
+            "الأثر",
+            "إجراء",
+            "تقييم",
+            "الأثر",
+            "للبيانات",
+            "منخفضة",
+            "الأثر",
+            "مراجعة",
+            "التصنيف",
+            "تطبيق",
+            "الضوابط",
+            "المناسبة",
+            "الأدوار",
+            "والمسؤوليات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "اسم السياسة.",
+          "status": "PASS",
+          "matched_terms": [
+            "اسم",
+            "السياسة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "تاريخ الإصدار.",
+          "status": "PASS",
+          "matched_terms": [
+            "تاريخ",
+            "الإصدار"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "رقم الإصدار.",
+          "status": "PASS",
+          "matched_terms": [
+            "رقم",
+            "الإصدار"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "ضبط المستند (الإعداد، المراجعة، الاعتماد).",
+          "status": "PASS",
+          "matched_terms": [
+            "ضبط",
+            "المستند",
+            "الإعداد",
+            "المراجعة",
+            "الاعتماد"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "سجل الإصدارات.",
+          "status": "PASS",
+          "matched_terms": [
+            "سجل",
+            "الإصدارات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "المصطلحات.",
+          "status": "PASS",
+          "matched_terms": [
+            "المصطلحات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "الهدف.",
+          "status": "PASS",
+          "matched_terms": [
+            "الهدف"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "نطاق العمل.",
+          "status": "PASS",
+          "matched_terms": [
+            "نطاق",
+            "العمل"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "المراجع.",
+          "status": "PASS",
+          "matched_terms": [
+            "المراجع"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "مالك السياسة.",
+          "status": "PASS",
+          "matched_terms": [
+            "مالك",
+            "السياسة"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 83,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "سياسة تصنيف البيانات"
+        },
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 210,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "سياسة تصنيف البيانات"
+        },
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 214,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "سياسة تصنيف البيانات"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.6"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 172,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.6"
+        },
+        {
+          "document_name": "سياسة تصنيف البيانات",
+          "source_type": "Supporting Official Reference",
+          "page_number": 2,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Supporting Policy Page",
+          "matched_text": "سياسة تصنيف البيانات"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'سياسة تصنيف البيانات (DC.M.6)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.6",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.6.docx",
+        "read_status": "success",
+        "text_length": 16794,
+        "paragraphs_count": 146,
+        "tables_count": 17,
+        "table_rows_count": 104,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.6",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.6",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 3,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.6",
+      "file_name": "DC.M.6.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 3,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 17,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.2.1": {
+    "evidence_code": "DC.C.2.1",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.2.1.docx",
+      "read_status": "success",
+      "text_length": 12542,
+      "paragraphs_count": 75,
+      "tables_count": 10,
+      "table_rows_count": 68,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.2.1",
+      "evidence_name": "ضوابط معالجة (تداول / مناولة) وحماية البيانات",
+      "document_type": "Evidence",
+      "mandatory_requirement": "وجود وثيقة ضوابط معالجة (تداول/مناولة) وحماية البيانات حسب تصنيفها.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 4,
+      "passed_criteria": 4,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": " ضوابط الحماية والمناولة والمعالجة للبيانات المصنفة على أنها عام (Public).",
+          "status": "PASS",
+          "matched_terms": [
+            "ضوابط",
+            "الحماية",
+            "والمناولة",
+            "والمعالجة",
+            "للبيانات",
+            "أنها",
+            "عام",
+            "Public"
+          ],
+          "missing_terms": [
+            "المصنفة"
+          ]
+        },
+        {
+          "criterion": " ضوابط الحماية والمناولة والمعالجة للبيانات المصنفة على أنها مقيّدة (Confidential).",
+          "status": "PASS",
+          "matched_terms": [
+            "ضوابط",
+            "الحماية",
+            "والمناولة",
+            "والمعالجة",
+            "للبيانات",
+            "أنها",
+            "مقيّدة",
+            "Confidential"
+          ],
+          "missing_terms": [
+            "المصنفة"
+          ]
+        },
+        {
+          "criterion": " ضوابط الحماية والمناولة والمعالجة للبيانات المصنفة على أنها سرّية (Secret).",
+          "status": "PASS",
+          "matched_terms": [
+            "ضوابط",
+            "الحماية",
+            "والمناولة",
+            "والمعالجة",
+            "للبيانات",
+            "أنها",
+            "سرّية",
+            "Secret"
+          ],
+          "missing_terms": [
+            "المصنفة"
+          ]
+        },
+        {
+          "criterion": " ضوابط الحماية والمناولة والمعالجة للبيانات المصنفة على أنها سرّية للغاية (Top Secret).",
+          "status": "PASS",
+          "matched_terms": [
+            "ضوابط",
+            "الحماية",
+            "والمناولة",
+            "والمعالجة",
+            "للبيانات",
+            "أنها",
+            "سرّية",
+            "للغاية",
+            "Top",
+            "Secret"
+          ],
+          "missing_terms": [
+            "المصنفة"
+          ]
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.2.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 172,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.2.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.2.1"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'ضوابط معالجة (تداول / مناولة) وحماية البيانات (DC.C.2.1)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.2.1",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.2.1.docx",
+        "read_status": "success",
+        "text_length": 12542,
+        "paragraphs_count": 75,
+        "tables_count": 10,
+        "table_rows_count": 68,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.2.1",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.2.1",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "محاضر اجتماعات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.2.1",
+      "file_name": "DC.C.2.1.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 10,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.1.2": {
+    "evidence_code": "DC.C.1.2",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.1.2.docx",
+      "read_status": "success",
+      "text_length": 14772,
+      "paragraphs_count": 71,
+      "tables_count": 14,
+      "table_rows_count": 91,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.1.2",
+      "evidence_name": "ترتيب أولويات مجموعات البيانات والسجلات",
+      "document_type": "List",
+      "mandatory_requirement": "وجود وثيقة توضح قائمة مجموعات البيانات والسجلات ذوات الأولوية أثناء التصنيف.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 0,
+      "passed_criteria": 0,
+      "failed_criteria": 0,
+      "criteria_results": [],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "high",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.1.2"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 172,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.1.2"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.1.2"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'ترتيب أولويات مجموعات البيانات والسجلات (DC.C.1.2)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.1.2",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.1.2.docx",
+        "read_status": "success",
+        "text_length": 14772,
+        "paragraphs_count": 71,
+        "tables_count": 14,
+        "table_rows_count": 91,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.1.2",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.1.2",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "خطابات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.1.2",
+      "file_name": "DC.C.1.2.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 14,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.3.1": {
+    "evidence_code": "DC.C.3.1",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.3.1.docx",
+      "read_status": "success",
+      "text_length": 10634,
+      "paragraphs_count": 57,
+      "tables_count": 12,
+      "table_rows_count": 94,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.3.1",
+      "evidence_name": "تقرير جرد المجموعات التي تم تحديدها من البيانات والسجلات (Identified Datasets & Artifacts)",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود وثيقة توضح قائمة حصر بكل مجموعات البيانات والسجلات لتنفيذ عملية تصنيف البيانات.",
+      "mandatory_requirement_passed": false,
+      "overall_status": "FAIL",
+      "coverage_percentage": 100,
+      "total_criteria": 2,
+      "passed_criteria": 2,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "قائمة كل مجموعات البيانات والسجلات.",
+          "status": "PASS",
+          "matched_terms": [
+            "قائمة",
+            "مجموعات",
+            "البيانات",
+            "والسجلات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": " تحديد ملكية مجموعات البيانات والسجلات.",
+          "status": "PASS",
+          "matched_terms": [
+            "تحديد",
+            "ملكية",
+            "مجموعات",
+            "البيانات",
+            "والسجلات"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 172,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.3.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.1"
+        }
+      ],
+      "recommendation_note": "الدليل 'تقرير جرد المجموعات التي تم تحديدها من البيانات والسجلات (Identified Datasets & Artifacts) (DC.C.3.1)' لم يحقق المتطلب الإلزامي (Mandatory Gate) بالكامل، لذلك يُعتبر الدليل غير ناجح (FAIL) بغض النظر عن نسبة التغطية الإجمالية."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.3.1",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.3.1.docx",
+        "read_status": "success",
+        "text_length": 10634,
+        "paragraphs_count": 57,
+        "tables_count": 12,
+        "table_rows_count": 94,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.3.1",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.3.1",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "خطابات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.3.1",
+      "file_name": "DC.C.3.1.docx",
+      "text_overall_status": "FAIL",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": false,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 12,
+      "combined_overall_status": "FAIL",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.3.2": {
+    "evidence_code": "DC.C.3.2",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.3.2.docx",
+      "read_status": "success",
+      "text_length": 12958,
+      "paragraphs_count": 47,
+      "tables_count": 15,
+      "table_rows_count": 122,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.3.2",
+      "evidence_name": "تقرير تقييم الأثر",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير يثبت إجراء تقييم للأثر المحتمل لمجموعات البيانات والسجلات المحددة.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "FAIL",
+      "coverage_percentage": 57,
+      "total_criteria": 7,
+      "passed_criteria": 4,
+      "failed_criteria": 3,
+      "criteria_results": [
+        {
+          "criterion": "تحديد الفئات المحتملة التي يمكن أن تتأثر من بين المصالح الوطنية، والجهات، والأفراد، والبيئة.",
+          "status": "PASS",
+          "matched_terms": [
+            "تحديد",
+            "الفئات",
+            "المحتملة",
+            "يمكن",
+            "تتأثر",
+            "المصالح",
+            "الوطنية",
+            "والجهات",
+            "والأفراد",
+            "والبيئة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "اختيار مستوى تأثير الضرر المحتمل لكل فئة محددة منها بين مرتفع، متوسط، منخفض، لا يوجد / ضئيل.",
+          "status": "PASS",
+          "matched_terms": [
+            "اختيار",
+            "مستوى",
+            "تأثير",
+            "الضرر",
+            "المحتمل",
+            "لكل",
+            "فئة",
+            "مرتفع",
+            "متوسط",
+            "منخفض",
+            "يوجد",
+            "ضئيل"
+          ],
+          "missing_terms": [
+            "محددة",
+            "منها"
+          ]
+        },
+        {
+          "criterion": "إذا كان تقييم مستوى الأثر مرتفع تصنف مجموعات البيانات والسجلات باعتبارها \"سرية للغاية\".",
+          "status": "FAIL",
+          "matched_terms": [
+            "تقييم",
+            "مستوى",
+            "الأثر",
+            "مرتفع",
+            "مجموعات",
+            "البيانات",
+            "والسجلات",
+            "باعتبارها",
+            "للغاية"
+          ],
+          "missing_terms": [
+            "إذا",
+            "كان",
+            "تصنف",
+            "سرية"
+          ]
+        },
+        {
+          "criterion": "إذا كان تقييم مستوى الأثر متوسط تصنف مجموعات البيانات والسجلات باعتبارها \"سرية\".",
+          "status": "FAIL",
+          "matched_terms": [
+            "تقييم",
+            "مستوى",
+            "الأثر",
+            "متوسط",
+            "مجموعات",
+            "البيانات",
+            "والسجلات",
+            "باعتبارها"
+          ],
+          "missing_terms": [
+            "إذا",
+            "كان",
+            "تصنف",
+            "سرية"
+          ]
+        },
+        {
+          "criterion": "إذا كان تقييم مستوى الأثر منخفض تصنف مجموعات البيانات والسجلات باعتبارها \"مقيدة\".",
+          "status": "FAIL",
+          "matched_terms": [
+            "تقييم",
+            "مستوى",
+            "الأثر",
+            "منخفض",
+            "مجموعات",
+            "البيانات",
+            "والسجلات",
+            "باعتبارها"
+          ],
+          "missing_terms": [
+            "إذا",
+            "كان",
+            "تصنف",
+            "مقيدة"
+          ]
+        },
+        {
+          "criterion": "إذا كان تقييم مستوى الأثر لا يوجد تصنف مجموعات البيانات والسجلات باعتبارها \"عامة\".",
+          "status": "PASS",
+          "matched_terms": [
+            "تقييم",
+            "مستوى",
+            "الأثر",
+            "يوجد",
+            "مجموعات",
+            "البيانات",
+            "والسجلات",
+            "باعتبارها",
+            "عامة"
+          ],
+          "missing_terms": [
+            "إذا",
+            "كان",
+            "تصنف"
+          ]
+        },
+        {
+          "criterion": "توافق التقييم مع سياسات ولوائح تصنيف البيانات الصادرة من مكتب إدارة البيانات الوطنية - سدايا.",
+          "status": "PASS",
+          "matched_terms": [
+            "توافق",
+            "التقييم",
+            "سياسات",
+            "ولوائح",
+            "تصنيف",
+            "البيانات",
+            "الصادرة",
+            "مكتب",
+            "إدارة",
+            "البيانات",
+            "الوطنية"
+          ],
+          "missing_terms": [
+            "سدايا"
+          ]
+        }
+      ],
+      "critical_missing": [
+        "إذا كان تقييم مستوى الأثر مرتفع تصنف مجموعات البيانات والسجلات باعتبارها \"سرية للغاية\".",
+        "إذا كان تقييم مستوى الأثر متوسط تصنف مجموعات البيانات والسجلات باعتبارها \"سرية\".",
+        "إذا كان تقييم مستوى الأثر منخفض تصنف مجموعات البيانات والسجلات باعتبارها \"مقيدة\"."
+      ],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.2"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 172,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.3.2"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.2"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'تقرير تقييم الأثر (DC.C.3.2)' لا يغطي متطلبات القبول الأساسية بشكل كافٍ. يوصى بإعادة صياغة الدليل ليشمل البنود الناقصة (3 حرجة و0 متوسطة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.3.2",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.3.2.docx",
+        "read_status": "success",
+        "text_length": 12958,
+        "paragraphs_count": 47,
+        "tables_count": 15,
+        "table_rows_count": 122,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.3.2",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.3.2",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "خطابات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.3.2",
+      "file_name": "DC.C.3.2.docx",
+      "text_overall_status": "FAIL",
+      "text_coverage_percentage": 57,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 3,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 15,
+      "combined_overall_status": "FAIL",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.3.3": {
+    "evidence_code": "DC.C.3.3",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.3.3.docx",
+      "read_status": "success",
+      "text_length": 17089,
+      "paragraphs_count": 51,
+      "tables_count": 17,
+      "table_rows_count": 107,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.3.3",
+      "evidence_name": "تقرير تقييم البيانات منخفضة الأثر",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير يثبت دراسة إمكانية تصنيف البيانات منخفضة الأثر باعتبارها عامة بدلاً من مقيدة.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "FAIL",
+      "coverage_percentage": 75,
+      "total_criteria": 4,
+      "passed_criteria": 3,
+      "failed_criteria": 1,
+      "criteria_results": [
+        {
+          "criterion": "دراسة ما إذا كان الإفصاح عن هذه البيانات منخفضة الأثر يتعارض مع أي نظام / لائحة حالية في المملكة العربية السعودية، مثل نظام مكافحة الجرائم المعلوماتية ونظام التجارة الإلكترونية.",
+          "status": "PASS",
+          "matched_terms": [
+            "دراسة",
+            "إذا",
+            "كان",
+            "الإفصاح",
+            "البيانات",
+            "منخفضة",
+            "الأثر",
+            "يتعارض",
+            "نظام",
+            "لائحة",
+            "المملكة",
+            "العربية",
+            "السعودية",
+            "نظام",
+            "مكافحة",
+            "الجرائم",
+            "المعلوماتية",
+            "ونظام",
+            "التجارة",
+            "الإلكترونية"
+          ],
+          "missing_terms": [
+            "حالية",
+            "مثل"
+          ]
+        },
+        {
+          "criterion": "تحديد المزايا المحتملة للإ فصاح عن مثل هذه المجموعات من البيانات والسجلات، والتأكد مما إذا كانت المزايا ستفوق الآثار السلبية أم لا.",
+          "status": "PASS",
+          "matched_terms": [
+            "تحديد",
+            "المحتملة",
+            "للإ",
+            "فصاح",
+            "البيانات",
+            "والسجلات",
+            "مما",
+            "إذا",
+            "كانت",
+            "ستفوق",
+            "الآثار",
+            "السلبية",
+            "أم"
+          ],
+          "missing_terms": [
+            "المزايا",
+            "مثل",
+            "المجموعات",
+            "والتأكد",
+            "المزايا"
+          ]
+        },
+        {
+          "criterion": "تعديل تصنيف البيانات \"منخفضة الأثر\" باعتبارها «عامة» إذا لم يكن النشر يمثل خرقا لأي نظام نافذ، وخصوصا إذا كانت المنافع تتجاوز التأثيرات السلبية.",
+          "status": "FAIL",
+          "matched_terms": [
+            "تصنيف",
+            "البيانات",
+            "منخفضة",
+            "الأثر",
+            "باعتبارها",
+            "«عامة»",
+            "إذا",
+            "خرقا",
+            "لأي",
+            "نظام",
+            "إذا",
+            "كانت",
+            "المنافع",
+            "تتجاوز",
+            "السلبية"
+          ],
+          "missing_terms": [
+            "تعديل",
+            "يكن",
+            "النشر",
+            "يمثل",
+            "نافذ",
+            "وخصوصا",
+            "التأثيرات"
+          ]
+        },
+        {
+          "criterion": "أن يكون التقييم متوافقا مع سياسات ولوائح تصنيف البيانات الصادرة من مكتب إدارة البيانات الوطنية - سدايا.",
+          "status": "PASS",
+          "matched_terms": [
+            "يكون",
+            "التقييم",
+            "متوافقا",
+            "سياسات",
+            "ولوائح",
+            "تصنيف",
+            "البيانات",
+            "الصادرة",
+            "مكتب",
+            "إدارة",
+            "البيانات",
+            "الوطنية",
+            "سدايا"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [
+        "تعديل تصنيف البيانات \"منخفضة الأثر\" باعتبارها «عامة» إذا لم يكن النشر يمثل خرقا لأي نظام نافذ، وخصوصا إذا كانت المنافع تتجاوز التأثيرات السلبية."
+      ],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.3"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 173,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.3.3"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.3"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'تقرير تقييم البيانات منخفضة الأثر (DC.C.3.3)' لا يغطي متطلبات القبول الأساسية بشكل كافٍ. يوصى بإعادة صياغة الدليل ليشمل البنود الناقصة (1 حرجة و0 متوسطة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.3.3",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.3.3.docx",
+        "read_status": "success",
+        "text_length": 17089,
+        "paragraphs_count": 51,
+        "tables_count": 17,
+        "table_rows_count": 107,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.3.3",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.3.3",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "خطابات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.3.3",
+      "file_name": "DC.C.3.3.docx",
+      "text_overall_status": "FAIL",
+      "text_coverage_percentage": 75,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 1,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 17,
+      "combined_overall_status": "FAIL",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.M.7": {
+    "evidence_code": "DC.M.7",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.7.docx",
+      "read_status": "success",
+      "text_length": 19818,
+      "paragraphs_count": 62,
+      "tables_count": 20,
+      "table_rows_count": 165,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.7",
+      "evidence_name": "إرفاق ما يثبت استخدام أداة دليل / فهرس البيانات لجرد البيانات",
+      "document_type": "Evidence",
+      "mandatory_requirement": "وجود تقرير أو دليل على استخدام أداة دليل / فهرس البيانات لجرد البيانات.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 0,
+      "passed_criteria": 0,
+      "failed_criteria": 0,
+      "criteria_results": [],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.7"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 173,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.7"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'إرفاق ما يثبت استخدام أداة دليل / فهرس البيانات لجرد البيانات (DC.M.7)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.7",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.7.docx",
+        "read_status": "success",
+        "text_length": 19818,
+        "paragraphs_count": 62,
+        "tables_count": 20,
+        "table_rows_count": 165,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.7",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.7",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "خطابات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.7",
+      "file_name": "DC.M.7.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 20,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.M.8": {
+    "evidence_code": "DC.M.8",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.8.docx",
+      "read_status": "success",
+      "text_length": 12232,
+      "paragraphs_count": 63,
+      "tables_count": 11,
+      "table_rows_count": 112,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.8",
+      "evidence_name": "قائمة معتمدة لوصول المستخدمين إلى البيانات مع الامتيازات المخصصة",
+      "document_type": "List",
+      "mandatory_requirement": "وجود مستند يوضح قائمة الوصول إلى البيانات مع الصلاحيات المعينة / الامتيازات المخصصة.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "FAIL",
+      "coverage_percentage": 50,
+      "total_criteria": 2,
+      "passed_criteria": 1,
+      "failed_criteria": 1,
+      "criteria_results": [
+        {
+          "criterion": "تحديد صلاحيات الوصول إلى البيانات (قراءة، تعديل، حذف).",
+          "status": "PASS",
+          "matched_terms": [
+            "تحديد",
+            "صلاحيات",
+            "الوصول",
+            "البيانات",
+            "قراءة",
+            "تعديل",
+            "حذف"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "تحديد أنواع المستخدمين الذين يحتاجون الوصول إلى البيانات.",
+          "status": "FAIL",
+          "matched_terms": [
+            "تحديد",
+            "المستخدمين",
+            "الوصول",
+            "البيانات"
+          ],
+          "missing_terms": [
+            "أنواع",
+            "الذين",
+            "يحتاجون"
+          ]
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [
+        "تحديد أنواع المستخدمين الذين يحتاجون الوصول إلى البيانات."
+      ],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.8"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 173,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.8"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'قائمة معتمدة لوصول المستخدمين إلى البيانات مع الامتيازات المخصصة (DC.M.8)' لا يغطي متطلبات القبول الأساسية بشكل كافٍ. يوصى بإعادة صياغة الدليل ليشمل البنود الناقصة (0 حرجة و1 متوسطة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.8",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.8.docx",
+        "read_status": "success",
+        "text_length": 12232,
+        "paragraphs_count": 63,
+        "tables_count": 11,
+        "table_rows_count": 112,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.8",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.8",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "تقارير"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 2,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.8",
+      "file_name": "DC.M.8.docx",
+      "text_overall_status": "FAIL",
+      "text_coverage_percentage": 50,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 1,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 2,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 11,
+      "combined_overall_status": "FAIL",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.5.1": {
+    "evidence_code": "DC.C.5.1",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.5.1.docx",
+      "read_status": "success",
+      "text_length": 10659,
+      "paragraphs_count": 43,
+      "tables_count": 12,
+      "table_rows_count": 93,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.5.1",
+      "evidence_name": "سجل البيانات",
+      "document_type": "Register",
+      "mandatory_requirement": "وجود سجل يوثق قائمة مجموعات البيانات والسجلات المحددة وأنشطة تصنيف البيانات.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 6,
+      "passed_criteria": 6,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "قائمة بكل مجموعات البيانات والسجلات المحددة.",
+          "status": "PASS",
+          "matched_terms": [
+            "قائمة",
+            "بكل",
+            "مجموعات",
+            "البيانات",
+            "والسجلات",
+            "المحددة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "مستويات التصنيف الممنوحة لمجموعات البيانات والسجلات المحددة.",
+          "status": "PASS",
+          "matched_terms": [
+            "مستويات",
+            "التصنيف",
+            "الممنوحة",
+            "لمجموعات",
+            "البيانات",
+            "والسجلات",
+            "المحددة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "تواريخ منح مستويات التصنيف لمجموعات البيانات والسجلات المحددة.",
+          "status": "PASS",
+          "matched_terms": [
+            "تواريخ",
+            "منح",
+            "مستويات",
+            "التصنيف",
+            "لمجموعات",
+            "البيانات",
+            "والسجلات",
+            "المحددة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "فترات التصنيف المفروضة على مجموعات البيانات والسجلات المحددة.",
+          "status": "PASS",
+          "matched_terms": [
+            "فترات",
+            "التصنيف",
+            "المفروضة",
+            "مجموعات",
+            "البيانات",
+            "والسجلات",
+            "المحددة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "مستويات التصنيف المعتمدة / المصدق عليها أثناء المراجعات.",
+          "status": "PASS",
+          "matched_terms": [
+            "مستويات",
+            "التصنيف",
+            "المعتمدة",
+            "أثناء",
+            "المراجعات"
+          ],
+          "missing_terms": [
+            "المصدق",
+            "عليها"
+          ]
+        },
+        {
+          "criterion": "تواريخ مراجعة مستويات التصنيف.",
+          "status": "PASS",
+          "matched_terms": [
+            "تواريخ",
+            "مراجعة",
+            "مستويات",
+            "التصنيف"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 84,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "سجل البيانات"
+        },
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 201,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "سجل البيانات"
+        },
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 212,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "سجل البيانات"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.5.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 173,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.5.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.5.1"
+        },
+        {
+          "document_name": "ضوابط ومواصفات إدارة البيانات الوطنية",
+          "source_type": "Supporting Official Reference",
+          "page_number": 180,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "سجل البيانات"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'سجل البيانات (DC.C.5.1)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.5.1",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.5.1.docx",
+        "read_status": "success",
+        "text_length": 10659,
+        "paragraphs_count": 43,
+        "tables_count": 12,
+        "table_rows_count": 93,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.5.1",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.5.1",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "خطابات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.5.1",
+      "file_name": "DC.C.5.1.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 12,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.4.1": {
+    "evidence_code": "DC.C.4.1",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.4.1.docx",
+      "read_status": "success",
+      "text_length": 18967,
+      "paragraphs_count": 64,
+      "tables_count": 24,
+      "table_rows_count": 175,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.4.1",
+      "evidence_name": "تقرير مراقبة عمليات تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير محدث ومعتمد من صاحب الصلاحية لمراقبة فعالية عمليات تصنيف البيانات بناءً على مؤشرات الأداء الرئيسية.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 7,
+      "passed_criteria": 7,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "النسبة المئوية لمجموعات البيانات والسجلات المصنفة من إجمالي مجموعات البيانات والسجلات لدى الجهة.",
+          "status": "PASS",
+          "matched_terms": [
+            "النسبة",
+            "المئوية",
+            "لمجموعات",
+            "البيانات",
+            "والسجلات",
+            "المصنفة",
+            "إجمالي",
+            "مجموعات",
+            "البيانات",
+            "والسجلات"
+          ],
+          "missing_terms": [
+            "لدى"
+          ]
+        },
+        {
+          "criterion": "النسبة المئوية لمجموعات البيانات والسجلات المصنفة بمستوى تصنيف معين.",
+          "status": "PASS",
+          "matched_terms": [
+            "النسبة",
+            "المئوية",
+            "لمجموعات",
+            "البيانات",
+            "والسجلات",
+            "المصنفة",
+            "بمستوى",
+            "تصنيف",
+            "معين"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "النسبة المئوية للبيانات ذات الأثر المنخفض المصنفة على مستوى مقيدة.",
+          "status": "PASS",
+          "matched_terms": [
+            "النسبة",
+            "المئوية",
+            "للبيانات",
+            "ذات",
+            "الأثر",
+            "المنخفض",
+            "المصنفة",
+            "مستوى"
+          ],
+          "missing_terms": [
+            "مقيدة"
+          ]
+        },
+        {
+          "criterion": "النسبة المئوية لمجموعات البيانات والسجلات المصنفة التي خضعت للمراجعة والتعميد والتصديق.",
+          "status": "PASS",
+          "matched_terms": [
+            "النسبة",
+            "المئوية",
+            "لمجموعات",
+            "البيانات",
+            "والسجلات",
+            "المصنفة",
+            "خضعت",
+            "للمراجعة",
+            "والتعميد",
+            "والتصديق"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "يجب أن يحتوي التقرير أيضاً على توصيات لتحسين الأداء بناءً على القيم الفعلية للمؤشرات.",
+          "status": "PASS",
+          "matched_terms": [
+            "التقرير",
+            "توصيات",
+            "لتحسين",
+            "الأداء",
+            "بناءً",
+            "القيم",
+            "الفعلية",
+            "للمؤشرات"
+          ],
+          "missing_terms": [
+            "يحتوي",
+            "أيضاً"
+          ]
+        },
+        {
+          "criterion": "يجب أن تتضمن بطاقة كل مؤشر اسم / رمز المؤشر، مالك المؤشر، منسق المؤشر، وصف المؤشر، الهدف، معادلة المؤشر، وحدة القياس، خط الأساس، القيمة المستهدفة، دورية القياس، مصادر البيانات، آلية جمع البيانات، قطبية المؤشر، قيمة المؤشر الحالية، وحالة المؤشر.",
+          "status": "PASS",
+          "matched_terms": [
+            "تتضمن",
+            "بطاقة",
+            "مؤشر",
+            "اسم",
+            "رمز",
+            "المؤشر",
+            "مالك",
+            "المؤشر",
+            "منسق",
+            "المؤشر",
+            "وصف",
+            "المؤشر",
+            "الهدف",
+            "معادلة",
+            "المؤشر",
+            "وحدة",
+            "القياس",
+            "خط",
+            "الأساس",
+            "القيمة",
+            "المستهدفة",
+            "دورية",
+            "القياس",
+            "مصادر",
+            "البيانات",
+            "آلية",
+            "جمع",
+            "البيانات",
+            "قطبية",
+            "المؤشر",
+            "قيمة",
+            "المؤشر",
+            "الحالية",
+            "وحالة",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "الوثائق الداعمة للبيانات المستخدمة لحساب قيم المؤشرات.",
+          "status": "PASS",
+          "matched_terms": [
+            "الوثائق",
+            "الداعمة",
+            "للبيانات",
+            "المستخدمة",
+            "لحساب",
+            "قيم",
+            "المؤشرات"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": true,
+      "confidence": "low",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.4.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 173,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.4.1"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.4.1"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'تقرير مراقبة عمليات تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً (DC.C.4.1)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.4.1",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.4.1.docx",
+        "read_status": "success",
+        "text_length": 18967,
+        "paragraphs_count": 64,
+        "tables_count": 24,
+        "table_rows_count": 175,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.4.1",
+        "evidence_found": true,
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "matched_acceptance_criteria": [
+          "الوثائق الداعمة للبيانات المستخدمة لحساب قيم المؤشرات."
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "النوع المطلوب عام (أدلة/وثائق داعمة أو إثباتات) دون تحديد واضح - يلزم مراجعة بشرية."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.4.1",
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "detected_supporting_types": [
+          "جداول",
+          "محاضر اجتماعات",
+          "تقارير",
+          "مستندات",
+          "Workflow"
+        ],
+        "supporting_evidence_status": "PARTIAL",
+        "missing_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "النوع المطلوب عام (أدلة/وثائق داعمة أو إثباتات) دون تحديد واضح - يلزم مراجعة بشرية.",
+          "تم رصد أدلة داعمة، لكن أحد الأنواع المطلوبة عام (أدلة/وثائق داعمة أو إثباتات) - يلزم مراجعة بشرية للتأكد من التطابق."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": true,
+        "supporting_evidence_status": "PARTIAL",
+        "required_supporting_types_count": 1,
+        "detected_supporting_types_count": 5,
+        "missing_supporting_types_count": 1,
+        "needs_human_review": true
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.4.1",
+      "file_name": "DC.C.4.1.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": true,
+      "supporting_evidence_status": "PARTIAL",
+      "required_supporting_types_count": 1,
+      "detected_supporting_types_count": 5,
+      "missing_supporting_types_count": 1,
+      "images_count": 0,
+      "tables_count": 24,
+      "combined_overall_status": "PARTIAL_PASS",
+      "needs_human_review": true
+    },
+    "warnings": []
+  },
+  "DC.M.9": {
+    "evidence_code": "DC.M.9",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.9.docx",
+      "read_status": "success",
+      "text_length": 25135,
+      "paragraphs_count": 79,
+      "tables_count": 25,
+      "table_rows_count": 211,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.9",
+      "evidence_name": "أداة أتمتة تصنيف البيانات",
+      "document_type": "Tool",
+      "mandatory_requirement": "وجود تقرير يوضح استخدام أداة أتمتة تصنيف البيانات.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 4,
+      "passed_criteria": 4,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "وصف للحلول والأدوات المستخدمة في عملية أتمتة تصنيف البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "وصف",
+            "للحلول",
+            "والأدوات",
+            "المستخدمة",
+            "عملية",
+            "أتمتة",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "وصف عمليات ومراحل أتمتة تصنيف البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "وصف",
+            "عمليات",
+            "ومراحل",
+            "أتمتة",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "عينات من الأدوات المستخدمة في عملية أتمتة تصنيف البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "عينات",
+            "الأدوات",
+            "المستخدمة",
+            "عملية",
+            "أتمتة",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "عينات من البيانات المصنفة باستخدام أدوات أتمتة تصنيف البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "عينات",
+            "البيانات",
+            "المصنفة",
+            "باستخدام",
+            "أدوات",
+            "أتمتة",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": true,
+      "confidence": "low",
+      "references": [
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 84,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "أداة أتمتة تصنيف البيانات"
+        },
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 213,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "أداة أتمتة تصنيف البيانات"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 171,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.9"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 173,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.9"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'أداة أتمتة تصنيف البيانات (DC.M.9)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.9",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.9.docx",
+        "read_status": "success",
+        "text_length": 25135,
+        "paragraphs_count": 79,
+        "tables_count": 25,
+        "table_rows_count": 211,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.9",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.9",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "تقارير",
+          "مستندات",
+          "Workflow"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.9",
+      "file_name": "DC.M.9.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 25,
+      "combined_overall_status": "PASS",
+      "needs_human_review": true
+    },
+    "warnings": []
+  },
+  "DC.M.10": {
+    "evidence_code": "DC.M.10",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.10.docx",
+      "read_status": "success",
+      "text_length": 15294,
+      "paragraphs_count": 50,
+      "tables_count": 16,
+      "table_rows_count": 143,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.10",
+      "evidence_name": "الممارسات الحالية المتعلقة بمراجعة تصنيفات البيانات",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير يوضح الممارسات الحالية المتعلقة بمراجعة تصنيف مجموعات البيانات والسجلات المصنفة.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 2,
+      "passed_criteria": 2,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "ضمان تناسب مستوى التصنيف الممنوح لكل منها وفقاً لسياسات ولوائح تصنيف البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "ضمان",
+            "تناسب",
+            "مستوى",
+            "التصنيف",
+            "الممنوح",
+            "لكل",
+            "وفقاً",
+            "لسياسات",
+            "ولوائح",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": [
+            "منها"
+          ]
+        },
+        {
+          "criterion": "تغيير مستوى التصنيف إذا تغيرت حالة البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "تغيير",
+            "مستوى",
+            "التصنيف",
+            "إذا",
+            "تغيرت",
+            "حالة",
+            "البيانات"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 174,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.10"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 175,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.10"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'الممارسات الحالية المتعلقة بمراجعة تصنيفات البيانات (DC.M.10)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.10",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.10.docx",
+        "read_status": "success",
+        "text_length": 15294,
+        "paragraphs_count": 50,
+        "tables_count": 16,
+        "table_rows_count": 143,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.10",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.10",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 3,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.10",
+      "file_name": "DC.M.10.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 3,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 16,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.M.11": {
+    "evidence_code": "DC.M.11",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.11.docx",
+      "read_status": "success",
+      "text_length": 20047,
+      "paragraphs_count": 57,
+      "tables_count": 16,
+      "table_rows_count": 118,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.11",
+      "evidence_name": "آلية مراجعة تصنيف البيانات",
+      "document_type": "Evidence",
+      "mandatory_requirement": "وجود وثيقة تحدد آلية مراجعة تصنيف البيانات والأدوار والمسؤوليات المتعلقة بها.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 5,
+      "passed_criteria": 5,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "إجراءات التحقق من دقة البيانات المجمعة.",
+          "status": "PASS",
+          "matched_terms": [
+            "إجراءات",
+            "التحقق",
+            "دقة",
+            "البيانات",
+            "المجمعة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "إجراءات التحقق من مستويات تصنيف البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "إجراءات",
+            "التحقق",
+            "مستويات",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "إجراءات التحقق من الصلاحية.",
+          "status": "PASS",
+          "matched_terms": [
+            "إجراءات",
+            "التحقق",
+            "الصلاحية"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "إجراءات تحديد الأخطاء والتصحيحات.",
+          "status": "PASS",
+          "matched_terms": [
+            "إجراءات",
+            "تحديد",
+            "الأخطاء",
+            "والتصحيحات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "إجراءات توثيق عملية مراجعة تصنيف البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "إجراءات",
+            "توثيق",
+            "عملية",
+            "مراجعة",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 84,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "آلية مراجعة تصنيف البيانات"
+        },
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 85,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "آلية مراجعة تصنيف البيانات"
+        },
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 214,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "آلية مراجعة تصنيف البيانات"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 174,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.11"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 175,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.11"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'آلية مراجعة تصنيف البيانات (DC.M.11)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.11",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.11.docx",
+        "read_status": "success",
+        "text_length": 20047,
+        "paragraphs_count": 57,
+        "tables_count": 16,
+        "table_rows_count": 118,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.11",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.11",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "محاضر اجتماعات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.11",
+      "file_name": "DC.M.11.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 16,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.3.4": {
+    "evidence_code": "DC.C.3.4",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.3.4.docx",
+      "read_status": "success",
+      "text_length": 14300,
+      "paragraphs_count": 46,
+      "tables_count": 14,
+      "table_rows_count": 117,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.3.4",
+      "evidence_name": "تقرير مراجعة تصنيف البيانات",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير يثبت المراجعات الدورية لتصنيف البيانات.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 2,
+      "passed_criteria": 2,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "مجموعات البيانات والسجلات المصنفة التي تم مراجعتها.",
+          "status": "PASS",
+          "matched_terms": [
+            "مجموعات",
+            "البيانات",
+            "والسجلات",
+            "المصنفة",
+            "تم",
+            "مراجعتها"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "القرارات المتخذة الناتجة عن عملية المراجعة.",
+          "status": "PASS",
+          "matched_terms": [
+            "القرارات",
+            "المتخذة",
+            "الناتجة",
+            "عملية",
+            "المراجعة"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 174,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.4"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 175,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.3.4"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.4"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'تقرير مراجعة تصنيف البيانات (DC.C.3.4)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.3.4",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.3.4.docx",
+        "read_status": "success",
+        "text_length": 14300,
+        "paragraphs_count": 46,
+        "tables_count": 14,
+        "table_rows_count": 117,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.3.4",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.3.4",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "خطابات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.3.4",
+      "file_name": "DC.C.3.4.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 14,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.C.3.5": {
+    "evidence_code": "DC.C.3.5",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.C.3.5.docx",
+      "read_status": "success",
+      "text_length": 15564,
+      "paragraphs_count": 48,
+      "tables_count": 14,
+      "table_rows_count": 125,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.C.3.5",
+      "evidence_name": "وثيقة إثبات مستويات التصنيف المنشورة على أنها بيانات وصفية",
+      "document_type": "Evidence",
+      "mandatory_requirement": "وجود وثيقة تثبت نشر مستويات التصنيف الممنوحة لمجموعات البيانات والسجلات كبيانات وصفية.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "PASS",
+      "coverage_percentage": 100,
+      "total_criteria": 0,
+      "passed_criteria": 0,
+      "failed_criteria": 0,
+      "criteria_results": [],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "high",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 174,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.5"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 175,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.C.3.5"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 176,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.C.3.5"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'وثيقة إثبات مستويات التصنيف المنشورة على أنها بيانات وصفية (DC.C.3.5)' يغطي متطلبات القبول بشكل كافٍ (Coverage ممتازة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.C.3.5",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.C.3.5.docx",
+        "read_status": "success",
+        "text_length": 15564,
+        "paragraphs_count": 48,
+        "tables_count": 14,
+        "table_rows_count": 125,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.C.3.5",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.C.3.5",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "خطابات",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.C.3.5",
+      "file_name": "DC.C.3.5.docx",
+      "text_overall_status": "PASS",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 14,
+      "combined_overall_status": "PASS",
+      "needs_human_review": false
+    },
+    "warnings": []
+  },
+  "DC.M.12": {
+    "evidence_code": "DC.M.12",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.12.docx",
+      "read_status": "success",
+      "text_length": 21738,
+      "paragraphs_count": 63,
+      "tables_count": 21,
+      "table_rows_count": 238,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.12",
+      "evidence_name": "تقرير مراقبة آلية مراجعة تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير محدث ومعتمد من صاحب الصلاحية لمراقبة فعالية عمليات تصنيف البيانات بناءً على مؤشرات الأداء الرئيسية.",
+      "mandatory_requirement_passed": true,
+      "overall_status": "FAIL",
+      "coverage_percentage": 71,
+      "total_criteria": 21,
+      "passed_criteria": 15,
+      "failed_criteria": 6,
+      "criteria_results": [
+        {
+          "criterion": "النسبة المئوية لمجموعات البيانات والسجلات المصنفة (من إجمالي مجموعات البيانات والسجلات لدى الجهة(.",
+          "status": "PASS",
+          "matched_terms": [
+            "النسبة",
+            "المئوية",
+            "لمجموعات",
+            "البيانات",
+            "والسجلات",
+            "المصنفة",
+            "إجمالي",
+            "مجموعات",
+            "البيانات",
+            "والسجلات"
+          ],
+          "missing_terms": [
+            "لدى"
+          ]
+        },
+        {
+          "criterion": "النسبة المئوية لمجموعات البيانات والسجلات المصنفة بمستوى تصنيف معين (من إجمالي مجموعات البيانات والسجلات لدى الجهة(.",
+          "status": "PASS",
+          "matched_terms": [
+            "النسبة",
+            "المئوية",
+            "لمجموعات",
+            "البيانات",
+            "والسجلات",
+            "المصنفة",
+            "بمستوى",
+            "تصنيف",
+            "إجمالي",
+            "مجموعات",
+            "البيانات",
+            "والسجلات"
+          ],
+          "missing_terms": [
+            "معين",
+            "لدى"
+          ]
+        },
+        {
+          "criterion": "النسبة المئوية للبيانات ذات الأثر المنخفض المصنفة على مستوى مقيدة.",
+          "status": "FAIL",
+          "matched_terms": [
+            "النسبة",
+            "المئوية",
+            "للبيانات",
+            "ذات",
+            "المصنفة",
+            "مستوى"
+          ],
+          "missing_terms": [
+            "الأثر",
+            "المنخفض",
+            "مقيدة"
+          ]
+        },
+        {
+          "criterion": "النسبة المئوية لمجموعات البيانات والسجلات المصنفة التي خضعت للمراجعة والتعميد والتصديق.",
+          "status": "PASS",
+          "matched_terms": [
+            "النسبة",
+            "المئوية",
+            "لمجموعات",
+            "البيانات",
+            "والسجلات",
+            "المصنفة",
+            "خضعت",
+            "للمراجعة"
+          ],
+          "missing_terms": [
+            "والتعميد",
+            "والتصديق"
+          ]
+        },
+        {
+          "criterion": "قيمة المؤشر الحالية مقارنة بالقيمة المستهدفة.،",
+          "status": "PASS",
+          "matched_terms": [
+            "قيمة",
+            "المؤشر",
+            "الحالية",
+            "مقارنة",
+            "بالقيمة",
+            "المستهدفة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "حالة المؤشر (محقق/متأخر/غير محقق/إلخ(..",
+          "status": "PASS",
+          "matched_terms": [
+            "حالة",
+            "المؤشر",
+            "محقق/متأخر/غير",
+            "محقق/إلخ"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "توصيات لتحسين الأداء بناءً على القيم الفعلية للمؤشرات.",
+          "status": "PASS",
+          "matched_terms": [
+            "توصيات",
+            "لتحسين",
+            "الأداء",
+            "بناءً",
+            "القيم",
+            "الفعلية",
+            "للمؤشرات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "اسم / رمز المؤشر،",
+          "status": "PASS",
+          "matched_terms": [
+            "اسم",
+            "رمز",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "مالك المؤشر،",
+          "status": "PASS",
+          "matched_terms": [
+            "مالك",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "منسق المؤشر،",
+          "status": "FAIL",
+          "matched_terms": [
+            "المؤشر"
+          ],
+          "missing_terms": [
+            "منسق"
+          ]
+        },
+        {
+          "criterion": "وصف المؤشر،",
+          "status": "PASS",
+          "matched_terms": [
+            "وصف",
+            "المؤشر"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "الهدف الاستراتيجي/ التشغيلي المراد قياسه (مع تحديد المواصفة أو العملية التي يتبع لها المؤشر(",
+          "status": "PASS",
+          "matched_terms": [
+            "الهدف",
+            "الاستراتيجي/",
+            "التشغيلي",
+            "قياسه",
+            "تحديد",
+            "العملية",
+            "المؤشر"
+          ],
+          "missing_terms": [
+            "المراد",
+            "المواصفة",
+            "يتبع"
+          ]
+        },
+        {
+          "criterion": "معادلة المؤشر،",
+          "status": "FAIL",
+          "matched_terms": [
+            "المؤشر"
+          ],
+          "missing_terms": [
+            "معادلة"
+          ]
+        },
+        {
+          "criterion": "وحدة القياس )نسبة، عدد، إلخ.(.،",
+          "status": "PASS",
+          "matched_terms": [
+            "وحدة",
+            "القياس",
+            "نسبة",
+            "عدد"
+          ],
+          "missing_terms": [
+            "إلخ"
+          ]
+        },
+        {
+          "criterion": "خط الأساس،",
+          "status": "PASS",
+          "matched_terms": [
+            "خط",
+            "الأساس"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "القيمة المستهدفة،",
+          "status": "PASS",
+          "matched_terms": [
+            "القيمة",
+            "المستهدفة"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "دورية القياس دورية القياس )شهري/ربع سنوي/نصف سنوي/ سنوي(.،",
+          "status": "PASS",
+          "matched_terms": [
+            "دورية",
+            "القياس",
+            "دورية",
+            "القياس",
+            "شهري/ربع",
+            "سنوي/نصف",
+            "سنوي/",
+            "سنوي"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "مصادر البيانات لحساب المؤشر.،",
+          "status": "FAIL",
+          "matched_terms": [
+            "البيانات",
+            "لحساب",
+            "المؤشر"
+          ],
+          "missing_terms": [
+            "مصادر"
+          ]
+        },
+        {
+          "criterion": "آلية جمع البيانات )آليا /يدويا (.،",
+          "status": "FAIL",
+          "matched_terms": [
+            "آلية",
+            "جمع",
+            "البيانات"
+          ],
+          "missing_terms": [
+            "آليا",
+            "/يدويا"
+          ]
+        },
+        {
+          "criterion": "قطبية المؤشر )(+/-)موجبة: الزيادة هي الهدف، سالبة: النقص هو الهدف(.،",
+          "status": "FAIL",
+          "matched_terms": [
+            "المؤشر",
+            "الهدف",
+            "الهدف"
+          ],
+          "missing_terms": [
+            "قطبية",
+            "+/-",
+            "موجبة",
+            "الزيادة",
+            "سالبة",
+            "النقص"
+          ]
+        },
+        {
+          "criterion": "الوثائق الداعمة للبيانات المستخدمة لحساب قيم المؤشرات.",
+          "status": "PASS",
+          "matched_terms": [
+            "الوثائق",
+            "الداعمة",
+            "للبيانات",
+            "لحساب",
+            "قيم",
+            "المؤشرات"
+          ],
+          "missing_terms": [
+            "المستخدمة"
+          ]
+        }
+      ],
+      "critical_missing": [
+        "النسبة المئوية للبيانات ذات الأثر المنخفض المصنفة على مستوى مقيدة."
+      ],
+      "medium_missing": [
+        "منسق المؤشر،",
+        "معادلة المؤشر،",
+        "مصادر البيانات لحساب المؤشر.،",
+        "آلية جمع البيانات )آليا /يدويا (.،",
+        "قطبية المؤشر )(+/-)موجبة: الزيادة هي الهدف، سالبة: النقص هو الهدف(.،"
+      ],
+      "needs_human_review": true,
+      "confidence": "low",
+      "references": [
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 174,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.12"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 175,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.12"
+        }
+      ],
+      "recommendation_note": "النص المقدم لـ 'تقرير مراقبة آلية مراجعة تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً (DC.M.12)' لا يغطي متطلبات القبول الأساسية بشكل كافٍ. يوصى بإعادة صياغة الدليل ليشمل البنود الناقصة (1 حرجة و5 متوسطة)."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.12",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.12.docx",
+        "read_status": "success",
+        "text_length": 21738,
+        "paragraphs_count": 63,
+        "tables_count": 21,
+        "table_rows_count": 238,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.12",
+        "evidence_found": true,
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "matched_acceptance_criteria": [
+          "الوثائق الداعمة للبيانات المستخدمة لحساب قيم المؤشرات."
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "النوع المطلوب عام (أدلة/وثائق داعمة أو إثباتات) دون تحديد واضح - يلزم مراجعة بشرية."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.12",
+        "supporting_evidence_required": true,
+        "required_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "detected_supporting_types": [
+          "جداول",
+          "تقارير",
+          "مستندات"
+        ],
+        "supporting_evidence_status": "PARTIAL",
+        "missing_supporting_types": [
+          "وثائق داعمة"
+        ],
+        "needs_human_review": true,
+        "notes": [
+          "تم العثور على 1 معيار قبول يشير إلى الحاجة لأدلة داعمة.",
+          "النوع المطلوب عام (أدلة/وثائق داعمة أو إثباتات) دون تحديد واضح - يلزم مراجعة بشرية.",
+          "تم رصد أدلة داعمة، لكن أحد الأنواع المطلوبة عام (أدلة/وثائق داعمة أو إثباتات) - يلزم مراجعة بشرية للتأكد من التطابق."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": true,
+        "supporting_evidence_status": "PARTIAL",
+        "required_supporting_types_count": 1,
+        "detected_supporting_types_count": 3,
+        "missing_supporting_types_count": 1,
+        "needs_human_review": true
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.12",
+      "file_name": "DC.M.12.docx",
+      "text_overall_status": "FAIL",
+      "text_coverage_percentage": 71,
+      "mandatory_requirement_passed": true,
+      "critical_missing_count": 1,
+      "medium_missing_count": 5,
+      "supporting_evidence_required": true,
+      "supporting_evidence_status": "PARTIAL",
+      "required_supporting_types_count": 1,
+      "detected_supporting_types_count": 3,
+      "missing_supporting_types_count": 1,
+      "images_count": 0,
+      "tables_count": 21,
+      "combined_overall_status": "FAIL",
+      "needs_human_review": true
+    },
+    "warnings": []
+  },
+  "DC.M.13": {
+    "evidence_code": "DC.M.13",
+    "assessment_status": "success",
+    "document_result": {
+      "file_name": "DC.M.13.docx",
+      "read_status": "success",
+      "text_length": 21859,
+      "paragraphs_count": 69,
+      "tables_count": 22,
+      "table_rows_count": 150,
+      "images_count": 0,
+      "image_files": [],
+      "warnings": []
+    },
+    "text_compliance_result": {
+      "evidence_code": "DC.M.13",
+      "evidence_name": "تقرير مراجعة آليات مراجعة تصنيف البيانات",
+      "document_type": "Report",
+      "mandatory_requirement": "وجود تقرير التحسين المستمر لمراجعة تصنيف البيانات.",
+      "mandatory_requirement_passed": false,
+      "overall_status": "FAIL",
+      "coverage_percentage": 100,
+      "total_criteria": 3,
+      "passed_criteria": 3,
+      "failed_criteria": 0,
+      "criteria_results": [
+        {
+          "criterion": "ما يثبت أتمتة عمليات مراجعة تصنيف البيانات وعكس التصنيف الجديد على أداة دليل البيانات بشكل مؤتمت.",
+          "status": "PASS",
+          "matched_terms": [
+            "يثبت",
+            "أتمتة",
+            "عمليات",
+            "مراجعة",
+            "تصنيف",
+            "البيانات",
+            "وعكس",
+            "التصنيف",
+            "الجديد",
+            "أداة",
+            "دليل",
+            "البيانات",
+            "بشكل",
+            "مؤتمت"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "وثائق المراجعات والنتائج: وثائق المراجعات والنتائج الدورية لمراجعة تصنيف البيانات.",
+          "status": "PASS",
+          "matched_terms": [
+            "وثائق",
+            "المراجعات",
+            "والنتائج",
+            "وثائق",
+            "المراجعات",
+            "والنتائج",
+            "الدورية",
+            "لمراجعة",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": []
+        },
+        {
+          "criterion": "آليات التحسين المستمر: آليات التحسين المستمر لمراجعة تصنيف البيانات..",
+          "status": "PASS",
+          "matched_terms": [
+            "آليات",
+            "التحسين",
+            "المستمر",
+            "آليات",
+            "التحسين",
+            "المستمر",
+            "لمراجعة",
+            "تصنيف",
+            "البيانات"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "critical_missing": [],
+      "medium_missing": [],
+      "needs_human_review": false,
+      "confidence": "medium",
+      "references": [
+        {
+          "document_name": "المؤشر الوطني للبيانات",
+          "source_type": "Official Reference",
+          "page_number": 85,
+          "matched_by": "Evidence Name",
+          "confidence": "0.9",
+          "page_role": "Official Maturity Reference",
+          "matched_text": "تقرير مراجعة آليات مراجعة تصنيف البيانات"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 174,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Summary Page",
+          "matched_text": "DC.M.13"
+        },
+        {
+          "document_name": "المحتوى التدريبي لمؤشر نضيء",
+          "source_type": "Training Reference",
+          "page_number": 175,
+          "matched_by": "Evidence Code",
+          "confidence": "1.0",
+          "page_role": "Detailed Requirement Page",
+          "matched_text": "DC.M.13"
+        }
+      ],
+      "recommendation_note": "الدليل 'تقرير مراجعة آليات مراجعة تصنيف البيانات (DC.M.13)' لم يحقق المتطلب الإلزامي (Mandatory Gate) بالكامل، لذلك يُعتبر الدليل غير ناجح (FAIL) بغض النظر عن نسبة التغطية الإجمالية."
+    },
+    "supporting_evidence_result": {
+      "evidence_code": "DC.M.13",
+      "service_status": "success",
+      "file_result": {
+        "file_name": "DC.M.13.docx",
+        "read_status": "success",
+        "text_length": 21859,
+        "paragraphs_count": 69,
+        "tables_count": 22,
+        "table_rows_count": 150,
+        "images_count": 0,
+        "image_files": [],
+        "warnings": []
+      },
+      "requirement_result": {
+        "evidence_code": "DC.M.13",
+        "evidence_found": true,
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "matched_acceptance_criteria": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول."
+        ]
+      },
+      "supporting_evidence_result": {
+        "evidence_code": "DC.M.13",
+        "supporting_evidence_required": false,
+        "required_supporting_types": [],
+        "detected_supporting_types": [
+          "جداول",
+          "تقارير",
+          "مستندات",
+          "Workflow"
+        ],
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "missing_supporting_types": [],
+        "needs_human_review": false,
+        "notes": [
+          "لا توجد كلمات مفتاحية تدل على الحاجة لأدلة داعمة ضمن متطلبات القبول.",
+          "لا حاجة للتحقق من الأدلة الداعمة لهذا الكود."
+        ]
+      },
+      "summary": {
+        "supporting_evidence_required": false,
+        "supporting_evidence_status": "NOT_REQUIRED",
+        "required_supporting_types_count": 0,
+        "detected_supporting_types_count": 4,
+        "missing_supporting_types_count": 0,
+        "needs_human_review": false
+      },
+      "warnings": []
+    },
+    "combined_summary": {
+      "evidence_code": "DC.M.13",
+      "file_name": "DC.M.13.docx",
+      "text_overall_status": "FAIL",
+      "text_coverage_percentage": 100,
+      "mandatory_requirement_passed": false,
+      "critical_missing_count": 0,
+      "medium_missing_count": 0,
+      "supporting_evidence_required": false,
+      "supporting_evidence_status": "NOT_REQUIRED",
+      "required_supporting_types_count": 0,
+      "detected_supporting_types_count": 4,
+      "missing_supporting_types_count": 0,
+      "images_count": 0,
+      "tables_count": 22,
+      "combined_overall_status": "FAIL",
+      "needs_human_review": false
+    },
+    "warnings": []
+  }
+}

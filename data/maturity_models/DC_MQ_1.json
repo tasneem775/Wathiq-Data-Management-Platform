@@ -1,0 +1,79 @@
+{
+  "mq_id": "DC.MQ.1",
+  "domain_code": "DC",
+  "domain_name_ar": "تصنيف البيانات",
+  "question": "هل قامت الجهة ببناء خطة لتصنيف البيانات على النحو المنصوص عليه في معايير إدارة البيانات وحماية البيانات الشخصية؟",
+  "levels": [
+    {
+      "level_number": 0,
+      "level_name": "غياب القدرات",
+      "description": "لا توجد لدى الجهة خطة قائمة لتصنيف البيانات.",
+      "evidence": []
+    },
+    {
+      "level_number": 1,
+      "level_name": "البناء",
+      "evidence": [
+        {
+          "evidence_code": "DC.M.1",
+          "evidence_name": "الممارسات الحالية المتعلقة بمجال تصنيف البيانات",
+          "maturity_requirement": "تدير الجهة أنشطة تصنيف البيانات عند الحاجة كردة فعل (Reactive) أو بشكل غير مخطط له (Ad hoc) دون وجود ممارسات رسمية.",
+          "related_specifications": [],
+          "inherits_previous_level_requirements": false
+        }
+      ]
+    },
+    {
+      "level_number": 2,
+      "level_name": "التعريف",
+      "evidence": [
+        {
+          "evidence_code": "DC.C.1.1",
+          "evidence_name": "الخطة المعرفة والمعتمدة لتصنيف البيانات",
+          "maturity_requirement": "قامت الجهة بتعريف خطة لتصنيف البيانات لإدارة وتنظيم أنشطة تصنيف البيانات.",
+          "related_specifications": [],
+          "inherits_previous_level_requirements": false
+        }
+      ]
+    },
+    {
+      "level_number": 3,
+      "level_name": "التفعيل",
+      "evidence": [
+        {
+          "evidence_code": "DC.M.2",
+          "evidence_name": "تقرير حالة تنفيذ خطة تصنيف البيانات",
+          "maturity_requirement": "تعمل الجهة على تنفيذ الخطة المعرفة وخارطة طريق تصنيف البيانات على جميع المجموعات المعتمدة من البيانات والسجلات (Artifacts).",
+          "related_specifications": [],
+          "inherits_previous_level_requirements": true
+        }
+      ]
+    },
+    {
+      "level_number": 4,
+      "level_name": "التمكن",
+      "evidence": [
+        {
+          "evidence_code": "DC.M.3",
+          "evidence_name": "تقرير مراقبة تنفيذ خطة وأنشطة تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقا",
+          "maturity_requirement": "تقوم الجهة بمراقبة مدى فعالية خطة وأنشطة تصنيف البيانات عبر مؤشرات الأداء الرئيسية المحددة مسبقاً.",
+          "related_specifications": [],
+          "inherits_previous_level_requirements": true
+        }
+      ]
+    },
+    {
+      "level_number": 5,
+      "level_name": "الريادة",
+      "evidence": [
+        {
+          "evidence_code": "DC.M.4",
+          "evidence_name": "تقرير مراجعة خطة لتصنيف البيانات",
+          "maturity_requirement": "تقوم الجهة بمراجعة وتحديث خطة وأنشطة تصنيف البيانات بشكل مستمر من أجل التحسين والتطوير.",
+          "related_specifications": [],
+          "inherits_previous_level_requirements": true
+        }
+      ]
+    }
+  ]
+}

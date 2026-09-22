@@ -1,0 +1,391 @@
+# -*- coding: utf-8 -*-
+"""Builds a standalone compliance-audit Calculation Record for DC.C.4.1 (KPI-DC-02).
+
+Purpose: document the data source and calculation method behind the classification-level
+distribution of KPI-DC-02 (توزيع الأصول على مستويات التصنيف) as reported in DC.C.4.1.docx.
+
+All 30 per-asset rows (name + granted classification + reviewed/current classification) are
+copied verbatim from the real DC.C.5.1.docx (Table 6), which is itself the merged register
+combining DC.C.3.2's original classification results with DC.C.3.3's reclassification review.
+No asset name, level, or count is invented.
+
+Audit template (7 sections, per compliance-auditor brief):
+1. بيانات الوثيقة  2. نطاق القياس  3. مصدر البيانات  4. جدول البيانات المستخدمة
+5. تطبيق المعادلة  6. النتيجة والتحقق مقابل DC.C.4.1  7. الاعتماد والتوقيع
+"""
+import docx
+from docx.shared import Pt, Cm, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.table import WD_ALIGN_VERTICAL
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
+
+OUT_PATH = "06_DC_C4_1_KPI_Evidence/DC.C.4.1-E02_KPI-DC-02_Classification_Distribution_KPI_Calculation_Record.docx"
+
+NAVY = RGBColor(0x1F, 0x2A, 0x44)
+GOLD = RGBColor(0xAB, 0x8D, 0x54)
+GREY = RGBColor(0x59, 0x59, 0x59)
+GREEN = RGBColor(0x1F, 0x6F, 0x43)
+AMBER = RGBColor(0x8A, 0x6D, 0x00)
+AR_FONT = "Arial"
+
+
+def rtl(p):
+    b = OxmlElement("w:bidi")
+    b.set(qn("w:val"), "1")
+    p._p.get_or_add_pPr().append(b)
+
+
+def set_rtl_run(run):
+    pr = run._element.get_or_add_rPr()
+    pr.get_or_add_rFonts().set(qn("w:cs"), AR_FONT)
+    e = OxmlElement("w:rtl")
+    e.set(qn("w:val"), "1")
+    pr.append(e)
+
+
+def set_table_rtl(table):
+    tbl_pr = table._tbl.tblPr
+    bv = OxmlElement("w:bidiVisual")
+    bv.set(qn("w:val"), "1")
+    tbl_pr.append(bv)
+
+
+def set_cell_background(cell, color_hex):
+    shd = OxmlElement("w:shd")
+    shd.set(qn("w:fill"), color_hex)
+    cell._tc.get_or_add_tcPr().append(shd)
+
+
+def add_meta_row(table, label, value):
+    row = table.add_row()
+    p1 = row.cells[1].paragraphs[0]
+    rtl(p1)
+    p1.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    r1 = p1.add_run(label)
+    r1.font.bold = True
+    r1.font.size = Pt(9)
+    r1.font.color.rgb = GREY
+    set_rtl_run(r1)
+
+    p2 = row.cells[0].paragraphs[0]
+    rtl(p2)
+    p2.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    r2 = p2.add_run(value)
+    r2.font.size = Pt(9)
+    r2.font.color.rgb = RGBColor(0x26, 0x26, 0x26)
+    set_rtl_run(r2)
+
+
+def add_paragraph_ar(doc, text, size=9.5, bold=False, italic=False, color=RGBColor(0x26, 0x26, 0x26)):
+    p = doc.add_paragraph()
+    rtl(p)
+    p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    r = p.add_run(text)
+    r.font.size = Pt(size)
+    r.font.bold = bold
+    r.font.italic = italic
+    r.font.color.rgb = color
+    set_rtl_run(r)
+    return p
+
+
+def add_heading_ar(doc, text, size=13):
+    p = doc.add_paragraph()
+    rtl(p)
+    p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    r = p.add_run(text)
+    r.font.size = Pt(size)
+    r.font.bold = True
+    r.font.color.rgb = NAVY
+    set_rtl_run(r)
+    return p
+
+
+def add_bullet_ar(doc, text, size=9.5):
+    p = doc.add_paragraph()
+    rtl(p)
+    p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    r = p.add_run("•  " + text)
+    r.font.size = Pt(size)
+    r.font.color.rgb = RGBColor(0x26, 0x26, 0x26)
+    set_rtl_run(r)
+    return p
+
+
+CLASS_COLOR = {"سرّي للغاية": NAVY, "سرّي": AMBER, "مقيّد": AMBER, "عام": GREEN}
+
+
+def make_table(doc, headers, rows, col_widths, status_cols=None, font_size=7.6):
+    table = doc.add_table(rows=1, cols=len(headers))
+    table.style = "Table Grid"
+    set_table_rtl(table)
+    for i, w in enumerate(col_widths):
+        table.columns[i].width = w
+
+    hdr_cells = table.rows[0].cells
+    for i, h in enumerate(headers):
+        hdr_cells[i].text = ""
+        set_cell_background(hdr_cells[i], "1F2A44")
+        hdr_cells[i].vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        p = hdr_cells[i].paragraphs[0]
+        rtl(p)
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        r = p.add_run(h)
+        r.font.bold = True
+        r.font.size = Pt(8.6)
+        r.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
+        set_rtl_run(r)
+
+    for idx, row_vals in enumerate(rows):
+        row = table.add_row()
+        for c, v in enumerate(row_vals):
+            cell = row.cells[c]
+            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            if idx % 2 == 0:
+                set_cell_background(cell, "F2F2F2")
+            p = cell.paragraphs[0]
+            rtl(p)
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER if c in (status_cols or []) else WD_ALIGN_PARAGRAPH.RIGHT
+            run = p.add_run(str(v))
+            run.font.size = Pt(font_size)
+            set_rtl_run(run)
+            if c == 0:
+                run.font.bold = True
+                run.font.color.rgb = NAVY
+            elif status_cols and c in status_cols:
+                run.font.bold = True
+                run.font.color.rgb = CLASS_COLOR.get(str(v), RGBColor(0x26, 0x26, 0x26))
+            else:
+                run.font.color.rgb = RGBColor(0x26, 0x26, 0x26)
+    for row in table.rows:
+        trPr = row._tr.get_or_add_trPr()
+        trPr.append(OxmlElement("w:cantSplit"))
+    return table
+
+
+# ============ بيانات مصدرها الحرفي DC.C.5.1.docx (Table 6) ============
+ASSETS = [
+    (1, "بيانات الهوية والتحقق الإلكتروني", "سرّي للغاية", "سرّي للغاية"),
+    (2, "بيانات الأحداث والتنبيهات الأمنية", "سرّي للغاية", "سرّي للغاية"),
+    (3, "بيانات الصلاحيات وإدارة الهوية", "سرّي للغاية", "سرّي للغاية"),
+    (4, "بيانات التكامل مع الجهات الحكومية", "سرّي للغاية", "سرّي للغاية"),
+    (5, "بيانات الرواتب والمزايا الوظيفية", "سرّي", "سرّي"),
+    (6, "بيانات المدفوعات والمعاملات المالية", "سرّي", "سرّي"),
+    (7, "بيانات الموظفين والملفات الوظيفية", "سرّي", "سرّي"),
+    (8, "بيانات المستخدمين والمستفيدين", "سرّي", "سرّي"),
+    (9, "بيانات طلبات ومعاملات المستفيدين", "مقيّد", "مقيّد"),
+    (10, "بيانات الخدمات الحكومية الرقمية", "مقيّد", "عام"),
+    (11, "بيانات الموردين والمتعاقدين", "مقيّد", "مقيّد"),
+    (12, "بيانات الأصول والبنية التحتية التقنية", "سرّي", "سرّي"),
+    (13, "بيانات الأهداف والخطط الاستراتيجية", "سرّي", "سرّي"),
+    (14, "بيانات التدريب والتطوير الوظيفي", "مقيّد", "مقيّد"),
+    (15, "بيانات استطلاعات رضا المستفيدين", "عام", "عام"),
+    (16, "بيانات الحوادث التقنية وطلبات الدعم", "مقيّد", "مقيّد"),
+    (17, "بيانات المحتوى الرقمي والموقع الإلكتروني", "عام", "عام"),
+    (18, "بيانات التقارير والإحصاءات المنشورة", "عام", "عام"),
+    (19, "سجلات العقود والاتفاقيات", "سرّي", "سرّي"),
+    (20, "سجلات التدقيق الداخلي والرقابة", "سرّي", "سرّي"),
+    (21, "سجلات المراسلات والخطابات الرسمية", "مقيّد", "مقيّد"),
+    (22, "سجلات الاجتماعات واللجان الحوكمية", "مقيّد", "مقيّد"),
+    (23, "سجلات التقارير الإدارية الدورية", "مقيّد", "عام"),
+    (24, "سجلات فعاليات الهيئة وأحداثها", "عام", "عام"),
+    (25, "سجلات الشكاوى والمقترحات", "مقيّد", "مقيّد"),
+    (26, "سجلات قرارات وتوجيهات الإدارة العليا", "سرّي", "سرّي"),
+    (27, "سجلات التراخيص والتصاريح القانونية", "مقيّد", "عام"),
+    (28, "سجلات النسخ الاحتياطي واسترجاع البيانات", "سرّي", "سرّي"),
+    (29, "وثائق السياسات والإجراءات الداخلية", "مقيّد", "مقيّد"),
+    (30, "سجلات التغييرات والتحديثات التقنية", "مقيّد", "مقيّد"),
+]
+TOTAL_ASSETS = len(ASSETS)
+
+from collections import Counter
+dist = Counter(level_after for _, _, _, level_after in ASSETS)
+DIST_ORDER = ["سرّي للغاية", "سرّي", "مقيّد", "عام"]
+
+
+def pct(n):
+    return round(n / TOTAL_ASSETS * 1000) / 10
+
+
+doc = docx.Document()
+section = doc.sections[0]
+section.left_margin = Cm(1.6)
+section.right_margin = Cm(1.6)
+section.top_margin = Cm(1.5)
+section.bottom_margin = Cm(1.5)
+
+style = doc.styles["Normal"]
+style.font.name = AR_FONT
+style.font.size = Pt(10)
+style.element.rPr.rFonts.set(qn("w:cs"), AR_FONT)
+
+# ============ صفحة الغلاف / 1. بيانات الوثيقة ============
+banner = doc.add_table(rows=1, cols=1)
+banner.autofit = True
+set_table_rtl(banner)
+cell = banner.rows[0].cells[0]
+set_cell_background(cell, "1F2A44")
+cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+p = cell.paragraphs[0]
+rtl(p)
+p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+run = p.add_run("سجل احتساب توزيع الأصول حسب مستوى التصنيف (KPI-DC-02)")
+run.font.size = Pt(18)
+run.font.bold = True
+run.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
+set_rtl_run(run)
+p.paragraph_format.space_before = Pt(6)
+p.paragraph_format.space_after = Pt(6)
+
+doc.add_paragraph()
+add_paragraph_ar(doc, "منصة ذكية لإدارة وقياس الامتثال لمتطلبات المكتب الوطني لإدارة البيانات (NDMO)",
+                  size=10.5, bold=True, color=GOLD)
+add_heading_ar(doc, "سجل احتساب توزيع الأصول حسب مستوى التصنيف (KPI-DC-02)", size=14)
+add_paragraph_ar(doc, "Classification Distribution KPI Calculation Record", size=11, italic=True, color=GOLD)
+
+doc.add_paragraph()
+add_heading_ar(doc, "1.  بيانات الوثيقة", size=11.5)
+meta_table = doc.add_table(rows=0, cols=2)
+meta_table.autofit = True
+set_table_rtl(meta_table)
+meta_table.columns[0].width = Cm(11.5)
+meta_table.columns[1].width = Cm(5)
+add_meta_row(meta_table, "الجهة", "هيئة الخدمات الحكومية الذكية (SGSA)")
+add_meta_row(meta_table, "المنصة", "")
+add_meta_row(meta_table, "الإطار المرجعي", "إطار حوكمة البيانات الوطني (NDMO)")
+add_meta_row(meta_table, "رمز الدليل", "DC.C.4.1-E02")
+add_meta_row(meta_table, "نوع الوثيقة", "Calculation Record")
+add_meta_row(meta_table, "المتطلب المرتبط", "DC.C.4.1 — تقرير مراقبة عمليات تصنيف البيانات عبر مؤشرات الأداء الرئيسية")
+add_meta_row(meta_table, "المؤشر المرتبط", "KPI-DC-02 — نسبة الأصول المصنفة بكل مستوى تصنيف")
+add_meta_row(meta_table, "الإصدار", "1.0")
+add_meta_row(meta_table, "التاريخ", "يونيو 2026")
+add_meta_row(meta_table, "حالة الوثيقة", "جاهزة للاعتماد")
+
+doc.add_page_break()
+
+# ============ 2. نطاق القياس ============
+add_heading_ar(doc, "2.  نطاق القياس")
+meta2 = doc.add_table(rows=0, cols=2)
+meta2.autofit = True
+set_table_rtl(meta2)
+meta2.columns[0].width = Cm(11.5)
+meta2.columns[1].width = Cm(5)
+add_meta_row(meta2, "فترة القياس", "الربع الثاني 2026 (أبريل – يونيو 2026) — كما ورد في تقرير DC.C.4.1")
+add_meta_row(
+    meta2, "نطاق القياس",
+    "جميع الأصول البيانية الثلاثين (30) بمستوى تصنيفها النهائي (المعتمد أثناء المراجعة) "
+    "كما ورد في سجل DC.C.5.1، وهو السجل الذي يدمج نتائج DC.C.3.2 مع قرارات إعادة التصنيف "
+    "الواردة في DC.C.3.3."
+)
+add_meta_row(meta2, "تاريخ استخراج البيانات", "يونيو 2026 (تاريخ إصدار DC.C.3.2 وDC.C.5.1)")
+
+doc.add_paragraph()
+
+# ============ 3. مصدر البيانات ============
+add_heading_ar(doc, "3.  مصدر البيانات")
+add_bullet_ar(doc, "DC.C.3.2 — تقرير تقييم الأثر (مستوى التصنيف الناتج/الممنوح أصلاً لكل أصل، قبل مراجعة إعادة التصنيف).")
+add_bullet_ar(doc, "DC.C.5.1 — سجل البيانات (السجل الموحّد الذي يثبت لكل أصل مستوى التصنيف الممنوح ومستوى التصنيف المعتمد أثناء المراجعة).")
+add_bullet_ar(doc, "لم تُستخدم بيانات DC.M.7 كمصدر لقيمة هذا المؤشر (انظر ملاحظة التدقيق في القسم 4)، رغم إشارة DC.C.4.1 إليه كمرجع عام.")
+
+doc.add_paragraph()
+
+# ============ 4. جدول البيانات المستخدمة ============
+add_heading_ar(doc, "4.  جدول البيانات المستخدمة")
+add_paragraph_ar(doc, "يعرض الجدول التالي جميع الأصول البيانية الثلاثين مع مستوى التصنيف الممنوح أصلاً (DC.C.3.2) ومستوى التصنيف المعتمد أثناء المراجعة (DC.C.5.1)، مرتبة حسب الرقم التسلسلي (م):")
+rows = [(n, name, granted, final) for n, name, granted, final in ASSETS]
+make_table(
+    doc,
+    ["م", "اسم الأصل", "مستوى التصنيف الممنوح (DC.C.3.2)", "مستوى التصنيف المعتمد (DC.C.5.1)"],
+    rows,
+    [Cm(0.8), Cm(6.2), Cm(4.5), Cm(4.5)],
+    status_cols=[2, 3],
+    font_size=7.6,
+)
+
+doc.add_paragraph()
+add_paragraph_ar(
+    doc,
+    "ملاحظة تدقيق: الأصول رقم 10 و23 و27 هي الأصول الثلاثة التي أُعيد تصنيفها من «مقيّد» "
+    "إلى «عام» بموجب مراجعة DC.C.3.3. يعرض فهرس البيانات المؤسسي (DC.M.7) تصنيف هذه "
+    "الأصول الثلاثة كما كانت قبل تلك المراجعة، لأن تحديث الفهرس لم يواكب تاريخ اعتماد "
+    "إعادة التصنيف؛ لذلك اعتُمد عمود «مستوى التصنيف المعتمد أثناء المراجعة» في DC.C.5.1 "
+    "حصراً كمصدر للقيمة النهائية، تفادياً للتعارض، وتماشياً مع التوضيح الوارد صراحة في "
+    "تقرير DC.C.4.1 (بند 9.2).",
+    size=8, italic=True, color=GREY,
+)
+
+doc.add_page_break()
+
+# ============ 5. تطبيق المعادلة ============
+add_heading_ar(doc, "5.  تطبيق المعادلة")
+add_paragraph_ar(doc, "معادلة كل مستوى: (عدد الأصول بمستوى X ÷ إجمالي الأصول المصنَّفة) × 100")
+calc_rows = []
+for level in DIST_ORDER:
+    n = dist.get(level, 0)
+    calc_rows.append((level, str(n), f"{n} ÷ {TOTAL_ASSETS} × 100", f"{pct(n)}%"))
+calc_rows.append(("الإجمالي", str(TOTAL_ASSETS), f"{TOTAL_ASSETS} ÷ {TOTAL_ASSETS} × 100", "100%"))
+make_table(
+    doc,
+    ["مستوى التصنيف", "عدد الأصول", "تطبيق المعادلة", "النسبة النهائية"],
+    calc_rows,
+    [Cm(3.5), Cm(3.0), Cm(4.5), Cm(3.0)],
+    status_cols=[0, 3],
+    font_size=9,
+)
+
+doc.add_paragraph()
+
+# ============ 6. النتيجة والتحقق مقابل DC.C.4.1 ============
+add_heading_ar(doc, "6.  النتيجة والتحقق مقابل DC.C.4.1")
+add_paragraph_ar(
+    doc,
+    "النسب الناتجة (سرّي للغاية 13.3%، سرّي 33.3%، مقيّد 30.0%، عام 23.3%) مطابقة تماماً "
+    "للقيم الواردة في بطاقة مؤشر KPI-DC-02 ضمن تقرير DC.C.4.1 (القسم 8 وبند 9.2)، وللقيم "
+    "الواردة في جدول توزيع مستويات التصنيف (القسم 9.2) وجدول لوحة الأداء الإجمالية (القسم 10)."
+)
+add_bullet_ar(doc, "تم التحقق من أن مجموع الأصول عبر المستويات الأربعة (4+10+9+7) يساوي 30، أي إجمالي عدد الأصول دون نقص أو زيادة.")
+add_bullet_ar(doc, "أي توزيع أولي (قبل مراجعة DC.C.3.3) لم يُستخدم كقيمة نهائية في هذا السجل؛ القيمة المعتمدة هي فقط التوزيع بعد المراجعة كما يطابق DC.C.4.1.")
+
+doc.add_paragraph()
+
+# ============ 7. الاعتماد والتوقيع ============
+add_heading_ar(doc, "7.  الاعتماد والتوقيع")
+add_paragraph_ar(
+    doc,
+    "تمت مراجعة هذا السجل من مكتب إدارة البيانات، وتم التحقق من مطابقة البيانات الواردة "
+    "فيه لمحتوى DC.C.3.2 وDC.C.5.1 دون أي إضافة أو حذف أو تعديل."
+)
+doc.add_paragraph()
+
+approval_table = doc.add_table(rows=2, cols=4)
+approval_table.style = "Table Grid"
+set_table_rtl(approval_table)
+headers = ["صاحب الصلاحية", "المسمى الوظيفي", "التوقيع", "التاريخ"]
+hdr_cells = approval_table.rows[0].cells
+for i, h in enumerate(headers):
+    set_cell_background(hdr_cells[i], "1F2A44")
+    hdr_cells[i].vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+    p = hdr_cells[i].paragraphs[0]
+    rtl(p)
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r = p.add_run(h)
+    r.font.bold = True
+    r.font.size = Pt(9.5)
+    r.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
+    set_rtl_run(r)
+
+vals = ["________________", "مدير مكتب إدارة البيانات", "________________", "________________"]
+row_cells = approval_table.rows[1].cells
+for i, v in enumerate(vals):
+    p = row_cells[i].paragraphs[0]
+    rtl(p)
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r = p.add_run(v)
+    r.font.size = Pt(9)
+    set_rtl_run(r)
+
+doc.save(OUT_PATH)
+print("Saved:", OUT_PATH)
+print("Distribution:", dict(dist))
+print("Percentages:", {lvl: pct(dist.get(lvl, 0)) for lvl in DIST_ORDER})

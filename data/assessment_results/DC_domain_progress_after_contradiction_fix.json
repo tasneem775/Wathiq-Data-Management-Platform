@@ -1,0 +1,291 @@
+{
+  "domain_code": "DC",
+  "domain_name": "تصنيف البيانات",
+  "total_evidence": 23,
+  "assessed_evidence": 23,
+  "not_assessed_evidence": 0,
+  "pass_count": 13,
+  "partial_pass_count": 2,
+  "fail_count": 8,
+  "unknown_count": 0,
+  "assessment_completion_percentage": 100,
+  "domain_compliance_percentage": 92,
+  "needs_human_review_count": 6,
+  "mq_progress": [
+    {
+      "mq_id": "DC.MQ.1",
+      "total_evidence": 5,
+      "assessed_evidence": 5,
+      "not_assessed_evidence": 0,
+      "pass_count": 2,
+      "partial_pass_count": 1,
+      "fail_count": 2,
+      "unknown_count": 0,
+      "assessment_completion_percentage": 100,
+      "compliance_percentage": 92,
+      "mq_status": "COMPLIANT",
+      "mq_status_ar": "مستوفٍ"
+    },
+    {
+      "mq_id": "DC.MQ.2",
+      "total_evidence": 12,
+      "assessed_evidence": 12,
+      "not_assessed_evidence": 0,
+      "pass_count": 7,
+      "partial_pass_count": 1,
+      "fail_count": 4,
+      "unknown_count": 0,
+      "assessment_completion_percentage": 100,
+      "compliance_percentage": 90,
+      "mq_status": "COMPLIANT",
+      "mq_status_ar": "مستوفٍ"
+    },
+    {
+      "mq_id": "DC.MQ.3",
+      "total_evidence": 6,
+      "assessed_evidence": 6,
+      "not_assessed_evidence": 0,
+      "pass_count": 4,
+      "partial_pass_count": 0,
+      "fail_count": 2,
+      "unknown_count": 0,
+      "assessment_completion_percentage": 100,
+      "compliance_percentage": 95,
+      "mq_status": "COMPLIANT",
+      "mq_status_ar": "مستوفٍ"
+    }
+  ],
+  "evidence_progress": [
+    {
+      "evidence_code": "DC.M.1",
+      "evidence_name": "الممارسات الحالية المتعلقة بمجال تصنيف البيانات",
+      "mq_id": "DC.MQ.1",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.1.1",
+      "evidence_name": "الخطة المعرفة والمعتمدة لتصنيف البيانات",
+      "mq_id": "DC.MQ.1",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.M.2",
+      "evidence_name": "تقرير حالة تنفيذ خطة تصنيف البيانات",
+      "mq_id": "DC.MQ.1",
+      "status": "FAIL",
+      "status_ar": "غير مستوفى",
+      "coverage_percentage": 67,
+      "assessed": true,
+      "needs_human_review": true
+    },
+    {
+      "evidence_code": "DC.M.3",
+      "evidence_name": "تقرير مراقبة تنفيذ خطة تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+      "mq_id": "DC.MQ.1",
+      "status": "PARTIAL_PASS",
+      "status_ar": "مستوفى جزئياً",
+      "coverage_percentage": 94,
+      "assessed": true,
+      "needs_human_review": true
+    },
+    {
+      "evidence_code": "DC.M.4",
+      "evidence_name": "تقرير مراجعة خطة تصنيف البيانات",
+      "mq_id": "DC.MQ.1",
+      "status": "FAIL",
+      "status_ar": "غير مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": true
+    },
+    {
+      "evidence_code": "DC.M.5",
+      "evidence_name": "القائمة الحالية لمجموعات البيانات المصنفة",
+      "mq_id": "DC.MQ.2",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.M.6",
+      "evidence_name": "سياسة تصنيف البيانات",
+      "mq_id": "DC.MQ.2",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.2.1",
+      "evidence_name": "ضوابط معالجة (تداول / مناولة) وحماية البيانات",
+      "mq_id": "DC.MQ.2",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.1.2",
+      "evidence_name": "ترتيب أولويات مجموعات البيانات والسجلات",
+      "mq_id": "DC.MQ.2",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.3.1",
+      "evidence_name": "تقرير جرد المجموعات التي تم تحديدها من البيانات والسجلات (Identified Datasets & Artifacts)",
+      "mq_id": "DC.MQ.2",
+      "status": "FAIL",
+      "status_ar": "غير مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.3.2",
+      "evidence_name": "تقرير تقييم الأثر",
+      "mq_id": "DC.MQ.2",
+      "status": "FAIL",
+      "status_ar": "غير مستوفى",
+      "coverage_percentage": 57,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.3.3",
+      "evidence_name": "تقرير تقييم البيانات منخفضة الأثر",
+      "mq_id": "DC.MQ.2",
+      "status": "FAIL",
+      "status_ar": "غير مستوفى",
+      "coverage_percentage": 75,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.M.7",
+      "evidence_name": "إرفاق ما يثبت استخدام أداة دليل / فهرس البيانات لجرد البيانات",
+      "mq_id": "DC.MQ.2",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.M.8",
+      "evidence_name": "قائمة معتمدة للوصول إلى البيانات مع الامتيازات المخصصة",
+      "mq_id": "DC.MQ.2",
+      "status": "FAIL",
+      "status_ar": "غير مستوفى",
+      "coverage_percentage": 50,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.5.1",
+      "evidence_name": "سجل البيانات",
+      "mq_id": "DC.MQ.2",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.4.1",
+      "evidence_name": "تقرير مراقبة عملية تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+      "mq_id": "DC.MQ.2",
+      "status": "PARTIAL_PASS",
+      "status_ar": "مستوفى جزئياً",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": true
+    },
+    {
+      "evidence_code": "DC.M.9",
+      "evidence_name": "أداة أتمتة تصنيف البيانات",
+      "mq_id": "DC.MQ.2",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": true
+    },
+    {
+      "evidence_code": "DC.M.10",
+      "evidence_name": "الممارسات الحالية المتعلقة بمراجعة تصنيفات البيانات",
+      "mq_id": "DC.MQ.3",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.M.11",
+      "evidence_name": "آلية مراجعة تصنيف البيانات",
+      "mq_id": "DC.MQ.3",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.3.4",
+      "evidence_name": "تقرير مراجعة التصنيف",
+      "mq_id": "DC.MQ.3",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.C.3.5",
+      "evidence_name": "وثيقة إثبات مستويات التصنيف المنشورة على أنها بيانات وصفية",
+      "mq_id": "DC.MQ.3",
+      "status": "PASS",
+      "status_ar": "مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    },
+    {
+      "evidence_code": "DC.M.12",
+      "evidence_name": "تقرير مراقبة عملية تصنيف البيانات عبر مؤشرات الأداء الرئيسية (KPIs) المحددة مسبقاً",
+      "mq_id": "DC.MQ.3",
+      "status": "FAIL",
+      "status_ar": "غير مستوفى",
+      "coverage_percentage": 71,
+      "assessed": true,
+      "needs_human_review": true
+    },
+    {
+      "evidence_code": "DC.M.13",
+      "evidence_name": "تقرير مراجعة آليات مراجعة تصنيف البيانات",
+      "mq_id": "DC.MQ.3",
+      "status": "FAIL",
+      "status_ar": "غير مستوفى",
+      "coverage_percentage": 100,
+      "assessed": true,
+      "needs_human_review": false
+    }
+  ],
+  "warnings": []
+}

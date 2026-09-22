@@ -1,0 +1,40 @@
+{
+  "catalog_id": "DC_EVIDENCE_CATALOG",
+  "catalog_type": "domain_manifest",
+  "domain": {
+    "code": "DC",
+    "name": "Data Classification",
+    "name_ar": "تصنيف البيانات"
+  },
+  "version": "1.0",
+  "status": "draft",
+  "description": "Master domain manifest for Data Classification evidence. This file acts as the entry point for the system to understand all MQ evidence catalogs and evidence documents related to the DC domain.",
+  "mq_catalogs": [
+    {
+      "mq_id": "DC.MQ.1",
+      "name": "خطة تصنيف البيانات",
+      "catalog_file": "data/evidence_catalog/DC_MQ_1_evidence.json",
+      "requirements_file": "data/maturity_models/DC_MQ_1.json",
+      "evidence_folder": "evidence_repository/data_classification/MQ1"
+    },
+    {
+      "mq_id": "DC.MQ.2",
+      "name": "عمليات تصنيف البيانات",
+      "catalog_file": "data/evidence_catalog/DC_MQ_2_evidence.json",
+      "requirements_file": "data/maturity_models/DC_MQ_2.json",
+      "evidence_folder": "evidence_repository/data_classification/MQ2"
+    },
+    {
+      "mq_id": "DC.MQ.3",
+      "name": "مراجعة تصنيفات البيانات",
+      "catalog_file": "data/evidence_catalog/DC_MQ_3_evidence.json",
+      "requirements_file": "data/maturity_models/DC_MQ_3.json",
+      "evidence_folder": "evidence_repository/data_classification/MQ3"
+    }
+  ],
+  "summary": {
+    "total_mqs": 3,
+    "total_evidence_documents": 23,
+    "domain_completion_status": "completed"
+  }
+}
